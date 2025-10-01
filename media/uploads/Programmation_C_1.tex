@@ -1,0 +1,4896 @@
+\documentclass[a4paper, oneside,11pt]{book}
+\usepackage[english,french]{babel}
+\usepackage{titletoc}
+\usepackage[utf8]{inputenc}
+%\usepackage{a4}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{epsfig}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts,amssymb}
+\usepackage{float}
+\usepackage{fancybox}
+\usepackage{fancyhdr}%for the headers and footnotes
+%\usepackage{bookman}
+%\usepackage{hyperref}
+%\hypersetup{colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black,pdftex}
+%\usepackage[paper=a4paper, tmargin=2.5cm,bmargin=2cm,lmargin=2.5cm,rmargin=2cm]{geometry}
+\usepackage[pdfauthor={NDENZAKO Eug\`ene},
+pdftitle={UNIVERSITY_OF_BURUNDI},
+pdftex]{hyperref}
+
+\pagestyle{fancy} 
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{graphicx}% for the automatic search of the format.
+\usepackage{color}
+%\usepackage{fancybox}
+%\usepackage{shadow}
+\usepackage{mathrsfs}%to write some math symboles vith the command mathscr
+\usepackage[pdftex]{hyperref}%for the references
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{wrapfig} %Pour permettre l'int\'egration d'une image dans un paragraphe.
+\usepackage{listings}
+\usepackage{lscape}
+\usepackage[toc,page]{appendix} 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage {fancybox} % Use this package.
+%\usepackage{titlesec}
+%\titleformat{\chapter}[display]   
+%{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{multicol}
+\usepackage{natbib}
+%\usepackage{apacite}
+
+\usepackage{xcolor}
+\usepackage{draftwatermark}
+
+\usepackage[most]{tcolorbox}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
+
+% this alters "before" spacing (the second length argument) to 0
+\titlespacing*{\chapter}{0pt}{-50pt}{15pt}
+
+
+
+
+\tcbset{
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!70,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+    }
+
+
+
+
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+\newcommand{\blob}{A text which is long, but not so long  as a
+  \texttt{\textbackslash lipsum}  paragraph and show the
+  problem about changing the background color}
+  
+  
+%\usepackage[ps2pdf,colorlinks=true,linkcolor=webred]{hyperref}
+\definecolor{webred}{rgb}{0.5,0,0}
+
+
+\textheight250mm \voffset-23mm
+\textwidth172mm \hoffset-20mm
+
+\setlength{\unitlength}{1mm}
+\setlength{\parskip}{2.5mm}
+\setcounter{secnumdepth}{4}
+
+\setcounter{tocdepth}{4}
+
+
+\author{E.~NDENZAKO}
+\title{Programmation}
+
+\newcommand{\ud}{\mathrm{d}}
+
+\newtheorem{thm}{Proposition}[chapter]
+\newtheorem{thmb2}{Th\'eor\`eme}[chapter]
+\newtheorem{thmc}{D\'efinition}[chapter]
+\newtheorem{thmd}{Corollaire}
+\newtheorem{thmp}{Propri\'et\'e}[chapter]
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+
+
+\usepackage{minted} 
+\usepackage{pagecolor,lipsum}% http://ctan.org/pkg/{pagecolor,lipsum}
+
+
+\usepackage{draftwatermark}
+\usepackage{lipsum}
+
+\SetWatermarkLightness{0.5}
+\SetWatermarkText{DRAFT\\COPY}
+
+
+
+
+\begin{document}
+\SetWatermarkAngle{30}
+\SetWatermarkText{MSc. NDENZAKO Eug\`ene}
+\SetWatermarkScale{5}
+%\begin{tcolorbox}
+%\pagecolor{yellow!10!orange!10!green!30!magenta!20!}%cyan!10!}
+\begin{titlepage}
+
+%\end{tcolorbox}
+
+\begin{center}
+
+
+
+\thisfancypage{%
+\setlength{\fboxsep}{16pt}\doublebox}{}
+
+
+  \thispagestyle{empty}
+
+\vspace{3 cm}
+{\Large UNIVERSITE DU BURUNDI}\\[0.35cm]
+{\large FACULTE DES SCIENCES}\\[0.35cm]
+{\large GROUPE POLYTECHNIQUE}\\[0.35cm]
+%{\large \textbf{Bac II Polytechnique}}\\[0.35cm]
+\vspace*{1.5cm}
+{\LARGE \textbf{Cours de Programmation}}\\[0.25cm] 
+{\Large 60 heures}\\[0.5cm]
+par\\[0.5cm]
+\textbf{NDENZAKO Eug\`ene}
+
+\vspace*{1.25cm}
+%\includegraphics[angle=0,scale=0.6]{./Figures/index.jpeg}
+
+\vspace*{3.0cm}
+{\large \textbf{Ann\'ee acad\'emique 2021-2022}}
+
+
+  \today
+  \vspace{\fill}
+\end{center}
+\end{titlepage}
+
+
+
+
+
+
+
+
+\frontmatter
+\fancyheadoffset[loh,reh]{0mm}
+\cfoot{NDENZAKO Eug\`ene}
+\tableofcontents
+
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyheadoffset[loh,reh]{0mm}
+
+\lstset{language=Python,showstringspaces=false,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+
+\chapter*{Descriptif du cours}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Descriptif du cours} \rhead{}
+\cfoot{\thepage}
+\addcontentsline{toc}{chapter}{Descriptif du cours}
+
+\section*{Intitul\'e du cours: \textbf{Programmation}}
+
+
+
+
+
+\textbf{Pr\'erequis} : Algorithmique I et II
+
+
+\textbf{Objectifs} :  A la fin du cours l'\'etudiant doit \^etre capable de :
+\begin{itemize}
+\item Maîtriser un langage de programmation (qui permet de traduire un algorithme en respectant une syntaxe donn\'ee, afin d'obtenir in fine un code ex\'ecutable), 
+en l'occurrence un langage imp\'eratif comme le C++. 
+
+\end{itemize}
+\textbf{Contenu}:
+Ce cours aborde les notions de base comme la d\'eclaration des variables, les op\'erateurs, les entr\'ees et sorties, les instructions de contr\^ole, 
+les strustures it\'eratives, les fonctions, les poiteurs et tableaux, les classes ou objets, la gestion de projet ainsi que le d\'eveloppement d'applications \`a interface 
+graphique (GUI). 
+
+\textbf{M\'ethode d'enseignement} : Notes de cours sous forme de syllabus, explications pendant le cours magistral, exercices et travaux personnalis\'es sous forme de projets 
+sur ordinateur.
+
+\textbf{M\'ethode d'\'evaluation} : Evaluation des projets et travaux dirig\'es (40$\%$)  et un examin final \`a la fin du semestre (60$\%$) : une partie th\'eorique (50\%) et une 
+partie pratique sur ordinateur (50\%) \textbf{sous forme de projet final}.
+
+\textbf{R\'ef\'erences principales} :
+
+\begin{enumerate}
+\item T. H.CORMEN et al., Introduction to algorithms, The MIT Press, 2009
+\item Delannoy, C. (2010). Programmer en langage C++. Editions Eyrolles.
+\item Stroustrup, B. (2000). Die C++-Programmiersprache. Pearson Deutschland GmbH.
+\end{enumerate}
+
+
+
+\vspace*{0.40cm}
+\sloppy
+
+\mainmatter
+
+
+
+\titlecontents{chapter}[-0.75cm]{}
+{\\*{\textbf{Chapitre} \textbf{\thecontentslabel}} -- }
+{}
+{\dotfill \contentspage}
+
+\chapter{Le langage C++}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Le langage C++} \rhead{\thepage}
+%\cfoot{\thepage}
+\vspace{-0.75cm}
+\section{Programmation}
+
+Un programme est une suite d'instructions qui demande \`a l'ordinateur d'effectuer une t\^ache. Il faut  garder \`a l'esprit que les ordinateurs ne sont que des machines. Ils ne 
+sont pas dou\'es d'intelligence pour d\'ecider d'eux m\^emes. Ils ne font rien du moment qu'ils n'ont pas \'et\'e expliqu\'es comment faire un travail donn\'e. 
+Un programme de traitement de
+texte par exemple est un programme \'ecrit par quelqu'un dans un langage comme le C++ qui indique \`a l'ordinateur ce qu'il faut faire lorsque vous tapez des mots.
+
+
+Vous \^etes sans doute habitu\'e au concept de la programmation (en Python) si vous suivez des \'etapes qui vous indiquent par exemple comment pr\'eparer votre cuisine. 
+Une bonne pratique liste ces instructions dans un bon ordre de telle fa\c{c}on que la t\^ache soit ex\'ecut\'ee avec succ\`es sans qu'aucune assertion ne soit prise. Imaginons 
+un certain nombre de t\^ache \`a faire chaque matin avant de se pr\'esenter au cours. On peu avoir ce cahier de charge : 
+
+\begin{itemize}
+\item faire la propr\'et\'e de la maison
+\item ranger le mobilier
+\item faire la vaisselle
+\item prendre sa douche
+\item peigner les cheveux
+\item ranger le lit
+\item pr\'eparer son cartable
+\begin{itemize}
+\item faire le plein du papier
+\item v\'erifier la disponibilt\'e du stylo, du crayon et \'eventuellement la r\`egle gradu\'ee, ...
+\end{itemize}
+\end{itemize} 
+
+
+Ces t\^aches peuvent \^etre effectu\'ees en totalit\'e ou en partie chaque matin. On peut les noter dans un agenda ou sur du papier \`a afficher sur le mur. 
+Les activit\'es quotidiennes sont mis dans un certain ordre d'ex\'ecution et on n'a pas la possibilit\'e de sauter une t\^ache sans votre consentement. Cette image  
+refl\`ete la mani\`ere dont l'ordinateur peut \^etre instruit pour effectuer un ensemble de t\^ache chaque fois que l'utilisateur clique sur un bouton. 
+
+Si vous voulez que l'ordinateur vous aide \`a bien g\'erer votre budget, vous pouvez \'ecrire un programme qui liste tous les articles dont vous avez besoin pendant 
+un mois ainsi que les prix respectifs. Apr\`es chaque achat, il vous dira combien il vous reste en poche et les articles non disponibles en stock. A la fin du mois il 
+vous permettra de faire le bilan de vos consommations. Vous pouvez vous procurer un tel programme de deux fa\c{c}ons. Soit par achat aupr\`es d'une compagnie de 
+d\'eveloppeurs ou l'\'ecrire vous m\^eme. Ecrire un programme par vous m\^eme a un grand avantage. Le programme fait exactement ce que vous voulez et pour le faire \'evoluer vers des 
+mises \`a jour vous n'aurez pas besoin de faire recours \`a une tierce personne. Mais si vous proc\'edez par achat, vous allez devoir l'adapter \`a vos 
+besoins. C'est \`a ce moment que le C++ joue pleinnement son r\^ole. Avec la programmation en C++,
+vous  pouvez instruire \`a l'ordinateur d'effectuer des t\^aches. Ce  que vous avez besoin c'est un \'editeur et un compilateur. Le reste du temps sera consacr\'e \`a l'\'ecriture 
+des instructions d\'etaillant les s\'equences de la t\^ache \`a ex\'ecuter! Apr\`es cette phase d'\'edition du programme, vous devez le compiler. 
+Apr\`es les \'etapes d'\'edition et de compilation, vous aurez besoin d'ex\'ecuter le programme sinon l'ordinateur ne pourra pas savoir si vous voulez qu'il 
+suive les instructions pour g\'en\'erer  des r\'esultats.
+
+Quand vous programmez, faire la distinction entre un programme et ses r\'esultats. Votre programme se compose d'une suite d'instructions que vous \'ecrivez, mais l'ordinateur
+suit les instructions uniquement quand vous ex\'ecutez le programme. Les sorties sont les r\'esultats du programme et peuvent \^etre renvoy\'es \`a l'\'ecran, sur l'imprimante ou 
+dans un fichier sur le disque.
+
+Le langage C++ est une \'evolution du langage C. Il a \'et\'e construit sur base du langage C en ajoutant d'autres couches. Il poss\`ede d'autres fonctionnalit\'es de la 
+\textbf{programmation orient\'e objet}. Le langage C++ se trouve \`a la fronti\`ere entre le langage C, non objet, et le langage JAVA qui est totalement orient\'e objet.
+On trouve sur le march\'e un grand nombre de compilateurs C++ destin\'es \`a diff\'erents microprocesseurs ou microcontr\^oleurs.
+Le langage C++ poss\`ede assez peu d'instructions, il fait par contre appel \`a des biblioth\`eques, fournies en plus ou moins grand nombre avec le compilateur. 
+L'appel d'une biblioth\`eque fournie  avec le compilateur se fait avec la directive de pr\'e-processing. C'est une instruction sp\'eciale  avec le signe \og\#\fg\ au d\'ebut.
+
+ \begin{table}[hhhh]
+ \begin{tabular}{lll}
+ \textbf{Exemple}&math.h &: biblioth\`eque de fonctions math\'ematiques\\
+&iostream &: biblioth\`eque d'entr\'ees/sorties standard (sortie \`a l'\'ecran)\\
+&complex.h &: biblioth\`eque contenant la classe des nombres complexes. \\
+ \end{tabular}
+ \end{table}
+Pour une bonne productivit\'e, le programmeur peut en cas de besoin consulter la documention de ces biblioth\`eques pour comprendre l'appel des fonctions de telle ou telle autre
+biblioth\`eque.
+
+
+\section{Cycle d'\'edition d'un programme}
+
+La r\'eussite d'un projet de prorammation doit passer par la planification avant de commencer l'\'edition. Tout comme pour les b\^atisseurs, ils ne se lancent pas imm\'ediatement
+sur les outils et se mettent \`a construire. Ils doivent d'abord fouiller ce que le propri\'etaire d\'esire, ensuite ils dessinent les plans, ach\`etent le mat\'eriel, recrutent 
+les travailleurs enfin ils commencent la construction. La partie la plus d\'elicate dans le processus d'\'edition d'un proramme est sa subdivision en des \'etapes significatives
+que l'ordinateur doit suivre. Pour \'ecrire un programme tu peux consid\'erer ce qui suit :
+
+\begin{enumerate}
+\item D\'efinir le probl\`eme \`a r\'esoudre par l'ordinateur
+\item Planifier les r\'esultats du programme (ce que l'utilisateur pourra voir)
+\item Subdiviser le probl\`eme en des \'etapes pour parvenir \`a ces r\'esultats
+\item Ecrire le programme en utilisant l'\'editeur
+\item Compiler le programme
+\item Tester le programme pour s'assurer qu'il s'ex\'ecute tel que pr\'evu.
+\end{enumerate}
+
+Comme on peut le voir, l'\'etape d'\'edition de programme arrive vers la fin. Ceci est tr\`es 
+important car il faut avoir bien planifier comment instruire \`a l'ordinateur pour 
+ex\'ecuter une t\^ache. L'ordinateur ex\'ecute les instructions \'etape par \'etape. 
+
+\section{Instructions en C++}
+
+Comme nous l'avons dit plus haut, un programme C++ est une suite d'instructions. Une \textbf{instruction} est une ligne qui se termine par un point virgule (;). 
+Le langage C++ est tr\`es exigeant, l'oublie de mettre le point virgule \`a la fin de chaque insrtuctiion conduit \`a l'erreur de compilation. On peut \'ecrire 
+les instructions ligne par ligne ou mettre plusieures instructions s\'epar\'ees par des virgules sur une m\^eme ligne.
+
+
+\section{Mots reserv\'es, commentaires et s\'equences d'\'echappement en C++}
+
+ \subsection{Mot r\'eserv\'es}
+ 
+Comme tout autre langage de programmation, le C++ d\'efinie un ensemble de mots r\'eserv\'es qui servent de fondement de toute la programmation en 
+C++ (e.g using, namespace, return, ...).
+
+Certains sont utilis\'es pour d\'efinir des objets sp\'eficiques comme \textbf{int, float, double, ...} et d'autres sont utilis\'es pour construire des instructions qui ont 
+ un sens comme \textbf{if, else, for, while, do, switch} pour les instructions de contr\^ole. Le Tableau \ref{tab12} montre la liste compl\`ete des mots r\'eserv\'e 
+ en C++. 
+ 
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{|cccccc|}
+\hline
+and & and\_eq & asm & auto & bitand &  bitor\\
+bool & break & case & catch& char & class\\
+compl & const & const\_cast & continue & default & delete\\
+do & double & dynamic\_cast & else & enum & explicit\\
+export & extern& false & float & for & riend\\
+goto & if  & inline & int & long & mutable\\
+namespace & new & not & not\_eq & operator & or\\
+or\_eq &private & protected & public & register & reinterpret\_cast\\
+return & short & signed & sizeof & static & static\_cast\\
+struct & switch & template & this& throw & true\\
+try & typedef & typeid & this & union & unsigned\\
+using & virtual void & typename & wchar\_twhile&&\\
+xor & xor\_eq & volatile & & &\\
+\hline
+\end{tabular}
+\vspace{-0.25cm}\caption{Mots r\'eserv\'es du langage C++.} \label{tab12}
+\end{center}
+\end{table}
+ 
+ \subsection{Comentaires}
+ 
+Les commentaires peuvent se faire par deux barres (//) sur une ligne comme ci-dessous :
+
+
+
+ //\emph D\'ebut de commentaire sur plusieures lignes
+
+ // \emph Deuxi\`eme ligne
+
+ // \emph derni\`ere ligne
+
+Mais on trouve aussi la synthaxe /*....*/ pour faire un commentaire s'\'etendant sur plusieures lignes.
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+\begin{lstlisting}
+/*Ceci est un commentaire
+sur plusieures lignes
+............
+*/
+\end{lstlisting}
+
+Les commentaires ne sont pas destin\'es au compilateur mais \`a l'humain. Ils servent de rappel dans le cadre du d\'eveloppement de grand projets. Pour se rappeler 
+du r\^ole d'un bout de  code, il est utile de placer un commentaire au d\'ebut et/ou \`a la fin de ce dernier. Un programme bien comment\'e sera plus lisible par les tiers.
+Lors de la compilation, les lignes mises en commentaire seront tout simplement ignor\'ees par le compilateur. Quoi que les 
+commentaire soient utiles, il ne  faut pas abuser leur usage, n'utiliser le commentaires quand ils sont n\'ecessaires pour ne pas alourdir
+le programme.
+
+ 
+\subsection{S\'equences d'\'echappement}
+
+L'utilisation de la directive \textit{endl} est un moyen simple pour contr\^oler le passage \`a la ligne. Une nouvelle fa\c{c}on de contr\^oler 
+le passage \`a la ligne est l'utilisation de la s\'equence d'\'echappement $\backslash$n.
+Mettez les instructions suivantes dans un programme et le tester. Quel est le r\^ole du symb\^ole $\backslash$n.
+
+\begin{lstlisting}
+cout <<"Ceci est notre programme en C++ avec passage a la ligne\n";
+cout <<"Il est plus simple...\n";
+\end{lstlisting}
+On trouve en C++ d'autres  s\'equences d'\'echappement comme le montre le tableau suivant: 
+
+\subsubsection*{Quelques caract\`eres constantes :}
+\begin{table}[hhhh]
+\begin{center}
+ \begin{tabular}{llll}
+ \hline
+ \textbf{Caract\`eres} & \textbf{Valeur (code ASCII)} & \textbf{Nom ASCII}\\
+  \hline
+'$\backslash$n' &interligne & 0x0a & LF\\
+'$\backslash$t' &tabulation horizontale& 0x09 & HT\\
+'$\backslash$v' &tabulation verticale & 0x0b & VT\\
+$\backslash$r' &retour chariot 0x0d& CR\\
+'$\backslash$f' &saut de page &0x0c & FF\\
+'$\backslash\backslash$' &backslash& 0x5c & $\backslash$ \\
+'$\backslash$'' &cote& 0x2c &'\\
+'$\backslash$"' &guillemets &0x22 & "\\
+  \hline
+ \end{tabular}
+ \vspace{-0.25cm}\caption{ Caract\`eres constantes en C++.}\label{tab3}
+ \end{center}
+ \end{table}
+
+
+\section{Etapes d'\'edition, de mise au point et l'ex\'ecution d'un programme}
+
+Le d\'eveloppement d'un programme en C++ aussi simple que possible  doit suivre les \'etapes suivantes : 
+
+\begin{enumerate}
+\item \textbf{Edition du programme source} : \`a l'aide d'un \'editeur de fichier texte. Le nom du
+fichier source contient l'extension .cpp (exemple: premier\_program.cpp). C'est du code compr\'ehensible au programmeur.
+\item \textbf{Compilation du programme source} :  c'est la traduction du code source en code machine destin\'es au  microprocesseur utilis\'e. Le compilateur indique les 
+erreurs de syntaxe mais \textbf{ignore les fonctions-biblioth\`eque appel\'ees par le programme}. Il g\'en\`ere un fichier binaire, non \'editable en mode « texte », appel\'e fichier objet:
+ premier\_program.o.
+\item \textbf{Editions de liens} : Le code machine des fonctions-biblioth\`eque est charg\'e, cr\'eation d'un fichier binaire, non \'editable en mode texte, appel\'e fichier ex\'ecutable:
+ sous l'environnement Windows, le fichier ex\'ecutable porte l'extension .exe alors que sous Linux, il porte l'extension .out. (exemple : premier\_program.exe 
+ ou premier\_program.out).
+\item \textbf{Ex\'ecution du programme} : une fois la compilation et l'\'edition des liens termin\'ee, il faut ex\'ecuter le programme pour g\'en\'erer des r\'esultats.
+
+\end{enumerate}
+
+
+Les compilateurs permettent en g\'en\'eral de construire des programmes compos\'es de plusieurs
+fichiers sources, d'ajouter \`a un programme des unit\'es d\'ej\`a compil\'ees. On dit alors que l'on
+travaille par gestion de projet.
+
+Avant de pr\'esenter l'exemple pr\'eliminaire d'un programme en C++, faisons contact avec la structure g\'en\'erale qu'il doit prendre.
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+int main()
+{
+    ...............
+    ...............
+    ...............
+}
+\end{lstlisting}
+
+Les instructions du programme se placent entre accolades. Bien s\^ur qu'il peut y avoir plus de codes pour un programme sofistiqu\'e. Notez que tout programme qu'il soit 
+petit ou un  grand projet comporte au moins ce bout de code. Nous reviendrons sur cet aspect quand nous aborderons la notion de fonction.
+
+
+
+ \begin{table}[hhhh]
+ \begin{tabular}{ll}
+ \textbf{Exercice} : &Compiler et ex\'ecuter le programme suivant:\\
+ &\\
+ \end{tabular}
+ \end{table}
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+\lstset{numbers=left,stepnumber=1,firstnumber=1,numberfirstline=true,frameround = fttt,frame=trBL,rulesep=1mm,framesep=0.5mm,framerule=2pt,
+xrightmargin=-0mm,xleftmargin=-0mm,
+rulecolor={\color[gray]{0.6}},rulesepcolor={\color[gray]{0.5}}}
+\begin{lstlisting}
+//Listing1-1.cpp
+#include <iostream> // sorties standards
+using namespace std;
+// les commentaires s'ecrivent derriere 2 barres
+int main()
+{
+    cout<<"BONJOUR"<<endl; //affichage d'un message sur l'ecran
+    cout<<"Belle journee!!"<<endl; //affichage d'un 
+                                   //autre message sur l'ecran
+    cout<<"Pour continuer tapper un caractere et entrer ..."<<endl;
+    // Attente d'une saisie clavier pour voir l'ecran d'execution
+    char c;
+    cin>> c;
+}
+\end{lstlisting}
+Nous reviendrons en d\'etails sur la signification de  chaque ligne du programme  pr\'ec\'edent. 
+
+Le langage C++ distingue les minuscules, des majuscules. Les mots r\'eserv\'es du langage C++ doivent \^etre \'ecrits en minuscules.
+
+On a introduit dans ce programme la notion d'interface homme/machine (IHM). 
+\begin{itemize}
+\item L'utilisateur visualise une information sur l'\'ecran,
+\item  L'utilisateur, par une action sur le clavier, fournit une information au programme. 
+\end{itemize}
+
+Les instructions sont ex\'ecut\'ees s\'equentiellement, c'est-\`a-dire les unes apr\`es les autres. Nous comprenons que l'ordre dans lequel elles sont \'ecrites a une grande importance.
+
+\section{Format d'un  programme en C++}
+A la diff\'erence des autres langage comme le COBOL et Python, le C++ est un langage \`a format libre. Les instructions peuvent commencer \`a n'importe quelle colonne. 
+On ne trouve pas les notions de blocs d'instruction qui sont une exigence en Python par exemple. N\'eamoins, pour une bonne lisibilit\'e on \'evitera de pr\'esenter nos programmes 
+comme ci-dessous. 
+
+
+\begin{lstlisting}
+//listing1-2.cpp
+#include <iostream> // sorties standards
+using namespace std;
+// les commentaires s'ecrivent derriere 2 barres
+int main()
+{
+cout<<"BONJOUR"<<endl; //affichage d'un message sur l'ecran
+cout<<"Belle journee!!"<<endl; //affichage d'un 
+//autre message sur l'ecran
+cout<<"Pour continuer tapper un caractere et entrer ..."<<endl;
+// Attente d'une saisie clavier pour voir l'ecran d'execution
+char c;
+cin>> c;
+}
+\end{lstlisting}
+
+Quoi que les programmes \textbf{listing1-1.cpp} et \textbf{listing1-2.cpp} soient les m\^emes, le premier est plus lisibles que le second. Un programme bien structur\'e est facile \`a 
+corriger en cas d'erreurs. Plus il est plus lisible, plus il sera facile pour toi m\^eme de le revisiter apr\`es un long moment d'attente ou si tu d\'esire 
+y apporter des am\'eliorations.
+Par exemple si tu travaille pour une compagnie en tant que d\'eveloppeur, il arrivera certainnement un moment o\`u  tu te verra charger de modifier un programme qui a \'et\'e \'ecrit
+par quelqu'un d'autre. Dans le cadre d'un projet de programmation o\`u plusieurs d\'eveloppeurs travaillent sur des parties de codes d'un m\^eme programme, il serait prudent 
+d'\'ecrire lisiblement  les composantes du projet pour faciliter  les \'echanges. M\^eme si la lisibilit\'e du programme ne soit pas une exigence du C++, il permet d'\'economiser du 
+temps durant le cycle de d\'eveloppement des applications. Dans le cadre de ce cours, il est conseill\'e d'\'ecrire des programmes plus lisibles que possible.
+
+
+
+
+\section{Compilation d'un programme en C++}
+
+Il existe plusieurs moyens pour compiler un programme \'ecrit en C++. Soit on peut utiliser un environnement de d\'eveloppement int\'egr\'e ou un compilateur en ligne de  commande 
+comme g++. Dans le cadre de ce cours, nous utiliseront, dans un terminal,  le compilateur \og\textbf{g++}\fg\ pour compiler et lier nos programmes.
+
+Le Tableau \ref{comp1} r\'esume les \'etapes de la compilation d'un programme \'ecrit en C++.
+ \begin{table}[hhhh]
+ \begin{center}
+ \begin{tabular}{|l|l|}
+ \hline
+ \textbf{Commande} : &\textbf{R\'esultat }\\
+ \hline
+ g++ premier\_program.cpp& a.out\\
+ \hline
+ g++ -c premier\_program.cpp & premier\_program.o\\
+ \hline
+ g++ premier\_program.o -o premier\_program.out & premier\_program.out\\
+ \hline
+ \end{tabular}
+ \vspace{-0.25cm}\caption{Etapes de compilation d'un programme en C++.} \label{comp1}
+ \end{center}
+ \end{table}
+
+La compilation d'un programme en C++ avec la commande \textbf{g++ nom\_du\_fichier.cpp} g\'en\`ere automatiquement le fichier ex\'ecutable \og a.out\fg. Il est possible de contr\^oler
+les \'etapes de la compilation en passant par la cr\'eation d'un fichier \textbf{objet} et proc\'eder ensuite \`a l'\'edition des liens. La compilation avec l'option -c suivie du nom du 
+fichier produit un fichier objet. Pour l'\'edition des liens, on appelle le compilateur  suivie  du nom  du fichier objet, de l'option -o et le nom du fichier ex\'ecutable. 
+L'ex\'ecution du programme dans un terminal Linux se fait avec la commane \textbf{./nom\_du\_fichier\_executable.out}. 
+
+\section{Premier programme en C++}
+
+Nous revenons sur le programme pr\'esent\'e dans le \textbf{listing1-1.cpp}. Dans cette section nous revenons en d\'etails  sur le programme pr\'esent\'e plus haut pour en saisir 
+le sens de chaque ligne. Signalons que nous ne pourons pas exposer tous les d\'etails de la signification de chaque bout de code. Le  lecteur  interess\'e peut se r\'ef\'erer sur la 
+documentation compl\`ete du langage C++ telle que \c{c}a \'et\'e expos\'ee  par Bjarne Stroustrup.
+\begin{itemize}
+\item La ligne 1 : indique le nom du fichier contenant le code source (en commentaires)
+\item La ligne 2 : c'est la ligne de pr\'e-processing. Elle appelle les fonctions de la biblioth\`eque d'entr\'ee/sortie (notemment cout, cin, endl, ...). Elle ordonne au compilateur
+de charger le fichier sur le disque.
+\item La ligne 3 : indique que nous utilisons les fonctions dont les noms sont d\'efinis dans l'espace de noms standard.
+\item La ligne 4 : indique un commentaire sur une ligne. Les  commentaires pr\'esentent les informations destin\'ees au programmeur et non au compilateur. Elles seront saut\'ees lors
+de la compilation.
+\item La ligne 5 : indique le d\'ebut du programme. Le programme principale s'\'ecrit sous forme de fonction qui porte le nom \textbf{main()}. Cette fonction peut renvoyer une  valeur 
+de type entier.
+\item Les lignes 6 et 14 : indique le d\'ebut et la fin de la fonction main()
+\item Les lignes 7, 8 et 10 : affichent des messages \`a l'\'ecran et se  terminent par un passage \`a la nouvelle ligne. Remarquons que pour afficher un message, 
+nous utilisons la directive \textbf{cout} (console out put en anglais)  suivir des chevrots $<<$. Pour  indiquer le passage \`a la nouvelle ligne, nous utilisons 
+la directive \textbf{endl} (end line en anglais) de la biblioth\`eque standard.
+\item La ligne 12 : d\'eclare une variable c de type \textbf{char}
+\item La ligne 13 : r\'ecup\`ere une valeur entr\'ee au cravier et la stocke dans la varible c. L'appel de la directive \textbf{cin} permet \`a l'utilisateur de saisir une valeur et le 
+programme attend jusqu'\`a ce que l'utilisateur ait saisi une valeur ou un caract\`ere. Sous certains environnements comme Windows, ceci permet \`a l'utilisateur de visualiser le 
+r\'esultat du programme avant que l'invite de  commande ne se  ferme.
+
+\end{itemize}
+
+\section{R\`egles de nomination des identifiants}
+ Tous les langages de programmation y compris le C++ exigent que le programmeur nomme les diff\'erents objets que le programme utilise. 
+ Nous nous r\'ef\'erons aux noms de ces objets comme  des \textbf{identifiants}. Il peut \^etre    n'importe quel nom choisi aussi longtemps qu'il 
+ satisfait aux exigences suivantes : 
+
+\begin{enumerate}
+\item Les caract\`eres peuvent \^etre des lettres, ( majuscule ou minuscules), des chiffres, et la barre d'en bas (\_).
+\item Un identifiant ne peut pas commencer par un chiffre.
+\item Un identifiant ne peut pas avoir le m\^eme nom qu'un non r\'eserv\'e.
+
+\end{enumerate}
+
+Une  bonne pratique de la programmation demande que les noms des objets refl\`etent le r\^ole ou le sens de ce que l'identifiant repr\'esente. Par exemple il   n'est pas conseill\'es 
+d'utiliser p pour repr\'esenter  le prix de l'ordinateur. Au contraire, on peut invraisemblablement utiliser \textbf{prix} ou \textbf{prix\_ordinateur}. Un identifiant ne peut pas
+contenir un espace. Cependant, pour am\'eliorer la lisibilit\'e, on peut utiliser la barre d'en bas pour s\'eparer les mots. L'identifiant \textbf{prix\_total} est facile \`a lire
+que l'identifiant \textbf{prixtotal}. Ci-dessous sont des noms des identifiants valables : 
+
+\begin{lstlisting}
+x c14 area electron_mass TEMPERATURE 
+\end{lstlisting}
+
+
+Le nom de l'identifiant peut contenir des lettres et des chiffres, mais un identifiant avec un chiffre au d\'ebut n'est pas valable. Il faudra \'eviter les identifiants du genre
+
+\begin{lstlisting}
+1x  4area 
+\end{lstlisting}
+Si cette synthaxe est utilis\'ee le compilateur signalera une erreur de compilation et vous indiquera \`a quelle ligne la r\`egle a \'et\'e viol\'ee.
+
+
+
+\chapter{Notion de variables et op\'erateurs}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Notion de variables et op\'erateurs} \rhead{\thepage}
+
+Un programme en C++, lors de son ex\'ecution, passe le temps \`a faire la d\'eclaration de variables, les modifier et produire des r\'esultats en appliquant les op\'erations sur 
+les variables.
+Une variable est un emplacement dans la m\'emoire centrale de l'ordinateur identifi\'e par un nom. Il stocke un type particulier de donn\'ee. 
+Comme c'est un emplacement dans la m\'emoire de l'ordinateur, une variable peut stocker n'importe quelle valeur admissible. C'est pour cette raison que nous 
+l'appelons \textbf{variable}. En C++, on d\'efinie une variable dans la d\'eclaration. La d\'eclaration d'une variable commence par le \textbf{type} de donn\'ees, 
+qui indique la nature de donn\'ees que  le programme peut stocker dans l'emplacement nomm\'e par la variable. Le type de donn\'ees est suivi par le 
+\textbf{nom de la variable} et puis par un poir virgule. Le nom de la variable n'est qu'un indentifiant. Par exemple 
+la ligne suivante est une d\'eclaration de variable. 
+
+
+
+
+
+
+
+\begin{lstlisting}
+int i;
+\end{lstlisting}
+
+Une variable poss\`ede des caract\'eristiques. Si vous estimez que votre programme a besoin d'une autre variable vous n'avez
+qu'\`a en d\'eclarer une nouvelle. En C++ une variable peut \^etre d\'eclar\'ee n'importe o\`u dans le programme. Il suffit de  respecter les caract\'eristes suivantes : 
+
+\begin{itemize}
+\item Chaque variable a un nom
+\item Chaque variable a un type
+\item Chaque variable stocke une valeur que vous lui attribuez par affectation.
+\end{itemize}
+
+Dans cette d\'eclaration, le mot cl\'e \textbf{int} signifie que le nom de la variable i est de type entier. En fonction de la plate forme, un entier peut \^etre 
+repr\'esent\'e sur deux 
+bytes (16 bits) ou quatre bytes (32 bits). Si deux bytes sont utilis\'es pour repr\'esenter un entier, $2^{16} = 65536$\ entiers (positifs, n\'egatifs et z\'ero) 
+peuvent \^etre repr\'esent\'es dans une variable de type entier. La moiti\'e de ces valeur sont des entiers n\'egatifs et l'autre moiti\'e sont des entiers positifs. Chacun de ces 
+entiers prend la valeur entre $32768$\ \`a $+32767$. L'op\'erateur \textbf{sizeof} 
+peut \^etre utilis\'e pour d\'eterminer combien de bits sont utilis\'e pour
+repr\'esenter la variable d'un type donn\'e sur une machine quelconque.
+
+\begin{lstlisting}
+//Listing2-1
+#include<iostream>
+using namespace std;
+int main()
+{
+    double salaire;
+    double prime;
+    double salaire_brute;
+    salaire = 80000.0;
+    prime = salaire * 0.03;
+    salaire_brute = salaire + prime;
+    cout << salaire_brute <<endl;
+}
+\end{lstlisting}
+
+
+
+Dans ce programme, on introduit 3 nouveaux concepts :
+
+\begin{itemize}
+\item  La notion de d\'eclaration de variables : les variables sont les donn\'ees que manipulera le
+programme lors de son ex\'ecution. Ces variables sont rang\'ees dans la m\'emoire vive de
+l'ordinateur. Elles peuvent \^etre d\'eclar\'ees au moment où on en a besoin dans le programme.
+Pour une meilleure lisibilit\'e, il est conseill\'e de les d\'eclarer au d\'ebut (sauf 
+peut-\^etre pour des variables cr\'e\'ees par commodit\'e et qui ne servent que tr\`es localement dans le programme).
+\item La notion d'affectation, symbolis\'ee par le signe =. La source de l'information est \`a droite du
+signe =, la destination \`a gauche.
+
+\begin{table}[hhhh]
+ \begin{tabular}{ll}
+a = 10; &signifie « a prend la valeur 10 »\\
+b = b0; &signifie « b prend la valeur 50 »\\
+s = a + b; &signifie « s prend la valeur a + b »\\
+s = s + 5; &signifie « la nouvelle valeur de s est \'egale \`a l'ancienne + 5 ». \\
+&Cette synthaxe est \'equivalente \`a s += 5\\
+ \end{tabular}
+ \end{table}
+
+\item La notion d'op\'eration. Rappelons qu'un programme informatique est ex\'ecut\'e s\'equentiellement, c'est-\`a-dire une instruction apr\`es l'autre. Lorsque 
+l'instruction \textbf{s = a + b} est ex\'ecut\'ee, \textbf{a} poss\`ede la
+valeur 10, et \textbf{b} poss\`ede la valeur 50
+
+\end{itemize}
+
+\section{Types de variables}
+
+En C++, il existe un nombre vari\'e de types de donn\'ees dont certains sont pr\'ed\'efinis et d'autres sont construits par le programmeur.  La d\'eclaration
+ d'une variable suit toujour la r\`egle suivante : 
+
+\begin{lstlisting}
+TYPE NOM_VARIABLE
+\end{lstlisting}
+o\`u \textbf{TYPE} signifie le type de la variable et \textbf{NOM\_VARIABLE} le nom de la variable ou l'identifiant. A la diff\'erence de langages 
+interpr\'et\'es comme \textbf{Python} qui n'exige aucune d\'eclaration pr\'ealable des variables, le langage C++ est fortement typ\'e. L'utilisation 
+d'un identifiant avant la d\'eclaration d'une variable conduit \`a l'erreur de compilation. Tester le programme suivant et voir le r\'esultat.
+
+\begin{lstlisting}
+//Listing2-2
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout_marchandise = 500; //Cout d'une marchandise en francs
+    cout << cout_marchandise << endl;
+}
+\end{lstlisting}
+Apporter les modifications suivantes et compiler le programme et puis ex\'ecuter.
+
+\begin{lstlisting}
+//Listing2-3
+#include<iostream>
+using namespace std;
+int main()
+{
+    int cout_marchandise = 500; //Cout d'une marchandise en francs
+                               //avec specification du type "int".
+    cout << cout_marchandise << endl;
+}
+\end{lstlisting}
+
+
+
+Il faut \^etre prudent quand vous attribuez des noms aux variables de votre programme. Les majuscules et les minuscules ne sont pas interchangeables. En effet, la variable
+\textbf{Cout\_Marchandise} du programme suivant n'est pas \'equivalente \`a \textbf{cout\_marchandise} du programme pr\'ec\'edent.
+
+
+\begin{lstlisting}
+//Listing2-4
+#include<iostream>
+using namespace std;
+int main()
+{
+    int cout_marchandise = 500; //Cout d'une marchandise en francs
+                               //avec specification du type "int".
+    cout << Cout_Marchandise <<endl;
+}
+\end{lstlisting}
+
+
+
+Voici les diff\'erents types de variables que vous pouvez utiliser (liste non exhaustive) :
+
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Mot cl\'e} &\textbf{Description}&\textbf{Taille en octet}\\
+\hline
+long&Un tr\`es grand nombre entier&8\\
+int&Un nombre entier&4\\
+short&Un petit nombre entier&2\\
+char&Repr\'esente un caract\`ere ASCII ou un tout petit nombre&1\\
+float&Repr\'esente \`a nombre \`a virgule (un nombre flottant)&4\\
+double&Repr\'esente un nombre \`a virgule avec une tr\`es grande pr\'ecision &8\\
+bool&Repr\'esente vrai (true) ou faux (false)&1\\
+
+\end{tabular}
+\vspace{-0.25cm}\caption{Types de variables en C++.}\label{type}
+\end{center}
+\end{table}
+
+
+\subsection{Constantes symboliques}
+
+Il est possible de d\'efinir des constantes symboliques avec le mot cl\'e \textbf{
+const} selon la synthaxe suivante : const type nom = val;
+
+Par exemple : 
+
+\begin{lstlisting}
+
+const int Taille = 100 ;
+\end{lstlisting}
+
+Il ne sera pas possible de modifier \textit{Taille} dans le reste du programme (erreur \`a la compilation). Voici un exemple dans lequel nous d\'efinissons une 
+constante PI que l'on pourra utiliser pour la suite du programme.
+
+\begin{lstlisting}
+...
+const double  PI = 3.14159;
+...
+\end{lstlisting}
+
+Une constante  ne peut en aucun cas \^etre modifi\'ee sous risque d'erreur qui est signal\'ee par le compilateur, et en plus, elle doit \^etre initialis\'ee 
+au moment de sa d\'eclaration. 
+Exp\'erimenter le programme  suivant et observer le r\'esultat d'une
+tentative de compilation. 
+\begin{lstlisting}
+#include<iostream>
+//Listing2-5
+using namespace std;
+const double PI = 3.14159;//Une variable constante
+int main()
+{
+    PI = 3.14;//Tentative de modifier une variable
+               //declaree constante
+    cout << PI << endl;
+}
+\end{lstlisting}
+Par contre si vous exp\'erimentez le code suivant, il ne g\'en\`ere aucune erreur. La d\'eclaration d'une variable comme une constante lui conf\`ere la propri\'et\'e d'\^etre 
+accessible en lecture seule. Aucune modification ne peut lui  \^etre apport\'ee. Dans le cycle de d\'eveloppement d'un programme, les donn\'ees peuvent \^etre prot\'eg\'ees en 
+\'ecriture si on les d\'eclarent comme des constantes symboliques!...
+
+\begin{lstlisting}
+//Listing2-6
+#include<iostream>
+using namespace std;
+const double PI = 3.14159;
+int main()
+{
+    //PI = 3.14;
+    cout << PI << endl; //Affichage de la constane PI sans mofocation.
+}
+\end{lstlisting}
+
+
+
+
+\subsection{Les entiers}
+
+Les variables peuvent contenir diff\'erents types de donn\'ees. 
+Le langage C++ distingue plusieurs types d'entiers comme le montre le Tableau \ref{tab2}. Par exemple si une variable contient une valeur de type entier, C++ suppose que la partie 
+d\'ecimale n'est pas admise. Pour le moment, les types auquels vous pouvez attacher plus d'attention sont \textbf{char} , \textbf{int}  et  \textbf{short} . Vous pouvez leur ajouter
+le pr\'efixe \textbf{long}.
+
+
+\begin{table}[hhhh]
+\begin{center}
+ \begin{tabular}{lll}
+ \hline
+ \textbf{Type} & \textbf{Description} & \textbf{Taille m\'emoire}\\
+  \hline
+ int & entier standard sign\'e & 4 octets : $ -2^{31}\leq n \leq 2^{31}-1$\\
+ unsigned int & entier positif & 4 octets : $0\leq n \leq 2^{32}$\\
+ short & entier court sign\'e & 2 octets : $-2^{15}\leq n \leq 2^{15}-1$\\
+ unsigned short & entier court non sign\'e & 2 octets : $0\leq n \leq 2^{16}$\\
+ char &caract\`ere  sign\'e & 1 octet  $-2^{7}\leq n \leq 2^{7}-1$\\
+ unsigned char & caract\`ere non sign\'e & 1 octet : $0 \leq n \leq 2^{8}$\\
+  \hline
+ \end{tabular}
+ \vspace{-0.25cm}\caption{Types d'entiers en C++.}\label{tab2}
+ \end{center}
+ \end{table}
+ 
+ 
+ 
+ 
+ 
+
+
+\subsection{Nombres r\'eels}
+
+Un nombre \textbf{r\'eel} ou nombre \`a virgule flottante est un nombre qui a une partie fractionnaire. En d'autres termes un nombre r\'eel est un nombre qui a une partie d\'ecimale.
+Il existe  en C++  deux types de nombres \`a virgule flottante : un \textbf{float} et un \textbf{double}. Les d\'eclarations suivantes d\'efinissent la variable \textbf{fl} comme
+une variable de type \textbf{float} et la variable \textbf{db} de type \textbf{double}.
+
+\begin{lstlisting}
+float fl;
+double db;
+\end{lstlisting}
+
+Les deux types de flottants diff\`erent dans leur pr\'ecision (c'est-\`a-dire le nombres de chiffres significatifs que chaque type peut stocker) et l'espace m\'emoire n\'ecessaire
+pour stocker chaque type. Compiler le progrmme suivant et observer le r\'esultat.
+
+
+\begin{lstlisting}
+//Listing2-7
+#include<iostream>
+using namespace std;
+int main()
+{
+        float fl;
+        double db;
+        cout<< sizeof(fl)<<" " <<sizeof(db)<<endl;
+return 0;
+}
+\end{lstlisting}
+
+Un nombre flottant occupe 4 octets (16 bits) et a une pr\'ecision de sept chiffres. Un double occupe 8 octes (64 bits ) et a une pr\'ecision de 15 chiffres. 
+On peut initialiser un nombre flottant lors de sa d\'eclaration.
+
+\begin{lstlisting}
+float fl = 3.14159;
+double db = -0.0023156;
+\end{lstlisting}
+
+
+Les nombres \`a virgule flottante peuvent appara\^ittre dans une expression arithm\'etique comme les nombres entiers.
+\begin{lstlisting}
+double db1 = 3.14159,
+       db2 = -83.01267,
+       db3;
+db3 = 2 * db1 + db2;
+\end{lstlisting}
+
+L'expression pr\'ec\'edente peut \^etre assimul\'ee \`a une \'equation d'une  fonction affine (type $y=ax+b$).
+
+ 
+\subsection{Les bool\'eens}
+Une variable bool\'eenne ne peut accepter que deux valeurs possibles : true (vrai) 
+ou false (faux).
+Elle peut \^etre assimul\'ee \`a un commutateur en \'el\'ectronique num\'erique ou \`a
+un interrupteur qu'on peut ouvrir ou fermer en \'electrotechnique. L'\'etat d'un 
+interrupteur ouvert peut \^etre repr\'esent\'e par la valeur false et celui d'un 
+interrupteur ferm\'e par la valeur true. De la m\^eme mani\`ere, en \'electronique
+num\'erique l'\'etat d'un commutateur qui laisse passer le signal peut \^etre 
+repr\'esent\'e par la valeur vrai tandis qu'un commutateur bloqu\'e peut \^etre 
+repr\'esent\'e par la valeur faux.
+
+
+
+\section{Op\'erateurs}
+
+
+
+
+\subsection{Les op\'eratuers usuels}
+
+On peut appliquer aux diff\'erents types de variables les op\'erations courantes. Ces op\'erations nous permettent de
+calculer et obtenir des r\'esultats. Le Tableau \ref{tab_op} montre la liste des op\'erateurs usuels.
+
+
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Nom} &\textbf{Symbole}&\textbf{Exemple}\\
+\hline
+Addition & + &int x = 5 + 8 ; // 12\\
+Soustraction & - & int x = 5 - 8; //-3\\
+Multiplication& * & int = 5*8; //40\\
+Division & / & int x  = 10/2; //5\\
+
+Reste de la division (modulo) &\% &int x = 10\%3; //1\\
+\hline
+\end{tabular}
+\vspace{-0.25cm}
+\caption{Les op\'erateurs en C++.}\label{tab_op}
+\end{center}
+\end{table}
+
+
+Signalons qu'il n'existe pas d'opperateur pour \'elever une valeur \`a la puissance donn\'ee comme on n'en conna\^it en Python. Pour le faire, on 
+fait recours \`a
+ l'\textbf{op\'erateur de multplication} ou \`a la foction \textbf{pow} de 
+ la librairie \textbf{math}.
+%\newpage
+\subsection{Les op\'erateurs logiques}
+
+Les op\'erateurs logiques sont utilis\'es pour faire un test ou une comparaison. Il sont en relation avec les bool\'eens ou les variables logiques. Le Tableau \ref{op_log} r\'esume les op\'erateurs logiques
+couramment rencontr\'es en C++.
+\newpage
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{|lll|}
+\hline
+condition d'\'egalit\'e: &if (a==b)&" si a est \'egal \`a b "\\
+condition de non \'egalit\'e: & if (a!=b) &" si a est diff\'erent de b "\\
+conditions de relation  &if (a<b), if (a<=b), if (a>b), if (a>=b)&plusieurs conditions \\
+d'ordre:&&devant \^etre vraies\\
+& &  simultan\'ement, \\
+
+ET LOGIQUE: & if ((expression1) \&\& (expression2)) &  si l'expression1 ET \\
+&&l'expression2 sont vraies \\
+&&une condition devant \^etre \\
+&&vraie parmi plusieurs,\\
+OU LOGIQUE & if ((expression1) || (expression2)) &" si l'expression1 \\
+&&OU l'expression2 est vraie "\\
+condition fausse & if (!(expression1)) & " si l'expression1 est fausse "\\
+\hline
+\end{tabular}
+\vspace{-0.25cm}\caption{Op\'erateurs logiques}\label{op_log}
+\end{center}
+\end{table}
+
+
+Toutes les combinaisons sont possibles pour ce genre de ces tests.
+
+\subsection{Applications des op\'erateurs logiques}
+Les programmes ci-dessous illustrent les op\'erteurs logiques en action.
+
+\begin{lstlisting}
+//Listing2-8
+#include<iostream>
+using namespace std;
+int main()
+{
+    double g = 9.87;
+    double mu = 19.2;
+    if (g == mu)
+        cout << g << " = "<<mu << endl;
+    else
+    {
+        if (g != mu)
+        {
+            cout << "g et mu sont differents : ";
+            if ( g < mu)
+                cout << g << " < " << mu <<endl;
+            else if (mu > g)
+                cout << mu << " > " << g << endl;
+        }
+    }
+}
+
+\end{lstlisting}
+
+Exp\'erimenter le reste des combinaisons possibles \`a l'aide des valeurs de \textit{g} et \textit{mu} du tableau suivant.
+
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{|ll|}
+\hline
+g = 6.2; mu = 6.2 &  g = 5.0; mu = 10.0\\
+g = 13.2; mu 7.0 &\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Pour les op\'erateurs logiques, on peut tester le programme ci-dessous et visualiser \`a chaque fois le r\'esultat de l'ex\'ecution.
+
+\begin{lstlisting}
+//Listing2-9
+#include<iostream>
+using namespace std;
+int main()
+{
+    bool a = true;
+    bool b = false;
+    if (a && b)
+        cout << " a et b sont vrais" << endl;
+    else if (a || b)
+    {
+        cout << "a est vrai ou b est vrai " << endl;
+        if (a == true)
+            cout << "C'est a qui est vrai ";
+        else
+            cout <<"C'est b qui est vrai ";
+    }
+    if !(a)
+       cout << "a etait fausse" << endl;
+    else
+        cout << "a etait  vrai" << endl;
+}
+\end{lstlisting}
+
+Avec cet exemple, vous auriez remarqu\'e que les instructions du bloc \textit{if} sont ex\'ecut\'ees si la condition est vrai dans le cas contraire, ce sont les 
+instructions du \textit{else}  qui le seront.
+
+
+
+\subsection{Exercices}
+ \begin{enumerate}
+ \item Si les variables a, b, c contiennent respectivement les nombres 2, 6 et 8, quelles sont leurs valeurs apr\`es l'ex\'ecution de chacune des suites d'assignations ci-dessous ?
+ \begin{itemize}
+ \item[a) ] a = b; c=a;
+ \item[b) ] a = a + 1; b = c + 1; c = 2 * c;
+ \item[c) ] a = b; b = a;
+ \item[d) ] c = a; a = b; b = c;
+ \item[e) ] a = -a; b = 2 * b; a = b;
+ \item[f) ] a = a * a; a = a * a;
+ \end{itemize}
+ \item Sur votre ordinateur, compiler et ex\'ecuter le programme suivant pour d\'eterminer la valeur enti\`ere minimale et maximale que votre architecture peut repr\'esenter
+ 
+
+\begin{lstlisting}
+//Listing2-10
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<INT_MIN<<"   "<<INT_MAX<<endl;
+}
+\end{lstlisting}
+La compilation de ce programme sur ma machine renvoie le r\'esultat suivant : -2147483648 et  2147483647 (Intel core i7, 8th generation).
+ \item Compile et ex\'ecute le programme suivant pour d\'eterminer combien de bits sont
+  n\'ecessaires pour stocker chacun des types entiers discut\'es dans le 
+  Tableau \ref{tab2}.
+ 
+\begin{lstlisting}
+//Listing2-11
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout <<"Entier :"<<sizeof(int)<< endl;
+    cout <<"Entier non signe : "<<sizeof(unsigned int) << endl;
+    cout <<"Short  : "<< sizeof(short) << endl;
+    cout << "unsigned short " << sizeof(unsigned short) << endl;
+    cout << "Char : " << sizeof(char) << endl;
+    cout << "unsigned char :"  << sizeof(unsigned char) << endl;
+}
+ \end{lstlisting}
+ 
+ \item Corriger ce qui ne marche pas pour les commentaires sur plusieures lignes dans le programme suivant.
+ \begin{lstlisting}
+ //Listing2-12
+#include<iostream>
+using namespace std;
+int main()
+ { 
+     //Ceci est un autre 
+       en C++ qui affiche la phrase Hello world.
+     cout << "Hello world. " << endl;
+     return 0;
+ }
+\end{lstlisting}
+
+\item Corriger l'erreur dans l'instruction suivante s'il y en a.
+
+ \begin{lstlisting}
+cout >> "Je m'appelle Jean;<< endl
+\end{lstlisting}
+
+\item Corriger le programme suivant
+
+ \begin{lstlisting}
+#include<iostream>  main(){cout ""Y'a-t-il quelque chose de faux "
+<< endl<<endl<<  cout <<"dans ce programme "?;}
+\end{lstlisting}
+
+\item Corriger le programme suivant si n\'ecessaire.
+
+\begin{lstlisting}
+#include<iostream>  
+//Listing2-13
+using namespace std;
+const int annee_Naissance = 1993;
+int main()
+{
+    annee_Naissance = 1995;
+    cout << Anne_Naissance << endl
+}
+\end{lstlisting}
+
+\item Ecrire un programme qui demande \`a l'utilisateur d'entrer 10 nombres et calcule la moyenne et la d\'eviation standard selon les formule suivantes (Listing2-14):
+\begin{equation*}
+\mu = \frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n},\quad\quad \quad\sigma = \sqrt{\frac{\sum_{i=1}^{n}x_i{}^{2} - \frac{\left(\sum_{i=1}^{n}x_i\right)^2}{n}}{n-1}}
+\end{equation*} 
+ 
+ \end{enumerate}
+
+\chapter{Entr\'ees et sorties de flux de donn\'ees}\label{chap4}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Entr\'ees et sorties de flux de donn\'ees} \rhead{\thepage}
+
+Le langage C++ dispose des fonctionnalit\'es pour les entr\'ees et sorties qui reposent sur les notions de flux et de surcharge d'op\'erateurs. Ces fonctionnalit\'es font passer les 
+donn\'ees sur \textbf{l'entr\'ee standard} (g\'en\'eralement le clavier) ou sur \textbf{la sortie standard} (g\'en\'eralement l'\'ecran). 
+Ces fonctionnalit\'es sont impl\'ement\'ees dans des fichiers \`a inclure en en-t\^ete pour obtenir les prototypes et autres d\'eclarations n\'ecessaires \`a leur bonne utilisation.
+
+\section{Affichage \`a l'\'ecran}
+
+Pour envoyer les flus de donn\'ees \`a l'\'ecran, C++ dispose d'une directive assez simple d'utilisation. Elle est compos\'ee de deux parties comme nous le montre l'exemple suivant :
+
+\begin{minted}{c}
+cout << "Hello world";
+\end{minted}
+
+Dans le cadre de ce cours, il n'est pas  obligatoire de comprendre tout le fonctionnement de cette directive, toute fois il faut retenir que :
+
+\begin{itemize}
+\item \textit{cout} d\'esigne un flot de sortie (console out put en englais) pr\'ed\'efinie associ\'e \`a la sortie standard (stdout)
+\item $<<$\ est un op\'erateur dont l'op\'erande de gauche (ici cout) est un flot et l'op\'erande de droite une expression de type quelconque. L'instruction pr\'ec\'edente peut \^etre 
+interpr\'et\'ee comme ceci : le flot \textit{cout} re\c{c}oit la valeur "Hello world".
+\end{itemize}
+\begin{lstlisting}
+//Listing3-1
+#include<iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
+        int a, b;
+        a = 5; b = 9;
+        int som;
+        som = a + b;
+        cout<<a <<" + "<<b<<" = "<<som<<endl;
+} 
+\end{lstlisting}
+
+
+ \begin{table}[hhhh]
+ \begin{tabular}{l}
+Modifier maintenant le programme de la Listing3-1 puis le tester\\
+ \\
+ \end{tabular}
+ \end{table}
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+\lstset{numbers=left,stepnumber=1,firstnumber=1,numberfirstline=true,frameround = fttt,frame=trBL,rulesep=1mm,framesep=0.5mm,framerule=2pt,
+xrightmargin=-0mm,xleftmargin=-0mm,
+rulecolor={\color[gray]{0.6}},rulesepcolor={\color[gray]{0.5}}}
+
+\begin{lstlisting}
+//Listing3-2
+#include<iostream> // sorties standards
+using namespace std;
+int main()
+{
+    int a, b, calcul; //declarationde 3 variables
+    cout<<"BONJOUR"<<endl; //affichage d'un message sur l'ecran
+    a = 10; //affectation
+    b = 50; //affectation
+    calcul = (a + b)*2;
+    cout <<"Affichage de a : "<< a << endl;
+    cout <<"Affichage de b : " << b << endl;
+    cout << "Voici le resultat : "<<calcul << endl;
+    cout<<"Pour continuer tapper un caractere..."<<endl;
+    // Attente d'une saisie au clavier pour voir l'ecran d'execution
+    char c;
+    cin>> c;
+}
+\end{lstlisting}
+Sous certains environnements de d\'evelopement comme Dev++, il est n\'ecessaire d'interompre l'ex\'ecution du programme pour pouvoir visualiser l'affichage 
+\`a l'\'ecran. On peut forcer le programme d'attendre pour une saisie au clavier et le programme sera actif en m\'emoire tant qu'aucune action  ne soit entreprise.
+
+\section{Saisi de donn\'ees au clavier}
+
+Tout comme la directive \textbf{cout} pour renvoyer les donn\'ees sur le flux de donn\'ees standard (\'ecran), la directive \textbf{cin}
+pour saisir les donn\'ees au clavier suit presque exactement
+la m\^eme synthaxe \`a la seule diff\'erence qu'elle utilise les chevrots droit $ >> $. Les donn\'ees saisies au clavier sont stock\'ees dans une variable plac\'ee \`a 
+la suite des chevrots.
+
+\begin{lstlisting}
+//Listing3-3
+#include<iostream> // entrees standards
+using namespace std;
+int main()
+{
+    int revenu;
+    cout << "Quel est votre revenu mensuel ?" << endl;
+    cout << "Mon revenu mensuel est ";
+    cin >> revenu;
+    cout << endl << "Eh beh, " << revenu
+    << " Bif, pas si mal comme revenu !" << endl;
+}
+\end{lstlisting}
+Avec la directive \textbf{cin}, il est possible de lire simultan\'ement plusieures valeurs saisies au clavier tout en les s\'eparant par des espaces vides.
+
+\begin{lstlisting}
+//Listing3-4
+#include<iostream> 
+using namespace std;
+int main()
+{
+    int age, anneeNaissance;
+    cout << "Quel est votre age et annee de naissance ?" << endl;
+    cout << endl <<"----------------------------------"<<endl<<endl;
+    cin >> age >> anneeNaissance;
+    cout << "Votre age : "<< age << endl << "Annee de naissance : "
+    << anneeNaissance <<endl;
+    cout << endl <<"----------------------------------"<<endl<<endl;
+}
+\end{lstlisting}
+
+
+\section{Ouverture d'un fichier}
+
+Pour pouvoir sauvegarder des donn\'ees apr\`es fermeture de vos programmes, vous devez \'ecrire ces donn\'ees dans des fichiers. L'ouverture d'un fichier fait appel \`a des 
+fonctionnalit\'es impl\'ement\'ees dans la librairie \textbf{fstream} (entrer la directive \textbf{\#include<fstream>}).
+
+\subsection{Ouverture d'un fichier en \'ecriture}
+
+L'ouverture  en \'ecriture d'un fichier se fait avec la classe \textbf{ofstream}. On cr\'ee un objet de type fichier qu'on utilise ensuite pour inscrire les donn\'ees dans le fichier.
+Le constructeur de cette classe re\c{c}oit en argument une cha\^ines de caract\`ere qui symbolise le nom du fichier.
+\begin{lstlisting}
+.....
+#include<fstream> 
+........
+ofstream fout("fichierEcrire.dat");
+.....
+\end{lstlisting}
+
+A la fin de l'\'ecriture de donn\'ees dans un fichier il faut penser \`a le fermer avec l'instruction
+
+\begin{lstlisting}
+.....
+#include<fstream> 
+........
+fout.close()
+.....
+\end{lstlisting}
+
+L'inscription de donn\'ees se fait de la m\^eme fa\c{c}on que l'affichage de donn\'ees \`a l'\'ecran. On peut \'ecrire dans un fichier  tout type de donn\'ees y compris les cha\^ines
+de caract\`ere ainsi que les valeurs num\'eriques. Le format de donn\'ees dans le fichier peut \^etre d\'ecid\'e par le programmeur. 
+
+\begin{lstlisting}
+//Listing3-5
+//Pas necessaire d'inclure iostream
+#include<fstream>
+using namespace std; //Utile d'evoquer l'espace de nom
+int main()
+{
+        ofstream f("testoutput.txt"); //Creation de l'objet de 
+                                      //type fichier de sortie.
+        f<<"Premiere ligne dans le fichier"<<endl;
+        f<<"Deuxieme ligne dans le fichier"<<endl;
+        f.close();
+}
+\end{lstlisting}
+A moins que vous pr\'evoyiez afficher un message \`a l'\'ecran, un code de manipulation des entr\'ees et sorties dans un fichier ne requiert pas l'inclusion de la librairie
+\textbf{iostream}. Par contre \textbf{l'espace de nom standard} doit \^etre \'evoqu\'e.
+
+Le programme suivant inscrit les entiers et leurs carr\'es dans un fichier en deux colonnes. La premi\`ere colonne contient les valeurs enti\`eres de 
+1 \`a 10 et la deuxi\`eme colonne contient leurs carr\'es. Le s\'eparateur est une tabulation.
+
+
+\begin{lstlisting}
+//Listing3-6
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream fout("fichierEcrire.dat");
+    fout << 1 <<"\t" << 1*1 <<endl;
+    fout << 2 <<"\t" << 2*2 <<endl;
+    fout << 3 <<"\t" << 3*3 <<endl;
+    fout << 4 <<"\t" << 4*4 <<endl;
+    fout << 5 <<"\t" << 5*5 <<endl;
+    fout << 6 <<"\t" << 6*6 <<endl;
+    fout << 7 <<"\t" << 7*7 <<endl;
+    fout << 8 <<"\t" << 8*8 <<endl;
+    fout << 9 <<"\t" << 9*9 <<endl;
+    fout << 10 <<"\t" << 10*10 <<endl;
+    fout.close()
+}
+\end{lstlisting}
+
+
+\subsection{Ouverture en lecture de fichier}
+L'ouverture en lecture d'un fichier fait recours \`a la classe \textbf{ifstream}. Examinons le programme suivant dans lequel nous lisons les donn\'ees inscrites dans le fichier 
+(section pr\'ec\'edente) et affichons le r\'esultat \`a l'\'ecran.
+
+\begin{lstlisting}
+//Listing3-7
+#include<fstream>
+#include<iostream>
+using namespace std;
+int main()
+{
+    ifstream fin("fichierEcrire.dat");
+    int i, icarre;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin >> i >> icarre;
+    cout << i << "\t" << icarre << endl;
+    fin.close();
+}
+\end{lstlisting}
+
+
+\subsection{Exercices}
+\begin{enumerate}
+\item Qu'affiche \`a l'\'ecran le programme suivant quand on lui fournit au clavier les valeurs 2 et 6 ?
+\begin{lstlisting}
+#include<iostream> // entrees standards
+using namespace std;
+int main()
+{
+    int a, b;
+    cin >> a;
+    a *= 2; 
+    cin >>b;
+    b += a;
+    cout << a << endl << b << endl;
+    return 0;
+}
+\end{lstlisting}
+\item Qu'affiche \`a l'\'ecran le programme suivant quand on lui fournit au clavier les valeurs 2, 6 et 4 ?
+\begin{lstlisting}
+#include<iostream> 
+using namespace std;
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    a = b;
+    cin >> b;
+    b += a;
+    cout << a << " " << b << endl;
+    return 0;
+}
+\end{lstlisting}
+\item Qu'affiche \`a l'\'ecran le programme suivant quand on lui fournit au clavier les valeurs 2 et 6?
+\begin{lstlisting}
+#include<iostream> 
+using namespace std;
+int main()
+{
+    int a, b;
+    cin >> b >> a;
+    a = b + 1;
+    cout << a << endl;
+    a += 1;
+    cout << a << " " << (a + 1) << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\item Ecrire un programme qui lit au clavier un prix en francs Burundais et le convertit en dollars (1\$ = 1850 FBu).
+\item Ecrire un programme qui lit au clavier la temp\'erature en degr\'es Fahrenheit, et qui la convertit en degr\'es Celcius, sachant que celle-ci s'obtient en retranchant 32
+de la valeur en degr\'es Fahrenheit et en multipliant par $\frac{5}{9}$.
+\item Ecrire une suite d'assignations permettant d'\'echanger les valeurs de 2 variables a et b, c'est-\`a-dire qu'\`a la fin de l'ex\'ecution du programme, la variable a contient la 
+valeur initiale de b et vice-versa.
+\item Ecrire un programme qui affiche la $17^e$\ puissance de a (lu au clavier) en employant le moins de multiplications possibles. 
+\end{enumerate}
+
+
+
+
+
+\chapter{Structures it\'eratives et conditionnelles}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Structures it\'eratives} \rhead{\thepage}
+\section{Structures it\'eratives}
+
+\subsection{La boucle for}
+
+La boucle \textbf{for} est particuli\`erement adapt\'ee pour faire un comptage, par exemple. Elle fonctionne en trois \'etapes :
+
+\begin{itemize}
+\item[\Huge.] L'initialisation int i = limit\_inf; : on d\'eclare le compteur, cette \'etape est effectu\'ee une seule fois.
+\item[\Huge.] La condition i < limit\_sup; : si cette condition est fausse, la boucle s'arr\^ete.
+\item[\Huge.] L'action ++i : on incr\'emente notre compteur. Mais on n'est pas limit\'e \`a une simple
+incr\'ementation on peut faire i += 2 par exemple. En fait, vous pouvez mettre n'importe quel
+instruction ici, mais juste une seule. La plupart du temps on va incr\'ementer un compteur soit par 1 ou toute autre  valeur. Par d\'efaut l'inc\'ement est fix\'e \`a 1.
+Surtout ne mettez jamais de ; pour cette troisi\`eme \'etape!
+\end{itemize}
+
+La synthaxe de la boucle \textbf{for} est la suivante :
+
+\begin{lstlisting}
+for(int i = limit_inf; i < limit_sup; ++i)
+{
+    ......................
+    ......................
+}
+
+\end{lstlisting}
+
+Explorons la boucle \textbf{for} \`a l'aide de l'example suivant :
+
+
+\begin{lstlisting}
+for(int i = 0; i < 30; ++i)
+{
+cout << "Bonjour!" << endl;
+}
+
+\end{lstlisting}
+
+Ce code dit Bonjour! un total de 30 fois. 
+
+Ainsi cette boucle est particuli\`erement adapt\'ee pour effectuer une action x fois ou encore pour garder
+en m\'emoire le nombre d'it\'erations de la boucle n\'ecessaires avant que celle-ci ne se termine. Voici un
+exemple :
+
+\begin{lstlisting}
+//Listing4-1
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i; // Declaration du compteur dans la boucle
+    int init = 50;
+    int limit = 675;
+    for(i = init; i < limit; ++i)
+    {
+        cout<< "La difference entre"<< limit << "et "
+        << init<< "est de "<<i - init<<"."<< endl;
+    }
+    cout << i << endl; //Le nombre d'iterations
+}
+\end{lstlisting}
+
+A la sortie de la bouble \textbf{for} la valeur du compteur vaut 675 (limit). Mais le nombre d'it\'eration vaut limit - init. Le programme suivant affiche les nombres paires
+inf\'erieurs \`a 20.
+\begin{lstlisting}
+#include<iostream>
+using namespace std;
+int main()
+{
+    for(int k=0;k<20;k=k+2) //en notation condensee k+=2
+    {
+      cout << k << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+
+
+\subsection{La boucle while}
+
+La boucle \textbf{while} fonctionne sur base d'une condition . Tant que l'expression sera valide (true), le contenu du while s'ex\'ecutera (le code
+entre le $\{$\ et le $\}$ ). La synthaxe de la boucle \textbf{while} est la suivante.
+
+
+\begin{lstlisting}
+while(condition)
+{
+
+    ......................
+    
+    ......................
+    
+}
+\end{lstlisting}
+o\`u \textbf{condition} est une expressiopn qui doit \^etre \'evalu\'ee \`a vrai pour que le corps du while s'ex\'ecute.
+
+Voici un exemple assez simple :
+
+\begin{lstlisting}
+//Listing4-2
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string message;
+    while(message != "j'ecoute")
+        {
+            cout<<"Vous devez ecrire 'j'ecoute'."<<endl;
+            getline(cin, message);
+        }
+}
+\end{lstlisting}
+
+Ce programme va se contenter de demander \`a l'utilisateur de rentrer le texte "j'ecoute". S'il ne le
+rentre pas, il va lui demander encore et encore.  La ligne 11 du programme pr\'ec\'edent est \'equivalante \`a l'instruction
+
+\begin{lstlisting}
+cin >> message ;
+\end{lstlisting}
+C'est une autre fa\c{c}on qu'un programme peut r\'ecup\'erer rentr\'ees au clavier par 
+l'utilisateur. 
+
+\emph {while (en anglais) se traduit par \textbf{Tant que}. On peut donc lire cette boucle par Tant que message n'est pas \'egal \`a "j'ecoute", affiche un texte et je remplis la variable message 
+par le texte que l'utilisateur entrera}.
+
+Il faut faire attention \`a l'expression que vous entrerez dans la boucle car si elle reste valide \`a l'infini (donc tout le temps \'evalu\'ee \`a \textit{vrai}), vous serez 
+dans une boucle infinie qui ne s'arr\^etera jamais ! Elle tournera sans jamais
+s'interrompre. Votre expression, au bout du compte, devra \^etre \'evalu\'ee 
+\`a faux afin de sortir de la boucle.
+
+
+\subsection{La boucle do...while}
+
+La boucle \textbf{do ... while } est une variante de la boucle while. Sa sythaxe est similaire \`a celle du while.
+
+\begin{lstlisting}
+do
+{
+     ......................
+     ......................
+while(condition);
+\end{lstlisting}
+Il faut remarquer le point virule \`a la fin du while. Voici un exemple d'utilisation de la boucle \textbf{do ..... while}.
+
+
+\begin{lstlisting}
+//Listing4-3
+#include <iostream>
+#include <string>
+string message;
+do
+{
+cout << "Vous devez ecrire 'j'ecoute'." << endl;
+getline(cin, message);
+} while(message != "j'ecoute");
+\end{lstlisting}
+La boucle do...while fonctionne exactement comme la boucle while \`a une diff\'erence pr\`es. En
+effet si l'expression de votre boucle est \'evalu\'ee \`a false d\`es le d\'ebut, la boucle ne sera jamais ex\'ecut\'ee,
+pas m\^eme une seule fois. L'int\'er\^et de la boucle do...while est de permettre \`a la boucle de
+s'ex\'ecuter au moins une fois quoi qu'il arrive. Par exemple :
+\begin{lstlisting}
+while(false)
+{
+    cout << "Bonjour!" << endl;
+}
+\end{lstlisting}
+
+Ici, Bonjour! ne s'affichera jamais \`a l'\'ecran.
+
+\begin{lstlisting}
+do
+{
+cout << "Bonjour!" << endl;
+}
+while(false);
+\end{lstlisting}
+Alors que ici, Bonjour! s'affichera une seule fois. 
+
+Quand vous utilisez la boucle \textbf{while} ou  \textbf{do ... while}, il faut \^etre prudent pour \'eviter de programmer une boucle infirnie. La condition du while doit passer en faux pour arreter 
+l'ex\'ecution du while sinon le programme tournera sans arr\^er. C'est une erreur qui peut arriver \`a tout programmeur de se retrouver en pr\'esence  du code infini du while, mais 
+sachez que dans cette situation on ne saura pas  si l'ex\'ecution \'evolue ou si la machine a plant\'e. Tester le programme suivant.
+
+\begin{lstlisting}
+#include<iostream>
+using namespace std;
+int main()
+{
+    bool flag = true;
+    while(flag)
+    {
+        cout << "Bonjour a tous!" << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+La compilation est l'ex\'ecution du programme ci-dessus affichera le message \textit{Bonjour a tous!} sans s'arr\^eter. Pour stopper le programme  il faut 
+faire une  combinaison de touches \textbf{Ctrl+C} ou fermer le terminal!
+
+Le programme suivant, pr\'esente une fa\c{c}on de mettre \`a l'arr\^et l'ex\'ecution d'une boucle while.
+
+\begin{lstlisting}
+//Listing4-4
+#include<iostream>
+using namespace std;
+int main()
+{
+    bool flag = true;
+    while(flag)
+    {
+        cout << "Bonjour a tous!" << endl;
+        flag = false; //commutation du flag
+    }
+    return 0;
+}
+\end{lstlisting}
+Ce programme est identique  au pr\'ec\'edent \`a part que la boucle s'ex\'ecute une fois, le programme se termine et laisse le contr\^ole au syst\`eme d'exploitation. Tout comme 
+en \'electronique o\`u nous disposons des commutateurs logiques, en programmation aussi, nous disposons des variables de type bool\'een qu'on peut faire agir comme des commutateurs
+pour contr\^oler l'ex\'ecution d'un programme. On parle souvent de \textbf{flag}. Un flag peut prendre la valeur \textbf{vrai} (true en anglais) ou \textbf{faux} (false en anglais).
+
+  
+\section{Structures conditionnelles}
+
+Les conditions servent \`a comparer (ou \'evaluer) des variables ou des valeurs retourn\'ees par des fonctions. Elles sont utilis\'ees pour d\'ecider la partie du programme \`a  ex\'ecuter
+selon le r\'esultat du test d'une condition. Dans ce cas toutes les instructions ne sont par \'evalu\'ees.
+
+\subsection{If et else}
+
+La structure de \textbf{if} est la suivante.
+
+\begin{lstlisting}
+if(test) // test est une variable booleenne (true ou false)
+{
+     ...  // instructions effectuees si test est vrai
+}
+else  // bloc else: n'est pas obligatoire
+{
+     ...  // instructions effectuees si test est faux
+}
+\end{lstlisting}
+
+Les accolades ne sont pas toujours n\'ecessaires. Elles sont utiles pour regrouper un ensemble d'instructions devant \^etre \'evalu\'ees si la condition du if est vraie, dans le cas
+contraire, ce sont les instructions du else qui sont \'evalu\'ees. Le bloc else n'est pas obligatoire. La variable test est forc\'ement de type bool\'een (bool) ou 
+le r\'esultat d'un test.   
+
+Il est \`a noter que la syntaxe if(a) est \'equivalent \`a if( a!=0 ) . Voici un exemple d'utilisation de structure if en C++ (ce n'est qu'un pseudo-code):
+
+\begin{lstlisting}
+bool a,b;
+a = true;
+if(a==true) // il s'agit bien de 2 signes "=="
+{
+    a = false;
+    cout << "Initialisation de la variable a false";
+}
+double moyenne;
+moyenne = 15.;
+if (moyenne >= 16.0) //la valeur resulte d'un test
+    cout << "Mention tres bien";
+else
+    if (moyenne >= 14.0)
+        cout << "Mention bien";
+    else
+        if (moyenne >= 12.0)
+            cout << "Mention assez bien";
+        else
+            if (moyenne >= 10.0)
+                cout << "Mention passable";
+            else
+                cout << "Non admis...";
+\end{lstlisting}
+
+
+\subsection{Switch et case}
+
+L'imbrication de if/else peut \^etre remplac\'ee par une structure \textbf{switch case} quand la variable \`a
+tester est de type entier, c'est-\`a-dire char, short, int , long et string . Dans l'exemple pr\'ec\'edent,
+il n'est donc pas possible d'utiliser cette structure.
+La syntaxe d'une condition switch case est la suivante (les crochets signalent des blocs non
+n\'ecessaires) :
+
+
+\begin{lstlisting}
+switch ( variable )
+{
+    case constante_1:   // faire attention au ":"
+        [instructions executees si variable == constante_1]
+        break ;
+    case constante_2:
+       [instructions executees si variable == constante_2]
+       [break ;]
+       ...
+    [default:
+        instructions executees si aucun des
+        cas precedents ne sont executes]
+}
+\end{lstlisting}
+
+Les blocs d'instructions n'ont pas besoin d'accolades. G\'en\'eralement chaque bloc se termine par
+l'instruction break; qui saute \`a la fin de la structure switch (l'accolade fermante). Si un bloc
+case ne se termine pas par une instruction break;, le compilateur passera au bloc case suivant.
+Voici un exemple d'utilisation de structure switch case en C++.
+
+
+\begin{lstlisting}
+char choix;
+// cout permet d'afficher a l'ecran un message
+cout << "Etes vous d'accord ? O/N"  << endl;
+// cin permet de recuperer une valeur saisie au clavier
+cin >> choix;
+switch( choix )
+{
+    case 'o':
+    case '0':
+        cout << "Vous etes d'accord" << endl;
+        break;
+    case 'n':
+    case 'N':
+        cout << "Vous n'etes pas d'accord"  << endl;
+        break;
+    default:
+        cout << "Repondre par o/n ou O/N"  << endl;
+}
+\end{lstlisting}  
+
+
+
+
+
+
+\chapter{Pointeurs et tableaux}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Pointeurs et tableaux} \rhead{\thepage}
+
+
+
+En C++, chaque variable est stock\'ee \`a une (et unique) adresse physique. Un pointeur
+est une variable contenant l'adresse d'une autre variable. Un pointeur est typ\'e : il pointe vers des
+variables d'un certain type et ainsi permet de manipuler correctement ces variables. Avant d'\^etre
+utilis\'e, un pointeur doit obligatoirement \^etre initialis\'e \`a l'adresse d'une variable ou d'un espace
+m\'emoire. Il est possible d'obtenir l'adresse d'une variable \`a partir du caract\`ere \& :
+
+
+\begin{lstlisting}
+int a;
+cout << &a; // affichage de l'adresse de a
+\end{lstlisting}
+
+Les pointeurs ont un grand nombre d'int\'er\^ets :
+
+\begin{itemize}
+\item ils permettent de manipuler de façon simple des donn\'ees pouvant \^etre importantes : au lieu de
+passer \`a une fonction un \'el\'ement de grande taille, on pourra lui fournir un pointeur vers cet
+\'el\'ement,
+\item ils permettent de manipuler les tableaux (un tableau est en fait un pointeur sur un espace m\'e-
+moire r\'eserv\'e),
+\item en C++ (programmation orient\'ee objet) les pointeurs permettent aussi de r\'ealiser des liens entre
+objets.
+\end{itemize}
+
+Un pointeur est une variable qui doit \^etre d\'efinie, pr\'ecisant le type de variable point\'ee. Il existe une relation entre un pointeur et le tableau comme nous le verrons plus tard.
+
+
+
+
+\section{Pointeurs}
+
+\subsection{Adresse et m\'emoire}
+
+Le tableau de la Figure \ref{mem} montre l'organisation de la m\'emoire vive d'un ordinateur. Il faut lire ce sch\'ema ligne par ligne. La premi\`ere ligne repr\'esente la 
+« cellule »  du tout d\'ebut de la m\'emoire vive. Chaque cellule a un num\'ero, c'est \textbf{son adresse}. La m\'emoire comporte un grand nombre d'adresses, commençant \`a l'adresse num\'ero 
+0 et se terminant \`a l'adresse num\'ero .... (ins\'erez un tr\`es grand nombre ici). Le nombre d'adresses disponibles d\'epend en fait de la quantit\'e de m\'emoire dont dispose 
+votre ordinateur. A chaque adresse, on peut stocker un nombre. Un et UN SEUL nombre. On ne peut pas stocker deux nombres par adresse.
+
+
+Votre m\'emoire n'est faite que pour stocker des nombres. Elle ne peut stocker ni lettres ni phrases. Pour contourner ce probl\`eme, on a invent\'e une table qui fait la 
+liaison entre les nombres et les lettres. Cette table dit par exemple : « Le nombre 89 repr\'esente la lettre Y ». Nous reviendrons dans un prochain chapitre sur la gestion 
+des caract\`eres ; pour l'instant, nous nous concentrons sur le fonctionnement de la m\'emoire.
+
+\subsection{Adresse et valeur}
+
+Quand vous cr\'eez une variable age de type int par exemple, en tapant ça :
+
+\begin{lstlisting}
+int age = 10;
+\end{lstlisting}
+
+
+votre programme demande au syst\`eme d'exploitation la permission d'utiliser un peu de m\'emoire. Le syst\`eme d'exploitation r\'epond en indiquant \`a quelle adresse en m\'emoire il 
+vous laisse le droit d'inscrire votre nombre.
+
+C'est d'ailleurs justement l\`a un des rôles principaux d'un syst\`eme d'exploitation : on dit qu'il alloue de la m\'emoire aux programmes. C'est un peu lui le chef d'orchestre
+, il contrôle chaque programme et v\'erifie que ce dernier a l'autorisation de se servir de la m\'emoire.
+
+
+Revenons \`a notre variable age. La valeur 10 a \'et\'e inscrite quelque part en m\'emoire, disons par exemple \`a l'adresse n° 4655 (ceci n'est qu'un exemple, \c{c}a peut \^etre diff\'erent
+d'un ordinateur \`a l'autre).
+Ce qu'il se passe (et c'est le rôle du compilateur), c'est que le mot age dans votre programme est remplac\'e par l'adresse 4655 \`a l'ex\'ecution. Cela fait que, \`a 
+chaque fois que vous avez tap\'e le mot age dans votre code source, il est remplac\'e par 4655, et votre ordinateur voit ainsi \`a quelle adresse il doit aller chercher 
+le r\'esultat en m\'emoire ! 
+Du coup, l'ordinateur se rend en m\'emoire \`a l'adresse 4655 et r\'epond fi\`erement : « La variable age vaut 10 ! ».
+
+Pour r\'ecup\'er la valeur de la variable  il suffit  de taper age dans son code source. Si on veut afficher l'\^age, on peut utiliser cout :
+
+\begin{lstlisting}
+cout << "La variable age vaut : "<< age<<endl;
+\end{lstlisting}
+
+
+\subsection{D\'efinition d'un pointeur}
+
+Un pointeur est une variable qui doit \^etre d\'efinie, pr\'ecisant le type de variable point\'ee, de la
+mani\`ere suivante :
+\begin{lstlisting}
+type *Nom_du_pointeur;
+\end{lstlisting}
+
+
+Le type de variable point\'ee peut \^etre aussi bien un type primaire (tel que int , char ...) qu'un type
+complexe (tel que struct ou une classe). La taille des pointeurs, quel que soit le type point\'e,
+est toujours la m\^eme. Elle est de 4 octets avec un OS 5 32 bits (et 8 en 64 bits). Un pointeur est
+typ\'e. Il est toutefois possible de d\'efinir un pointeur sur void, c'est-\`a-dire sur quelque chose qui
+n'a pas de type pr\'ed\'efini ( void * toto ). Ce genre de pointeur sert g\'en\'eralement de pointeur de
+transition, dans une fonction g\'en\'erique, avant un transtypage qui permettra d'acc\'eder aux donn\'ees
+point\'ees. Le polymorphisme (qu'on abordera pas dans ce cours) propos\'e en programmation orient\'ee objet est souvent une
+alternative au pointeur void *.
+Pour initialiser un pointeur, il faut utiliser l'op\'erateur d'affectation « = » suivi de l'op\'erateur
+d'adresse \& auquel est accol\'e un nom de variable :
+
+\begin{minted}{c}
+    double *pt;  /Definition d'un pointeur
+    double y=3.14;
+    pt = &y; // initialisation du pointeur!
+\end{minted} 
+
+Apr\`es (et seulement apr\`es) avoir d\'eclar\'e et initialis\'e un pointeur, il est possible d'acc\'eder au
+contenu de l'adresse m\'emoire point\'ee par le pointeur gr\^ace \`a l'op\'erateur * (op\'erateur de d\'er\'ef\'erencement). La syntaxe est la
+suivante :
+
+
+\begin{lstlisting}
+//Listing5-1
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout << "La variable age vaut : "<< age<<endl;
+    double *pt;
+    double y=3.14;
+    pt = &y
+    cout << *pt; // Affiche le contenu pointe par pt, c'est a dire 3.14
+    *pt=4;    // Affecte au contenu pointe par pt la valeur 4
+              // A la fin de ces instructions, y=4;
+}
+\end{lstlisting}
+
+Attention \`a ne pas m\'elanger la signification des symboles * :
+
+\begin{itemize}
+\item il sert \`a d\'eclarer un pointeur (double *pt ;),
+\item  il sert \`a acc\'eder au contenu point\'e par un pointeur (*pt),
+\item il s'agit de l'op\'erateur de multiplication ( mettre pt*pt au carr\'e ... )
+\end{itemize}
+
+Voici le sch\'ema illustratif de chaque \'etape lors de la d\'eclaration du pointeur *pt et son initialisation avec l'adresse de y.
+
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/memories.png}
+\end{center}
+\end{figure}
+
+\textbf{NB} : Un pointeur et la r\'ef\'erence point\'ee sont intimement li\'es. C'est-\`a-dire que la modification du contenu de la variable point\'ee entra\^ine aussi
+la modification du contenu du pointeur. Analysons cel\` a par l'exemple suivant
+
+\begin{lstlisting}
+//Listing5-2
+#include<iostream>
+using namespace std;
+int main()
+{
+    double *pt;  // definition d'un pointeur
+    double y=7;  //definition de la variable y et initialisatio a 7
+    pt = &y //initialisation du pointeur par la reference sur y
+    y = 45; //Modofication du contenu de y
+    cout << "Contenu pointe par *pt " << *pt << "Contenu de y "
+     << y << endl;
+}
+\end{lstlisting}
+Apr\`es ex\'ecution de ce code, on a le r\'esultat suivant :
+\begin{lstlisting}
+Contenu pointe par *pt 45  Contenu de y 45
+\end{lstlisting}
+
+Il se r\'ev\`ele que la modification faite \`a la ligne 9 s'est r\'epercut\'ee sur le contenu du pointeur. Les valeurs affich\'ees par *pt et y sont les m\^emes.
+
+
+\subsection{R\'ef\'erences}
+
+
+Le C++ introduit un nouveau concept : les r\'ef\'erences. Une r\'ef\'erence permet de
+faire « r\'ef\'erence » \`a des variables. Le concept de r\'ef\'erence a \'et\'e introduit en C++ pour faciliter
+le passage de param\`etres \`a une fonction, on parle alors de passage par r\'ef\'erence. La d\'eclaration
+d'une r\'ef\'erence se fait simplement en intercalant le caract\`ere \& , entre le type de la variable et son nom.
+
+\begin{lstlisting}
+type & Nom_de_la_variable = valeur;
+\end{lstlisting}
+
+
+Il existe deux contraintes \`a l'utilisation des r\'ef\'erences :
+
+\begin{itemize}
+\item une r\'ef\'erence doit obligatoirement \^etre initialis\'ee lors de sa d\'eclaration,
+\item une r\'ef\'erence ne peut pas \^etre d\'er\'ef\'erenc\'ee d'une variable \`a une autre.
+\end{itemize}
+
+Voici un exemple de d\'eclaration d'une r\'ef\'erence suivie d'une affectation :
+
+
+
+
+\begin{lstlisting}
+    int A = 2;
+    int &refA = A; //initialisatoin obligatoire!
+    refA++; // maintenant A=3
+    // dereference impossible ==> modification de la valeur contenue:
+    int B = 5;
+    refA = B; // signifie A = 5 !!!!
+    refA++;
+    // on a : A = 6, B = 5, et refA = 6
+\end{lstlisting}
+
+
+Les r\'ef\'erences permettent d'all\'eger la syntaxe du langage C++ vis \`a vis des pointeurs. Voici une
+comparaison de 2 codes \'equivalents, utilisant soit des pointeurs soit des r\'ef\'erences. 
+
+
+
+
+\begin{minted}{c}
+                                            //Listing5-3
+/*Code utilisant un pointeur */          /*Code utilisant une reference */
+int main()                                 int main()
+{                                           {
+    int age = 21;                                 int age = 21;
+    int *ptAge = &age;                            int &refAge = age;
+    cout << *ptAge << endl;                               cout << refAge << endl;
+    *ptAge = 40;                                  refAge = 40;
+    cout << *ptAge;                               cout << refAge;
+}                                           }
+\end{minted}
+
+\subsection{Allocation dynamique de la m\'emoire}
+
+Le langage C++ dispose d'un mot cl\'e \textbf{new} qui sert \`a allouer dynamiquement 
+de la m\'emoire. Il peut arriver qu'on ait pas besoin d'allouer de la m\'emoire \`a 
+une variable lors de sa d\'eclaration et avoir la possibilit\'e de le faire 
+au moment de son utilisation. Le code ci-apr\`es montre le m\'ecanisme d'allocation
+dynamique de la m\'emoire
+pour un pointeur.
+\begin{lstlisting}
+double *ptdynamique; //Declarationde la variable
+ptdynamique = new double; //Allocation de la m\'emoire
+\end{lstlisting}
+Voici un exemple complet \`a tester pour lequel on d\'eclare une variable globale age et son allocation/initialisation est faite dans la fonction main.
+
+\begin{lstlisting}
+//Listing5-4
+#include<iostream>
+using namespace std;
+int *age; //Declaration de la variable age
+int main ()
+{
+    
+    age = new int; //Allocation de la variable
+    *age = 15; //Affectation d'une valeur
+    cout << *age << endl;
+}
+\end{lstlisting}
+
+Cette m\'ethode est essentielle en programmation orient\'ee objet o\`u des   variables objets peuvent \^etre d\'eclar\'ees dans des fichiers en-t\^ete et l'allocation de la m\'emoire
+peut \^etre retard\'ee pour s'effectuer \`a l'\'etape de l'utilisation de ces variables. Cette pratique peut para\^itre sans impportance \`a premi\`ere vue mais son importance devient 
+capitale si on travaille sur un grand projet qui requiert une d\'eclaration intensive de variables. Il faut noter que pour une bonne gestion de la m\'emoire, les variables allou\'ees
+dynamiquement doivent \^etre d\'etruites par l'op\'erateur \textbf{delete}. Apr\`es la destruction, la variable n'existe plus dans la m\'emoire. Tester l'exemple suivant.
+
+\begin{lstlisting}
+//Listing5-5
+#include<iostream>
+using namespace std;
+int *age; //Declaration de la variable age
+int main()
+{
+    
+    age = new int; //Allocation dynamique de la variable
+    *age = 15; //Affectation d'une valeur
+    cout << age << "  Avant destruction" << endl;
+    cout << *age << endl;
+    delete age;
+    cout <<   "Apres destruction" << *age << endl;
+}
+\end{lstlisting}
+
+
+
+
+\section{Les tableaux dans la m\'emoire}
+
+Les tableaux sont une suite de variables de m\^eme type, situ\'ees dans un espace contigu en m\'emoire. Concr\`etement, il s'agit de « grosses variables » pouvant contenir plusieurs
+nombres du m\^eme type (long, int, char, double, ...). Un tableau a une dimension bien pr\'ecise. Il peut occuper 2, 3, 10, 150, 2 500 cases, c'est vous qui d\'ecidez. La Figure \ref{mem}
+est un sch\'ema d'un tableau de 4 cases en m\'emoire qui commence \`a l'adresse 1600.
+
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/tab_mem.png}
+\end{center}
+\vspace{-0.25cm}\caption{Adresses m\'emoires de la m\'emoire vive.}\label{mem}
+\end{figure}
+
+Lorsque vous demandez \`a cr\'eer un tableau de 4 cases en m\'emoire, votre programme demande \`a l'OS la permission d'utiliser 4 cases en m\'emoire. Ces 4 cases doivent \^etre contiguës, c'est-\`a-dire les unes \`a la suite des autres. Comme vous le voyez, les adresses se suivent : 1600, 1601, 1602, 1603. Il n'y a pas de « trou » au milieu.
+
+Enfin, chaque case du tableau contient un nombre du m\^eme type. Si le tableau est de type int, alors chaque case du tableau contiendra un int. On ne peut pas d\'eclarer de tableau contenant \`a la fois des entiers des doubles par exemple.
+
+
+En r\'esum\'e, voici ce qu'il faut retenir sur les tableaux.
+
+\begin{itemize}
+\item    Lorsqu'un tableau est cr\'e\'e, il prend un espace contigu en m\'emoire : les cases sont les unes \`a la suite des autres.
+
+\item    Toutes les cases d'un tableau sont du m\^eme type. Ainsi, un tableau d'entiers contiendra uniquement des entiers, et pas autre chose.
+\end{itemize}   
+    
+\subsection{D\'efinir un tableau}
+
+Pour commencer, voyons comment d\'efinir un tableau de 4 entiers:
+
+\begin{lstlisting}
+int tableau[4];
+\end{lstlisting}
+
+Il suffit donc de rajouter entre crochets le nombre de cases que vous voulez mettre dans votre tableau. Il n'y a pas de limite (\`a part peut-\^etre la taille de votre m\'emoire, quand m\^eme).
+
+Pour acc\'eder \`a chaque case du tableau il faut \'ecrire tableau[numeroDeLaCase]
+
+\textbf{Attention} : les num\'eros des cases d'un tableau commence \`a l'indice 
+n° 0 ! Notre tableau de 4 entiers a donc les indices 0, 1, 2 et 3. 
+Il n'y a pas d'indice 4 dans un tableau de 4 cases ! C'est une source d'erreurs 
+tr\`es courantes.
+
+Si on veux mettre dans notre tableau les m\^emes valeurs que celles indiqu\'ees sur la figure pr\'ec\'edente, on devrait donc \'ecrire :
+
+
+\begin{lstlisting}
+int tableau[4];
+tableau[0] = 10;
+tableau[1] = 23;
+tableau[2] = 505;
+tableau[3] = 8;
+\end{lstlisting}
+
+\subsection{Relation entre un pointeur et un tableau}
+
+
+Si vous \'ecrivez juste tableau, vous obtenez un pointeur. C'est un pointeur sur la premi\`ere case du tableau. Faisons un test :
+
+\begin{lstlisting}
+//Listing5-6
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tableau[4];
+    tableau[0] = 10;
+    tableau[1] = 23;
+    tableau[2] = 505;
+    tableau[3] = 8;
+    cout << tableau << endl;
+}
+\end{lstlisting}
+
+Le r\'esultat de la compilation et de l'ex\'ecution de ce programme donne l'adresse m\'emoire où se trouve la variable tableau.
+
+
+En revanche, si vous indiquez l'indice de la case du tableau entre crochets, vous obtenez la valeur :
+
+\begin{lstlisting}
+#include<iostream>
+//Listing5-7
+using namespace std;
+int main()
+{
+    int tableau[4];
+    tableau[0] = 10;
+    tableau[1] = 23;
+    tableau[2] = 505;
+    tableau[3] = 8;
+    cout << tableau[0] << endl;
+}
+\end{lstlisting}
+
+
+Vous pouvez faire de  m\^eme pour les autres indices. Notez que comme un tableau est un pointeur, on peut utiliser le symbole * pour conna\^itre la premi\`ere valeur :
+
+\begin{lstlisting}
+//Listing5-8
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tableau[4];
+    tableau[0] = 10;
+    tableau[1] = 23;
+    tableau[2] = 505;
+    tableau[3] = 8;
+    cout << *tableau << endl;
+}
+\end{lstlisting}
+
+
+Il est aussi possible d'obtenir la valeur de la seconde case avec *(tableau + 1) (adresse de tableau + 1).
+Les deux lignes suivantes sont donc identiques :
+
+
+\begin{lstlisting}
+tableau[1] // Renvoie la valeur de la seconde case
+*(tableau + 1) // renvoie la valeur contenue dans la seconde case
+\end{lstlisting}
+Ceci met en \'evidence l'incr\'ementation des pointeurs sur les entiers.
+
+\subsection{Parcourir les \'el\'ements d'un tableau}
+
+Supposons que l'on veille afficher les valeurs de chaque case du tableau.
+On pourrais faire appel \`a autant  de cout qu'il y a de cases. Mais bon, ce serait r\'ep\'etitif et lourd, et imaginez un peu la taille de notre code si on devait afficher 
+le contenu de chaque case du tableau un \`a un !
+
+Le mieux est de se servir d'une boucle, par exemple la boucle \textbf{for}. La boucle for est tr\`es pratique pour parcourir un tableau :
+
+\begin{lstlisting}
+//Listing5-9
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tableau[4], i = 0;
+    tableau[0] = 10;
+    tableau[1] = 23;
+    tableau[2] = 505;
+    tableau[3] = 8;
+    for (i = 0 ; i < 4 ; i++)
+    {
+        cout << tableau[i] << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+Notre boucle parcourt le tableau \`a l'aide d'une variable appel\'ee i (c'est le nom tr\`es original que les programmeurs donnent en g\'en\'eral \`a la variable qui leur permet de parcourir 
+un tableau !).
+
+
+\subsection{Initialiser un tableau}
+
+L'initialisation d'un tableau peut se faire en parcourant chaque case et en affectant une valeur \`a la case rencontr\'ee. Dans le programme suivant, nous initialisons toutes les valeurs du tableau \`a 0 en utilisant une boucle!
+
+
+
+\begin{lstlisting}
+Listing5-10
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tableau[4], i = 0;
+    // Initialisation du tableau
+    for (i = 0 ; i < 4 ; i++)
+    {
+        tableau[i] = 0;
+    }
+    // Affichage de ses valeurs pour verifier
+    for (i = 0 ; i < 4 ; i++)
+    {
+        cout << tableau[i] << endl;
+    }
+    return 0;
+}
+\end{lstlisting} 
+
+Il existe une autre façon d'initialiser un tableau un peu plus automatis\'ee en C++.
+Elle consiste \`a \'ecrire tableau[4] = \{valeur1, valeur2, valeur3, valeur4\}. En clair, vous placez les valeurs une \`a une entre accolades, s\'epar\'ees par des virgules :
+
+
+\begin{lstlisting}
+//Listing5-11
+#include<iostream>
+using namespace std;
+int main()
+{
+    int tableau[4] = {0, 0, 0, 0}, i = 0;
+    // Affichage de ses valeurs pour verifier
+    for (i = 0 ; i < 4 ; i++)
+    {
+        cout << tableau[i] << endl;
+    }
+    return 0;
+}
+\end{lstlisting} 
+
+
+
+\section{En r\'esum\'e}
+
+\begin{itemize}
+\item    Les tableaux sont des ensembles de variables du m\^eme type stock\'ees côte \`a côte en m\'emoire.
+
+\item    La taille d'un tableau doit \^etre d\'etermin\'ee avant la compilation, elle ne peut pas d\'ependre d'une variable.
+
+\item    Chaque case d'un tableau de type int contient une variable de type int.
+
+\item    Les cases sont num\'erot\'ees via des indices commençant 
+\`a 0 : tableau[0],tableau[1],tableau[2], etc.
+\end{itemize}
+
+\color{black}
+
+\section{Exercices}
+\begin{enumerate}
+\item Le tableau suivant indique la note des 10 premiers \'etudiants obtenue sur 20
+dans le cours de programmation dans les travaux dirig\'es et l'examen final.
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+TD & 15& 14.5&16 &17.2 & 15.6& 16.5& 14.7&15.8 & 18& 15.5\\
+\hline
+Examen &17 & 16.2& 15.4& 16& 17.2& 16.3& 15.5&18.2 &17.8&16 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Ecrire un programme pour calculer la moyenne pond\'er\'ee sur 20 sachant la note pour 
+les compte pour 40\% et la note de l'examen final compte pour 60\% (la formule \`a
+utiliser : moy\_ponderee\_sur\_20=note\_sur\_20\_td*0.4+note\_examen\_sur\_20*0.6).
+\item Ecrire un programme qui, \'etant donn\'e un tableau d’entiers d\'ej\`a
+ initialis\'e, demande \`a l’utilisateur quel entier chercher et affiche ensuite le nombre d’occurrences de cet entier
+dans le tableau.
+\begin{enumerate} 
+\item \'ecrire le programme en utilisant l'op\'erateur []
+\item \'ecrire le programme en utilisant explicitement les pointeurs pour acc\'eder 
+aux \'el\'ements du tableau, c'est-\`a-dire sans utiliser une variable d'indice.
+\end{enumerate}
+\item Cr\'eez trois variables r\'eelles v1 , v2 et v3 et initialisez-les à des valeurs de votre choix.
+\begin{enumerate}
+\item D\'eclarez une variable choix de type pointeur sur un r\'eel.
+\item Demandez un nombre entre 1 et 3 et en fonction du choix de l'utilisateur, 
+faites pointer choix sur v1 , v2 ou v3 .
+\item Affichez \og Vous avez choisi \fg et la valeur choisie en utilisant la 
+variable point\'ee.
+\end{enumerate}
+\item Ecrivez une programme qui permute les contenus des entiers a et b en utilisant les pointers (\textbf{Hint} : utiliser une variable d'aide).
+\item On consid\`ere que l'on dispose d'un tableau de flottants d\'eclar\'e de la manière suivante :
+
+\begin{minted}{c}
+    float tab[3];
+\end{minted}
+
+On supposera que ce tableau a \'egalement \'et\'e initialis\'e.
+\begin{enumerate}
+\item \'ecrire un programme permettant de calculer la somme des \'el\'ements du tableau en utilisant
+le formalisme tableau.
+\item \'ecrire un programme permettant de calculer la somme des \'el\'ements du 
+tableau en utilisant le formalisme pointeur.
+\item Reprendre les questions (a) et (b) en consid\'erant un tableau 
+\`a deux dimensions d\'eclar\'e comme
+suit :
+\begin{minted}{c}
+float tab2D[3][4];
+\end{minted}
+et dont on supposera qu'il a \'et\'e initialis\'e.
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+
+\chapter{Modules et fonctions}
+
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Modules et fonctions} \rhead{\thepage}
+Les modules et les fonctions sont construites presque de la m\^eme fa\c{c}on \`a la seule diff\'erence qu'un module ex\'ecute une t\^ache sans renvoyer une valeur de retour.
+Consid\'erer le bout de code suivant.
+
+\begin{enumerate}
+\item Saisi le code et enregistrer dans un fichier
+\begin{lstlisting}
+#include<iostream>
+//Listing6-1
+#include<string>
+using namespace std;
+void bonjour() 
+{
+    cout << "Entrez votre prenom :";
+    string prenom;
+    cin >> prenom;
+    cout << "Bonjour " <<prenom<< "\n";
+}
+\end{lstlisting}
+
+Compiler le fichier. Que se passe t-il ? Expliquer
+\item A la suite du code, ajouter le bout de code suivant :
+
+\begin{lstlisting}
+//Listing6-2
+/*...*/
+int main() 
+{
+    bonjour();
+    return 0;
+}
+\end{lstlisting}
+Re-compiler le fichier. Que se passe t-il ? Expliquer.
+
+Si tout se passe bien, vous remarquerez l'importance de la pr\'esence des instructions mises dans le corps du main\{...\}. Nous reviendrons plus bas sur le r\^ole du \textbf{main}
+ pour un programme en C++.
+\end{enumerate}
+
+
+
+\section{D\'efinition d'un module}\label{sec61} 
+
+Les sections \ref{sec61}  et \ref{sec62} traitent de la d\'efinition d'un module et d'une fonction. Elle suit presque la m\^eme synthaxe. Il peut accepter les arguments, les modifier et
+renvoyer le contr\^ole au programme principal.
+
+
+\begin{lstlisting}
+//Listing6-2_bis
+#include<iostream>
+#include<ctime>
+using namespace std;
+void greatings()
+{
+    struct tm *ptr;
+    // Pointer to struct tm.
+    time_t sec;
+    // For seconds.
+    time(&sec);
+    ptr = localtime(&sec);
+    // Get the present date.
+    // Initialize a struct of
+    // type tm and return a
+    // pointer to it.
+    short month, day, year, hour, min, secs;
+    month = (short) ptr->tm_mon + 1;
+    day = (short) ptr->tm_mday;
+    year = (short) ptr->tm_year + 1900;
+    hour = (short) ptr->tm_hour;
+    min = (short) ptr->tm_min;
+    secs =  (short) ptr->tm_sec;
+    cout << "Bonjour"<<endl;
+    cout <<"Il est : ";
+    cout<<hour<<":"<<min<<":"<<secs<<"  "<<month<<"/"
+     << day <<"/"<< year<<endl;
+}
+int main()
+{
+    greatings(); //Appel du module "greatings"
+    return 0;
+}
+\end{lstlisting}
+
+Les lignes (5-27) du programme pr\'ec\'edent d\'efinissent un module. Un fois ex\'ecut\'e, le programme lit la date et l'heure de l'ordinateur, fait un formatage n\'ecessaire
+et affiche \`a l'\^ecran un message de salutation suivi de l'heure et la date du jour. Pour avoir acc\`es aux fonctions de manipulation de dates, le programme doit inclure le fichier
+"ctime" de la  \textbf{librairie standtard}. La pr\'esence du mot \textbf{void} \`a la ligne (5) indique qu'aucune valeur n'est retourn\'ee du module.
+
+Un module peut aussi recevoir des arguments, effectuer des op\'erations et retourner le contr\^ole au programme appelant ou le module/fonction appellant(e).
+
+\begin{lstlisting}
+//Listing6-3
+#include<iostream>
+using namespace std;
+void prod(int a, int b)
+{
+    int c;
+    c = a * b;
+    cout << "Le produit de "<< a << " et "<<b << " est "<< c << endl;
+} 
+
+int main()
+{
+    prod(4,8); //Appel du module prod
+}
+\end{lstlisting}
+
+Il faut remarquer la mani\`ere dont on fait appel \`a un module. Aucune d\'eclaration de variable n'est n\'ecessaire.  Un module peut \^etre utilis\'e pour afficher un menu dans 
+le cadre des programmes interactifs. Citons par exemple un programme qui demande \`a l'utilisateur d'effectuer un choix parmi plusieurs \'eventualit\'es avant de poursuivre sont 
+ex\'ecution. 
+
+Comme illustration, imaginons que l'administration territoriale d\'efinit les tranches d'\^age pour chaque cat\'egorie de la population. Ainsi sera qualifi\'e de mineur toute personne
+dont l'\^age est comprise entre 0 et 18 ans, de majeure si l'\^age est  comprise entre 18 et 30 et d'adulte si  son \^age est sup\'erieur \`a 30 ans. Ecrire un programme qui demande
+\`a l'utilisateur de rentrer son \^age, d\'etermine s'il est mineur, majeur ou adulte et affiche un mesage selon le cas. 
+
+
+\begin{lstlisting}
+#include<iostream>
+using namespace std;
+void registre()
+{
+    int age;
+    cout << "Entre  votre age : " ;
+    cin >> age;
+    if (age < 18)
+        cout << "Vous etes mineur "<< endl;
+    else if ((age >=18) && (age < 30))
+        cout << "Vous etes majeur"<<endl;
+    else
+        cout << "Vous etes adulte "<<endl;
+}
+int main()
+{
+    registre(); //Appel du module registre
+    return 0;
+}
+\end{lstlisting}
+Le module \textbf{registre()} d\'eclare une variable \textbf{age} de type  entier. Elle est initialis\'ee avec une valeur saisie au clavier. Un test est fait pour d\'eterminer 
+si la valeur entr\'ee est dans l'une des cat\'egories d\'efinies par le registre de l'administration territoriale. Un message appropri\'e sera afficher selon le r\'esultat du test.
+Par exemple si l'utilisateur entre une valeur comprise entre 18 et 30, le message \textbf{Vous etes majeur} sera afich\'e.
+
+\section{D\'efinition d'une fonction} \label{sec62} 
+
+La d\'efinition d'une fonction suit cette synthaxe : \textit{type nom(liste des param\`etres ou arguments){corps}}
+
+\begin{itemize}
+\item \textit{type} est le type du r\'esultat renvoy\'e par la fonction (on utilise void lorsqu'il s'agit d'une
+proc\'edure, i.e. lorsqu'il n'y a pas de valeur de retour).
+\item La liste des param\`etres (appel\'es \textit{param\`etres formels}) est de la forme : \textit{$type_1\ p_1 , . . . , type_n\ p_n$} ,
+signifiant que le premier param\`etre s'appelle $p_1$\ et est de type $type_1$\ etc.
+\item Le corps de la fonction d\'ecrit les instructions \`a effectuer lors de l'appel de cette fonction.
+Le corps utilise ses propres variables locales (\`a d\'efinir), les \'eventuelles variables globales et
+les param\`etres formels (consid\'er\'es comme des variables locales).
+\item Lorsqu'une fonction renvoie un r\'esultat (dans le cas contraire il est assimilable au module), il doit y avoir (au moins) une instruction \og return
+\textit{expr} ;\fg\ où \textit{expr} est une expression du type de la fonction. Cette instruction met fin \`a la fonction. 
+\end{itemize}
+
+Voici un exemple de fonction qui d\'etermine le maximun entre deux nombres entr\'es comme arguments et renvoie le maximun entre les deux.
+
+
+
+
+
+\begin{lstlisting}
+//Listing6-4
+//=========================
+int max(int a,int b)
+{ 
+    int res=b;
+    if (a>b) 
+        res = a;
+    return res;
+}
+//=========================
+\end{lstlisting}
+
+Ci-dessous nous pr\'esentons un autre exemple de fonction.
+
+\begin{lstlisting}
+//Listing6-5
+#include <iostream.h>
+using namespace std;
+//Definition de la fonction
+int cube(int m)
+{
+    return m * m * m;
+}
+int main()
+{
+    for (int i = 1; i <= 10; i++)
+        cout << cube(i) << " ";
+    cout << endl;
+    return 0;
+}
+\end{lstlisting}
+
+Le  type de retour d'une fonction peut \^etre n'importe lequel parmis les types de base (Tableau \ref{type}) et les types d\'efinies par le programmeur (voir plus loin). Vous aurez remarqu\'e que lors de la d\'efinition d'un module, nous avons utilis\'e le 
+mot cl\'e \textbf{void} \`a la place du type de retour du module. Par contre, 
+une fonction retourne une valeur d'un type donn\'e.
+
+\section{D\'eclaration et d\'efinition d'une fonction}
+
+Le langage C++ admet une autre technique de d\'eclaration de fonction. On peut distinguer la d\'eclaration d'une fonction et la partie d\'edi\'ee \`a son impl\'ementation. 
+Explorons l'exemple suivant.
+
+\begin{lstlisting}
+//Listing6-6
+#include<iostream>
+using namespace std;
+double volume(double);
+int main()
+{
+   double cote;
+   cote = 5;
+   double vol;
+   vol = volume(cote);
+   cout <<"Le volume d'un cube de cote "<<cote <<" est :"<<vol<<endl;
+   return 0;
+}
+double volume(double v)
+{
+    return v*v*v;
+}
+\end{lstlisting}
+
+La d\'eclaration (Ligne 4)  est une simple instruction qui indique le type de retour,
+le nom de la fonction ainsi que les param\`etres eventuels. C'est ce qu'on appelle 
+un prototype ou une interface de la fonction. Si l'on conna\^it le prototype d'une
+fonction, son appel est simple car l'utilisateur aura besoin de pr\'eparer les
+arguments suivant leur type ainsi que la valeur de retour. L'impl\'ementation de 
+la fonction est faite apr\`es l'appel dans la fonction \textbf{main()} ou autre. 
+Cette m\'ethode est largement exploit\'ee dans le cadre de la gestion d'un projet. Toutes les d\'eclarations de fonctions peuvent \^etre regroup\'ees dans des fichiers 
+en-t\^ete (headers) (g\'en\'eralement d'extension *.h). L'impl\'ementation est 
+faite dans un fichier source d'extension *.cpp. Ceci permet une flexibilit\'e lors 
+du cycle d'\'edition. On le verra plus tard sur un exemple de projet \`a 
+interface graphique (GUI).
+
+
+\section{Passage des arguments \`a une fonction}
+
+\subsection{Passage par valeur}
+Les valeurs (arguments) de toutes les fonctions d\'efinies plus haut sont pass\'ees par valeurs. Analysons le code suivant.
+
+\begin{lstlisting}
+//Listing6-7
+#include<iostream>
+using namespace std;
+double carre(double value)
+{
+    return value*value;
+}
+int main()
+{
+    double valueout;
+    double valuein = 10;
+    valueout = carre(valuein); //Appel de la fonction carre()
+    cout << valueout << endl;
+    return 0;
+}
+\end{lstlisting}
+
+Le passage d'arguments par valeur se fait de mani\`ere habituelle comme on acc\`ede \`a la valeur contenue dans une variabale.
+
+\subsection{Passage par r\'ef\'erence}
+
+Pour le passage par r\'ef\'erence des arguments \`a une fonction, ces derniers sont d\'efinis comme des r\'ef\'erences. Ci-dessous nous avons un codes identique au pr\'ec\'edent
+mais utilisant une r\'ef\'erence pour passer un param\`etre en argument \`a la fonction \textbf{carre()}.
+
+\begin{lstlisting}
+//Listing6-8
+#include<iostream>
+using namespace std;
+double carre(double &value) //Argument defini comme une reference
+{
+    return value*value;
+}
+int main()
+{
+    double valueout;
+    double valuein = 10;
+    valueout = carre(valuein); //Appel de la fonction carre()
+    cout << valueout << endl;
+    return 0;
+}
+\end{lstlisting}
+L'appel d'une fonction d\'efinie avec des r\'ef\'erences comme arguments se 
+fait de mani\`ere identique comme le passage par valeur. Mais la diff\'erence 
+entre le passage par valeur et le passage par r\'ef\'erence est que pour le 
+passage par r\'ef\'erence, il n'y a pas de copie de la variable transmise en 
+argument. L'espace m\'emoire est r\'ef\'erenc\'ee mais il n'est pas copi\'e. 
+
+
+
+
+
+\subsection{Passage par pointeur}
+
+Analysons maintenant le passage d'arguments \`a une fonction (\textbf{carre()}) avec un pointeur en argument.
+
+\begin{lstlisting}
+//Listing6-9
+#include<iostream>
+using namespace std ;
+double carre ( double * value ) // Argument defini comme un pointeur
+{
+        return (* value )*(* value );
+}
+int main ()
+{
+        double valueout ;
+        double *valuein; //Declaration d'un pointeur
+        *valuein = 10;
+        valueout = carre(valuein); // Appel de la fonction carre()
+        cout << valueout << endl ;
+        return 0;
+}
+\end{lstlisting}
+
+Vous remarquez le d\'er\'ef\'erencement fait pour acc\'eder \`a la valeur contenue dans la variable \textbf{valuein} transmise en argument 
+de la fonction.
+
+\subsection{Passage d'un tableau \`a une fonction}
+
+Le passage d'un tableau \`a une fonction se fait comme les autres variables. Mais g\'en\'eralement on pr\'ecise la taille du tableau pour s'en servir pour le parcours des \'el\'ements
+du tableau. Voici un exemple d'une fonction qui re\c{c}oit en argument la taille et un tableau, calcule la somme de ses \'el\'ement et retourne le r\'esultat.
+
+\begin{lstlisting}
+//Listing6-10
+#include<iostream>
+using namespace std;
+double sommeTableau(double taille, double tab[])
+{
+    double somme;
+    somme = 0; //Initialisation de l'accumulateur
+    for(int i = 0; i < taille ; i++)
+        somme += tab[i];
+    return somme;
+}
+int main()
+{
+    double tab[10] = {1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0};
+    double res;
+    res = sommeTableau(10,tab);
+    cout << res << endl;
+    return 0;
+}
+\end{lstlisting}
+
+Il faut remarquer l'usage d'un accumulateur pour stocker les sommes particielles lors 
+de l'ex\'ecution de la boucle.
+
+\section{Retour sur la fonction main ()}
+
+Tout programme en C++ comporte au moins une fonction d\'enomm\'ee \textbf{main()}.
+C'est sa porte d'entr\'ee. L'ex\'ecution commence par la fonction main et toutes 
+les autres fonctions ou modules peuvent \^etre appel\'es directement \`a partir 
+de cette fonction. Cette fonction retourne une valeur de type entier. Elle peut 
+recevoir des arguments, un de type \textbf{entier} et l'autre un \textbf{pointeur 
+sur un tableau de type char}. Voici un exemple de la fonction main avec les arguments.
+
+\begin{lstlisting}
+//Listing6-11
+#include<iostream>
+#include<string>
+#include<stdlib.h> //librairie C pour les fonctions atoi() et atof()
+using namespace std;
+int main(int argc, char *argv[])
+{
+    string program_name;
+    double val1, val2, prod;
+    if(argc>1)
+    {
+        program_name = argv[0];
+        val1 = atof(argv[1]);
+        val2 = atof(argv[2]);
+        prod = val1 * val2;
+        cout << "Le nom du programme est : " << program_name << endl;
+        cout << "Le nombre des options est :" << argc << endl;
+        cout << "Le produit de "<< val1 << " et " 
+        << val2 << " est "<< prod << endl;
+    }
+    else
+    {
+        cout << "Le programme requiert des arguments optionnels" <<endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+L'argument \textbf{argc} indique le nombre de param\`etres d'appel et l'argument \textbf{argv} est un tableau qui contient les param\`etres d'appel.
+Ce programme r\'ecup\`ere les options d'appel du programme et calcule le produit de deux nombres fournis comme options. Sur un terminal, si le programme 
+s'appelle \textbf{a.out}
+son ex\'ecution se fait avec la commande \textbf{./a.out 2 8}. 2 et 8 sont pris 
+comme des options. Le r\'esultat de l'ex\'ecution de cette commande est le suivant.
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/command.png}
+\end{center}
+\end{figure}
+
+On signale que les valeurs pass\'ees en option \`a un programme sont interpr\'et\'ees comme des caract\`eres.
+Pour pouvoir les utiliser pour faire des calculs, il faut les convertir
+soit en entier ou en flotttant avec les fonction \textbf{atoi()} ou \textbf{atof()} de la librairie standard du langage C. On comprend alors l'inclusion de la librairie 
+\textbf{stdlib.h}.
+
+\section{Surcharge de fonctions}
+
+En C++ on peut d\'eclarer des fonctions qui portent le m\^eme nom mais avec des signatures diff\'erentes. Par signature, il faut 
+comprendre le nombre d'arguments. Le syst\`eme d\'etermine la fonction \`a appeler selon le nombre d'argumentsc transmis. Examinons l'exemple suivant.
+\begin{lstlisting}
+//Listing6-12
+#include<iostream>
+using namespace std;
+int prod(double a)
+{
+        return a*a;
+}
+double prod(double a, double b)
+{
+        return a*b;
+}
+double prod(double a,double b, double c)
+{
+        return a*b*c;
+}
+
+int main()
+{
+        int a = 2;
+        double b=5;
+        double c = 7;
+        double res;
+        res = prod(a);
+        cout << res << endl;
+        res = prod(b,c);
+        cout << res << endl;
+        res = prod(a,b,c);
+        cout << res << endl;
+}
+\end{lstlisting}
+Lors de l'appel, on ne se soucit pas de la fonction qu'on doit appeler, il sufit de pr\'eciser les arguments d'entrer et le reste est fait  par le syst\`eme.
+
+
+\section{Exercices}
+\begin{enumerate}
+\item Cr\'eez une fonction sommeTableau qui renvoie la somme des valeurs contenues dans le tableau (utilisez un return pour renvoyer la valeur). Pour vous aider, 
+voici le prototype de la fonction \`a cr\'eer :
+
+
+\begin{lstlisting}
+int sommeTableau(int tableau[], int tailleTableau);
+\end{lstlisting} 
+
+
+\item Cr\'eez une fonction moyenneTableau qui calcule et renvoie la moyenne des valeurs. Prototype :
+
+\begin{lstlisting}
+double moyenneTableau(int tableau[], int tailleTableau);
+\end{lstlisting} 
+
+
+
+\item Cr\'eez une fonction copierTableau qui prend en param\`etre deux tableaux. Le contenu du premier tableau devra \^etre copi\'e dans le second tableau.
+Prototype :
+
+\begin{lstlisting}
+void copie(int tableauOriginal[], int tableauCopie[], 
+int tailleTableau);
+\end{lstlisting} 
+\item Cr\'eez une fonction maximumTableau qui aura pour rôle de remettre \`a 0 toutes les cases du tableau ayant une valeur sup\'erieure \`a un maximum. Cette fonction prendra 
+en param\`etres le tableau ainsi que le nombre maximum autoris\'e (valeurMax). Toutes les cases qui contiennent un nombre sup\'erieur \`a valeurMax doivent \^etre mises \`a 0. Prototype :
+
+\begin{lstlisting}
+void maximumTableau(int tableau[], int tailleTableau, 
+int valeurMax);
+\end{lstlisting} 
+
+\item Cet exercice est plus difficile. Cr\'eez une fonction ordonnerTableau qui classe les valeurs d'un tableau dans l'ordre croissant. Ainsi, un tableau qui vaut 
+{15, 81, 22, 13} doit \`a la fin de la fonction valoir {13, 15, 22, 81}.
+
+Prototype :
+
+\begin{lstlisting}
+void ordonnerTableau(int tableau[], int tailleTableau);
+\end{lstlisting} 
+
+\end{enumerate}
+
+
+
+
+
+
+\chapter{Manipulation de cha\^ines de caract\`eres}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Manipulation de cha\^ines de caract\`eres} \rhead{\thepage}
+
+\section{D\'efinition}
+
+Les cha\^ines de caract\`eres sont un groupe de lettres, de caract\`etes 
+imprimables et/ou non imprimables qui permettent de repr\'esenter des mots, phrases,
+etc. Une cha\^ine de caract\`ere est un tableau de char dont la derni\`ere valeur
+est \'egale \`a la valeur 0
+(z\'ero). En C++ il existe deux mani\`eres de g\'erer les cha\^ines de caract\`eres
+\begin{itemize}
+\item un tableau de caract\`eres : char ch[50];
+\item un objet : string st;
+\end{itemize}
+
+En langage C++, une cha\^ine de caract\`eres est un tableau, comportant plusieurs
+donn\'ees de type char, dont le dernier \'el\'ement est le caract\`ere nul '', 
+c'est-\`a-dire le premier caract\`ere du code ASCII (dont la valeur est 0).
+
+Ce caract\`ere est un caract\`ere de contr\^ole (donc non affichable) qui permet
+d'indiquer une fin de cha\^ine de caract\`eres. Ainsi une cha\^ine compos\'ee 
+de n \'el\'ements sera en fait un tableau de n+1 \'el\'ements de type char.
+
+On peut par exemple repr\'esenter la cha\^ine « Bonjour » de la mani\`ere suivante :
+
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+B&o&n&j&o&u&r&\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Cr\'eer une cha\^ine de caract\`eres}
+
+Pour d\'efinir une cha\^ine de caract\`eres en langage C++, il suffit de
+d\'efinir un tableau de caract\`eres. Le nombre maximum de caract\`eres que comportera
+la cha\^ine sera \'egal au nombre d'\'el\'ements du tableau moins un (r\'eserv\'e au caract\`ere de fin de cha\^ine).
+
+
+\begin{lstlisting}
+char nom-du-tableau[nombre-d-elements]
+\end{lstlisting}
+
+
+    Le nombre d'\'el\'ements que comporte le tableau d\'efinit la taille maximale de la cha\^ine, on peut toutefois utiliser partiellement cet 
+    espace en ins\'erant le caract\`ere
+de fin de cha\^ine \`a l'emplacement d\'esir\'e dans le tableau.
+
+\color{red}Astuce !\color{black}\  En d\'efinissant le tableau de la mani\`ere suivante, vous
+mettez en \'evidence le nombre de caract\`eres maximal de la cha\^ine :
+
+
+\begin{lstlisting}
+char nom-du-tableau[nombre-d-elements + 1]
+\end{lstlisting}
+
+\section{Initialiser une cha\^ine de caract\`eres}
+
+Comme g\'en\'eralement en langage C++, il faut initialiser votre cha\^ine de caract\`eres, c'est-\`a-dire
+remplir les cases du tableau avec des caract\`eres, sachant que celui-ci devra obligatoirement contenir le caract\`ere
+de fin de cha\^ine '\textbackslash 0'.
+
+Il y a deux façons de proc\'eder :
+
+\begin{itemize}
+\item    remplir manuellement le tableau case par case
+\item    utiliser les fonctions de manipulation de cha\^ine fournies dessinentlibrairies standard
+\end{itemize}
+Voici un exemple d'initialisation manuelle de cha\^ine de caract\`eres :
+
+\begin{minted}{c}
+//Listing7-1
+#include <iostream>
+using namepspace std;
+int main()
+{
+    char Chaine[20+1];
+    Chaine[0]= 'B';
+    Chaine[1]= 'o';
+    Chaine[2]= 'n';
+    Chaine[3]= 'j';
+    Chaine[4]= 'o';
+    Chaine[5]= 'u';
+    Chaine[6]= 'r';
+    Chaine[7]= '\0';
+}
+\end{minted}
+
+Voici une autre façon (plus simple) d'initialiser une cha\^ine de caract\`eres :
+
+
+\begin{lstlisting}
+#include <iostream>
+using namepspace std;
+int main()
+{
+    char Chaine[20+1]={ 'B', 'o', 'n', 'j', 'o', 'u', 'r', '' };
+}
+\end{lstlisting}
+
+
+\section{Les fonctions de manipulation de cha\^ines de caract\`eres}
+
+De nombreuses fonctions de manipulation de cha\^ines de caract\`eres sont 
+directement fournies par le langage C++. Ces fonctions se trouvent dans le fichier 
+d'en-t\^ete <cstring.h>, c'est la raison pour laquelle il faut ajouter
+la ligne suivante en d\'ebut de votre programme.
+
+
+\begin{lstlisting}
+#include<cstring> //Fichier d'entete pour les
+                 //fonctions de manipulation de chaines de caracteres
+\end{lstlisting}
+
+
+Le fichier <cstring> contient les prototypes de nombreuses fonctions permettant 
+de simplifier l'utilisation et la manipulation de cha\^ines (environ une quarantaine).
+Voici un bref aperçu de certaines de ces fonctions :
+
+\subsection{La fonction strcpy()}
+
+La fonction strcpy() (prononcez string copy) est une fonction qui permet de copier
+une cha\^ine enti\`ere de caract\`eres dans une autre.
+Cette fonction admet comme param\`etres les deux cha\^ines
+de caract\`eres. Elle retourne 1 si la copie s'est effectu\'ee correctement,
+sinon elle renvoie 0.
+
+
+Prototype de la fonction strcpy() :
+
+\begin{lstlisting}
+#include <cstring>
+strcpy(Nom-de-la-chaine-destination,Nom-de-la-chaine-source);
+\end{lstlisting}
+Voici un exemple complet  sur l'initialisation d'une cha\^ine de caract\`ere par une fonction de la librairie \textbf{cstring}.
+
+\begin{lstlisting}
+//Listing7-2
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    char str1[50]; //Declaratio d'un tableau de caracteres
+    strcpy(str1,"Notre chaine de caracteres!"); //Initialisation
+    int i = 0;
+    while (str1[i]!='\0')
+    {
+            cout << str1[i] ;
+            i++;
+    }
+    cout << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{La fonction strcmp()}
+
+La fonction strcmp() (prononcez string compare) est une fonction qui permet de comparer
+deux cha\^ines de caract\`eres. En effet, il n'est pas possible d'effectuer simplement une
+comparaison de cha\^ines de caract\`eres avec la simple utilisation des op\'erateurs
+habituels (==, !=, >=, etc.) \`a moins d'utiliser une boucle. Il est donc pr\'ef\'erable
+d'utiliser cette fonction fournie en standard avec le C++. Cette fonction admet comme param\`etres deux cha\^ines
+de caract\`eres. Elle retourne 0 si les deux cha\^ines sont les m\^emes. Si les cha\^ines
+sont diff\'erentes, elle renvoie bien \'evidemment 1. 
+
+Syntaxe de la fonction strcmp() :
+
+\begin{lstlisting}
+#include <cstring>
+strcmp(Nom-de-la-chaine1,Nom-de-la-chaine2);
+\end{lstlisting}
+
+ou encore :
+
+\begin{lstlisting}
+#include <cstring>
+strcmp(Nom-de-la-chaine1,"Chaine de caracteres");
+\end{lstlisting}
+
+
+Notons toute fois que la librairie \textbf{cstring} d\'efinie une classe 
+\textbf{string} qui permet de faire une comparaison entres deux cha\^ines 
+de caract\`eres avec les op\'erateurs habituels.
+
+\begin{lstlisting}
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+        string str = "TOTO";
+        string inp;
+        cin >>  inp;
+        if(inp==str) //Comparaison de deux chaines de type string
+        {
+                cout << "Match" << endl;
+        }
+        else
+        {
+                cout << "Not match" << endl;
+        }
+}
+\end{lstlisting}
+
+\textbf{Exemple}
+
+
+
+\subsection{strlen()}
+strlen() est une fonction qui calcule la longueur d'une cha\^ine de caract\`eres (sans compter le caract\`ere '\textbackslash 0').
+Vous devez lui envoyer un seul param\`etre : votre cha\^ine de caract\`eres. Cette fonction vous retourne la longueur de la cha\^ine.
+
+
+Ci-dessous est le prototype de la fonction \textbf{strlen()}.
+
+
+\begin{lstlisting}
+size_t strlen(const char* chaine);
+\end{lstlisting}
+
+
+size\_t est un type sp\'ecial qui signifie que la fonction renvoie un nombre correspondant \`a une taille. Ce n'est pas un type de base comme int, long ou char, c'est un type 
+« invent\'e ». Nous apprendrons nous aussi \`a cr\'eer nos propres types de variables.
+Pour le moment, on va se contenter de stocker la valeur renvoy\'ee par strlen dans une variable de type int (l'ordinateur convertira 
+ size\_t en int automatiquement). En toute rigueur, il faudrait plutôt stocker le r\'esultat dans une variable de type size\_t, mais en pratique un int est suffisant pour cela.
+
+
+
+La fonction prend un param\`etre de type const char*. Le const (qui signifie constante) fait que la fonction strlen « s'interdit » 
+en quelque sorte de modifier votre cha\^ine. Quand vous voyez un const, vous savez que la variable n'est pas modifi\'ee par la fonction, elle est juste lue.
+
+
+Exemple d'utilisation de la fonction strlen()
+
+\begin{lstlisting}
+//Listing7-3
+#include<iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
+    char chaine[] = "Salut";
+    int longueurChaine = 0;
+    // On recupere la longueur de la chaine dans longueurChaine
+    longueurChaine = strlen(chaine);
+    // On affiche la longueur de la chaine
+    cout << "La chaine" << chaine << " fait "
+    << longueurChaine <<" caracteres de long"<<endl;
+    return 0;
+}
+\end{lstlisting}
+
+
+Il est facile d'\'ecrire. la fonction \textbf{strlen()}.  Il suffit de faire une boucle sur le tableau de char qui s'arr\^ete quand on tombe sur le caract\`ere\textbackslash 0. 
+Un compteur s'incr\'emente \`a chaque tour de boucle, et c'est ce compteur que la fonction retourne.
+Le code ci-dessous impl\'emente la fonction similaire \`a strlen. Ça vous permettra en plus de bien comprendre comment la fonction marche.
+
+
+
+\begin{lstlisting}
+#include<iostream>
+using namespace std;
+int longueurChaine(const char* chaine); //Prototype de la focntion 
+
+int main(int argc, char *argv[])
+{
+    char chaine[] = "Salut";
+    int longueur = 0;
+    longueur = longueurChaine(chaine);
+    cout << "La chaine "<<chaine<<" fait "
+    << longueur <<" caracteres de long"<< endl; 
+    return 0;
+}
+
+int longueurChaine(const char* chaine)
+{
+    int nombreDeCaracteres = 0;
+    char caractereActuel = 0;
+    do
+    {
+        caractereActuel = chaine[nombreDeCaracteres];
+        nombreDeCaracteres++;
+    }
+    while(caractereActuel != '\0'); // On boucle tant 
+                                   //qu'on n'est pas arrive a '\0'
+    nombreDeCaracteres--; // On retire 1 caractere de long pour 
+                          //ne pas compter le caractere '\0'
+    return nombreDeCaracteres;
+}
+\end{lstlisting}
+
+
+La fonction longueurChaine fait une boucle sur le tableau chaine. Elle stocke les caract\`eres un par un dans caractereActuel. D\`es que caractereActuel vaut '\textbackslash 0', 
+la boucle s'arr\^ete.
+A chaque passage dans la boucle, on ajoute 1 au nombre de caract\`eres qu'on 
+a analys\'es. A la fin de la boucle, on retire 1 caract\`ere au nombre total 
+de caract\`eres qu'on a compt\'es. Cela permet de ne pas compter le 
+caract\`ere '\textbackslash 0' dans le lot. Enfin, on retourne nombreDeCaracteres.
+
+\subsection{La fonction strcat()}
+
+Cette fonction ajoute une cha\^ine \`a la suite d'une autre. On appelle cela la concat\'enation.
+Supposons que l'on ait les variables suivantes :
+
+\begin{lstlisting}
+    chaine1 = "Salut "
+    chaine2 = "Programmeur"
+\end{lstlisting}
+
+
+
+
+Si on concat\`ene chaine2 dans chaine1, alors chaine1 vaudra "Salut Programmeur". Quant \`a
+chaine2, elle n'aura pas chang\'e et vaudra toujours "Programmeur". Seule chaine1 est modifi\'ee.
+
+C'est exactement ce que fait strcat, dont voici le prototype :
+
+\begin{lstlisting}
+char* strcat(char* chaine1, const char* chaine2);
+\end{lstlisting}
+
+
+Comme vous pouvez le voir, chaine2 ne peut pas \^etre modifi\'ee car elle est d\'efinie comme constante dans le prototype de la fonction.
+La fonction retourne un pointeur vers chaine1, ce qui, comme pour strcpy, ne sert pas \`a grand-chose dans le cas pr\'esent : on peut donc ignorer ce que la fonction nous renvoie.
+
+La fonction ajoute \`a chaine1 le contenu de chaine2. Regardons-y de plus pr\`es avec un exemple:
+
+\begin{lstlisting}
+//Listing7-4
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main(int argc, char *argv[])
+{
+    /* On cree 2 chaines. chaine1 doit etre assez grande pour 
+    accueillir le contenu de chaine2 en plus, sinon risque 
+    de plantage */
+    char chaine1[100] = "Salut ", chaine2[] = "Programmeur";
+    strcat(chaine1, chaine2); // On concatene chaine2 dans chaine1
+    // Si tout s'est bien passe, chaine1 vaut "Salut Programmeur"
+    cout << "chaine1 vaut : " << chaine1 << endl;
+    // chaine2 n'a pas change :
+    cout << "chaine2 vaut toujours : " << chaine2 << endl;
+    return 0;
+}
+\end{lstlisting}
+
+
+V\'erifiez absolument que chaine1 est assez grande pour qu'on puisse lui ajouter le contenu de chaine2, sinon vous ferez un d\'ebordement en m\'emoire qui peut conduire \`a un plantage.
+C'est pour cela que l'on a d\'efini chaine1 de taille 100. Quant \`a chaine2, on a laiss\'e l'ordinateur calculer sa taille car cette cha\^ine n'est pas modifi\'ee, il n'y a donc pas besoin 
+de la rendre plus grande que n\'ecessaire.
+
+
+
+\subsection{La fonction strchr()}
+
+La fonction strchr() recherche un caract\`ere dans une cha\^ine. Elle a pour prototype :
+
+
+\begin{lstlisting}
+char* strchr(const char* chaine, char caractereARechercher);
+\end{lstlisting}
+
+La fonction prend 2 param\`etres :
+
+\begin{itemize}
+\item    chaine: la cha\^ine dans laquelle la recherche doit \^etre faite ;
+
+\item    caractereARechercher: le caract\`ere que l'on doit rechercher dans la cha\^ine.
+\end{itemize}
+
+
+
+
+
+La fonction renvoie un pointeur vers le premier caract\`ere qu'elle a trouv\'e, c'est-\`a-dire qu'elle renvoie l'adresse de ce caract\`ere dans la m\'emoire. Elle renvoie NULL si elle n'a 
+rien trouv\'e.
+Dans l'exemple suivant, on r\'ecup\`ere ce pointeur dans suiteChaine:
+
+\begin{lstlisting}
+//Listing7-5
+#include<iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
+    char chaine[] = "Texte de test", *suiteChaine = NULL;
+    suiteChaine = strchr(chaine, 'd');
+    if (suiteChaine != NULL) // Si on a trouve quelque chose
+    {
+        cout <<"Voici la fin de la chaine a partir du premier d : "
+        << suiteChaine<<endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+
+
+\subsection{La fonction strstr}
+
+
+Cette fonction recherche la premi\`ere occurrence d'une cha\^ine dans une autre
+cha\^ine.
+Son prototype est :
+
+\begin{lstlisting}
+char* strstr(const char* chaine, const char* chaineARechercher);
+\end{lstlisting}
+
+Exemple  d'utilisation
+
+\begin{lstlisting}
+int main(int argc, char *argv[])
+{
+    char *suiteChaine;
+
+    // On cherche la premiere occurrence de "test" dans "Texte de test" :
+    suiteChaine = strstr("Texte de test", "test");
+    if (suiteChaine != NULL)
+    {
+        cout << "Premiere occurrence de test dans Texte de test : " 
+        << suiteChaine << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+
+
+La fonction strstr recherche la cha\^ine "test" dans "Texte de test". Elle renvoie un pointeur quand elle a trouv\'e ce qu'elle cherchait. Elle renvoie NULL si elle n'a rien trouv\'e.
+
+Jusqu'ici, on s'est content\'e d'afficher la cha\^ine \`a partir du pointeur retourn\'e par les fonctions. Dans la pratique, ce n'est pas tr\`es utile. Vous ferez juste un if 
+(resultat != NULL) pour savoir si la recherche a ou non donn\'e quelque chose, et vous afficherez « Le texte que vous recherchiez a \'et\'e trouv\'e ».
+
+\subsection{La fonction sprintf()}
+
+Cette fonction se trouve dans cstdio contrairement aux autres fonctions que nous avons \'etudi\'ees jusqu'ici, qui \'etaient dans cstring.
+
+
+Cette fonction ressemble \'enorm\'ement au printf du langage c qui renvoie le
+r\'esultat \`a \'ecran. Mais, au lieu d'\'ecrire \`a l'\'ecran, sprintf \'ecrit 
+dans une cha\^ine ! D'où son nom, qui commence par le « s » de « string » 
+(cha\^ine en anglais).
+
+C'est une fonction tr\`es pratique pour mettre en forme une cha\^ine. Petit exemple 
+
+
+\begin{lstlisting}
+//Listing7-6
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int main(int argc, char *argv[])
+{
+    char chaine[100];
+    int age = 15;
+
+    // On ecrit "Tu as 15 ans" dans chaine
+    sprintf(chaine, "Tu as %d ans !", age);
+    // On affiche chaine pour verifier qu'elle contient bien cela :
+    cout << chaine <<endl;
+    return 0;
+}
+
+\end{lstlisting}
+
+\chapter{Introduction \`a la programmation orient\'ee objet}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Introduction \`a la programmation orient\'ee objet} \rhead{\thepage}
+
+Le langage orient\'e objet le plus utilis\'e est le C++. C++ d\'efinit permet 
+la d\'efinition des classes qui font du C++ un langage diff\'erent de 
+son pr\'edecesseur. En effet, avant que le mot C++ soit invent\'e, le langage 
+C++ \'etait appel\'e C avec des classes. 
+
+
+\section{Notion de classes}
+Une classe est un type de donn\'ees d\'efini par l'utilisateur (programmeur) semblable \`a une structure. Une classe peut avoir des donn\'ees membres, mais \`a la diff\'erence des 
+structures les classes poss\`edent en plus les fonctions membres. Les donn\'ees membres peuvent \^etre de tout type que ce soit les types de base ou d\'efinis par l'utilisateur.
+Une fonction membre peut manipuler les donn\'ees, cr\'eer et d\'etruire les variables de la classe. Elles peuvent red\'efinir les op\'erateurs pour agir sur les objets de la classes.
+
+Une classe poss\`ede plusieurs types de donn\'ees mais regroup\'ees en deux cat\'egories : \textbf{donn\'ees membres et fonctions membres.} Pour cr\'eer un objet en C++ on doit 
+d'abord d\'efinir sa forme g\'en\'erale par le mot cl\'e \textbf{class}.
+
+\section{Donn\'ees membres ou attributs}
+
+Les donn\'ees membres peuvent \^etre de tout type. Voici un exemple simple de classe d\'enomm\'ee \textbf{Sphere} avec comme donn\'ees membres son rayon $r$\ et les coordonn\'ees
+cart\'esiennes $x,\ y$\ et $z$.
+
+\begin{lstlisting}
+class Sphere
+{
+    public:
+        double r; //rayon de la sphere
+        double x,y,z; //Coordonnees de la sphere
+};        //Terminer la declaration d'une classe par un point virgule
+\end{lstlisting} 
+Il faut remarquer l'usage du mot cl\'e \textbf{public} dont son utilit\'e sera explicit\'e plus tard.
+\section{Fonctions membre ou m\'ethodes} 
+
+Une classe peut \'egalement avoir des fonctions membres pour manipuler les donn\'ees membres. Voici encore une fois la classe \textbf{Sphere} avec les fonctions membres. 
+
+\begin{lstlisting}
+#include<cmath>
+const double PI = 3.14159;
+//La classe Sphere
+class Sphere
+{
+    public:
+        double r; //rayon de la sphere
+        double x,y,z; //Coordonnees de la sphere
+        Sphere(double xcoord, double ycoord, double zcoord, 
+        double rayon);
+        ~Sphere();
+        double volume();
+        double surface();
+};
+
+Sphere::Sphere(double xcoord, double ycoord, double zcoord, 
+double rayon)
+{
+    x = xcoord;
+    y = ycoord;
+    z = zcoord;
+    r = rayon;
+}
+~Sphere::Sphere()
+{
+
+}
+double Sphere::volume()
+{
+    return (4/3)*PI*r*r*r;
+}
+double Sphere::surface()
+{
+    return 4*PI*r*r;
+}
+\end{lstlisting} 
+Cette classez poss\` ede quatre fonctions membres. \textbf{Sphere()}, \texttt{\char`~}\textbf{Sphere()}, \textbf{volume()} et \textbf{surface()}. La m\'ethode avec le nom \texttt{\char`~} ne poss\`ede pas de codes. 
+Les programmes en C++ appellent les variables de type \textbf{class} des \textbf{objets} car elles font plus que les
+ variables de types simples. Dans la pratique une classe est un objet qui se manipule lui-m\^eme. Les fonctions
+ membres manipulent les donn\'ees de la classe. Dans cet exemple, la fonction membre \textbf{Sphere()} est une fonction sp\'eciale, elle porte le m\^eme nom que la classe. Dans
+ la d\'efinition de la classe, nous avons utilis\'e les prototypes pour d\'eclarer les fonctions membres et leur impl\'ementation a \'et\'e faite plus tard. Dans la d\'efinition
+ des fontions membres vous remarquez l'op\'eration ::, il est appel\'e \textbf{op\'erateur de r\'esolution de port\'ee}. Il indique que la fonction membre appartient \`a la classe
+ de nom situ\'e \`a gauche de cet op\'erateur. 
+\section{Constructeurs}
+
+La fonction membre \textbf{Sphere()} est une fonction sp\'eciale. C'est le constructeur de la classe et son nom doit toujour \^etre le m\^eme que la classe. Son utilisation 
+d\'eclare une nouvelle instance de la classe. Par exemple l'instruction suivante d\'eclare une instance de la classe \textbf{Sphere} dont les donn\'ee membres sont
+$x=4,\ y=2,\ z=3,\ r=5$.
+
+\begin{lstlisting}
+S = Sphere(4,2,3,5);
+\end{lstlisting}
+
+Les arguments transmis en entr\'ee de la fonction Sphere() sont utilis\'es pour initialiser les donn\'ees membres $x,\ y,\ z,\ r$. Les instances d'une classe sont appel\'ees des
+objets. Ainsi tout comme pour les types de base comme \textbf{int, char, float, double, ...} on peut  cr\'eer autant d'instances ou objets d'une classe qu'on veut.  
+Le programme suivant utilise la classe Sphere pour initialiser une instance et l'afficher.
+
+\begin{lstlisting}
+//Listing8-1
+#include<iostream>
+#include<cmath>
+using namespace std;
+const double PI = 3.14159;
+//La classe Sphere
+class Sphere
+{
+    public:
+        double r; //rayon de la sphere
+        double x,y,z; //Coordonnees de la sphere
+        Sphere(double xcoord, double ycoord, double zcoord, 
+        double rayon);
+        ~Sphere();
+        double volume();
+        double surface();
+};
+Sphere::Sphere(double xcoord, double ycoord, double zcoord, 
+double rayon)
+{
+    x = xcoord;
+    y = ycoord;
+    z = zcoord;
+    r = rayon;
+}
+Sphere::~Sphere()
+{
+
+}
+double Sphere::volume()
+{
+    return (4/3)*PI*r*r*r;
+}
+double Sphere::surface()
+{
+    return 4*PI*r*r;
+}
+int main(int argc, char *argv[])
+{
+    Sphere S(4, 2, 3, 5);
+    cout << "X = " << S.x <<" "<<"Y = " <<  S.y <<"  "<<" Z = " << S.z <<"  "<< "R= "<< S.r << endl;
+    return 0;
+}
+\end{lstlisting} 
+
+Le r\'esultat de l'ex\'ecution de ce programme est le suivant. 
+
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/classout.png}
+\end{center}
+\end{figure}
+
+La fonction main() devient courte car les fonctions membres contiennent tout le code pour manipuler les 
+donn\'ees membres. Le constructeur \textbf{Sphere()} est  la seule fonction appel\'ee. 
+\section{Destructeurs}
+Une autre fonction (membre)  sp\'eciale est le destructeur \texttt{~}\textbf{Sphere()}.  A remarquer qu'il porte le m\^eme nom que la classe mais avec un tilde (\texttt{\char`~}) comme 
+pr\'efixe. Le destructeur ne re\c{c}oit jamais d'argument et aucune valeur de retour n'est renvoy\'ee. La plus part des destructeurs fait peu de chose. Quand un destructeur ne fait
+rien on peut l'ignorer. De toutes les  fa\c{c}on quand le programme est en dehors de la port\'ee de l'objet, le syst\`eme d\'etruit automatiquement l'objet et restitut la m\'emoire
+au syst\`eme d'exploitation.
+Le destructeur est automatiquement appel\'e m\^eme s'il ne fait rien. Pour tester cette subtilit\'e, modifions le destructeur de la fac\c{c}on suivante.
+
+\begin{lstlisting}
+....
+Sphere::~Sphere()
+{
+    cout << "L'objet Sphere(" << x << ", " << y << ", " << z << 
+    ", " << r << ") est detruit\n";
+}
+....
+\end{lstlisting}
+La fonction main() n'appelle pas le destructeur.
+
+Les autres fonctions membres n'ont pas \'et\'e utilis\'ees. Le programme suivant montre l'utilisation des fonctions membres \textbf{volume()} et \textbf{surface()}.
+
+\begin{lstlisting}
+#include<iostream>
+#include<cmath>
+using namespace std;
+const double PI = 3.14159;
+//La classe Sphere
+class Sphere
+{
+    public:
+        double r; //rayon de la sphere
+        double x,y,z; //Coordonnees de la sphere
+        Sphere(double xcoord, double ycoord, double zcoord, 
+        double rayon);
+        ~Sphere();
+        double volume();
+        double surface();
+};
+Sphere::Sphere(double xcoord, double ycoord, double zcoord, 
+double rayon)
+{
+    x = xcoord;
+    y = ycoord;
+    z = zcoord;
+    r = rayon;
+}
+Sphere::~Sphere()
+{
+
+}
+double Sphere::volume()
+{
+    return (4/3)*PI*r*r*r;
+}
+double Sphere::surface()
+{
+    return 4*PI*r*r;
+}
+int main(int argc, char *argv[])
+{
+    Sphere S(4, 2, 3, 5);
+    cout << "X = " << S.x <<" "<<"Y = " <<  S.y <<"  "<<" Z = " 
+    << S.z <<"  "<< "R= "<< S.r << endl;
+    cout << "Le volume est : " << S.volume() << " et la surface est : "
+    << S.surface() << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section{Les arguments par d\'efaut}
+Il est possible d'attribuer aux fonctions membres des arguments par d\'efaut. Supposons que la coordonn\'ee $y$\ de la sph\`ere sera $2.0$, la coordonn\'ee $z$\ sera 2.5 et  le rayon
+ $1.0$. Le construteur devient alors.
+ 
+ \begin{lstlisting}
+ Sphere::Sphere(double xcoord, double ycoord = 2.0, double zcoord = 2.5, 
+double rayon = 1.0)
+{
+    x = xcoord;
+    y = ycoord;
+    z = zcoord;
+    r = rayon;
+}
+\end{lstlisting}
+
+
+et la cr\'eation de l'objet Sphere devient
+
+\begin{lstlisting}
+Sphere S(1.0); // Arguments par defaut
+Sphere T(1.0, 1.1); // Ecrasement de y
+Sphere U(1.0, 1.1, 1.2); // Override y and z
+Sphere V(1.0, 1.1, 1.2, 1.3); // Ecrasement de tous les arguments 
+                             //par defaut
+\end{lstlisting}
+
+Une classe peut avoir plus qu'un constructeur, c'est ce qu'on appelle la surcharge des constucteurs.
+
+\begin{lstlisting}
+Sphere::Sphere () //Le constructeur ne fait rien
+{
+
+}
+Sphere::Sphere(double xcoord, double ycoord, double zcoord, 
+double rayon) //Le constructeur
+              //initialise les donnees membres
+\end{lstlisting}
+
+\section{Visibilit\'e des membres d'une classe}
+
+Rappelons que la classe \textbf{Sphere} dispose du mot cl\'e \textbf{public}. Ce mot cl\'e est n\'ecessaire car par d\'efaut, tous les membres d'une classe sont priv\'es. Les 
+membres priv\'es ne peuvent \^etre acced\'es que par les fonctions membres. Pour que les donn\'ees ou les fonctions membres puissent \^etre utilis\'ees par les autres programmes, elles
+doivent \^etre d\'eclar\'es \textbf{public}.   Dans le cas de la classe Sphere(), tu peux  vouloir  cacher les donn\'ees membres aux autres classes. Ceci prot\`ege l'int\'egrit\'e
+des donn\'ees. Le programme suivant ajoute les fonction \textbf{cube()} et \textbf{carre()} pour faire une partie du travail des fonction \textbf{volume()} et \textbf{surface()}.
+
+\begin{lstlisting}
+//Listing8-2
+#include<iostream>
+#include<cmath>
+using namespace std;
+const double PI = 3.14159;
+//La classe Sphere
+class Sphere
+{
+    private:
+        double r; //rayon de la sphere
+        double x,y,z; //Coordonnees de la sphere
+        double cube();
+        double carre();
+    public:
+        Sphere(double xcoord, double ycoord, double zcoord, 
+        double rayon);
+        ~Sphere();
+        double volume();
+        double surface();
+};
+Sphere::Sphere(double xcoord, double ycoord, double zcoord, 
+double rayon)
+{
+    x = xcoord;
+    y = ycoord;
+    z = zcoord;
+    r = rayon;
+}
+Sphere::~Sphere()
+{
+
+}
+double Sphere::cube()
+{
+    return r*r*r;
+}
+double Sphere::carre()
+{
+    return r*r;
+}
+double Sphere::volume()
+{
+    return (4/3)*PI*cube();
+}
+double Sphere::surface()
+{
+    return 4*PI*carre();
+}
+int main(int argc, char *argv[])
+{
+    Sphere S(4, 2, 3, 5);
+    cout << "Le volume est : " << S.volume() << " et la surface est : "
+    << S.surface() << endl;
+    return 0;
+}
+\end{lstlisting}
+
+
+Remarquez que la ligne qui affiche les donn\'ees membres doit \^etre enlev\'ee dans la fonction main(). Les donn\'ees membres ne sont plus accessibles directement
+\`a l'exception d'une fonction membre de la classe Sphere(). En d'autre termes, la fonction main() ne pourra plus manipuler directement les donn\'ees $r$\ ou $x$\ m\^eme si elle appelle
+le constructeur qui cr\'ee ces donn\'ees. Les donn\'ees priv\'ees sont visibles uniquement dans les fonctions membres. Ceci d\'emontre la puissance du fait de cacher les donn\'ees.
+M\^eme ton propre programme ne peut plus acc\'eder directement aux donn\'ees. Le programmeur impl\'emente des m\'ethodes pour manipuler les donn\'ees et restituer leur contenu. Ces fonctions membres sont appel\'ees des \textbf{accesseurs}.
+
+
+\section{Heritage}
+La programmation orient\'ee objet introduit une nouvelle notion qui met en relation diff\'erentes classes. En effet, il arrive qu'on d\'esire tirer profit de fonctionnalit\'es
+qui ont \'et\'e impl\'ement\'ees dans  une classe donn\'ee sans devoir r\'e\'ecrire le code en entier. On arrive \`a cette \'economie de temps par la \textbf{technique d'h\'eritage}.
+Considerons la classe suivante.
+
+\begin{lstlisting}
+class Buildings
+{
+    private:
+        int rooms;
+        int floors
+        int area;
+    public:
+        void set_rooms(int num);
+        int get_rooms();
+        void set_floors(int num);
+        int get_floors();
+        void set_area(int num);
+        int get_area();
+};
+\end{lstlisting}
+
+L'h\'eritage permet d'avancer d'une classe \`a une autre. Le processus implique la d\'efinition d'une classe de  base. La classe de base repr\'esente la d\'efinition 
+la plus g\'en\'erale et la classe d\'eriv\'ee de la classe de base
+est appel\'ee la \textbf{classe d\'eriv\'ee}. Une classe d\'eriv\'ee h\'erite de toutes les fonctionnalit\'es de la
+classe de base et en impl\'emente d'autres. Maintenant, nous pouvons utiliser cette d\'efinition g\'en\'erale
+\textbf{Buildings} pour 
+cr\'eer un type donn\'e de maison. Consid\'erons le code suivant :
+
+\begin{lstlisting}
+//La classe House est derivee de Buildings
+class House : public Buildings
+{
+    private:
+        int bedrooms;
+        int baths;
+    public:
+        void set_bedrooms(int num);
+        int get_bedrooms();
+        void set_baths(int num);
+        int get_baths();
+};
+\end{lstlisting}
+
+Noter comment la classe House() h\'erite de la classe Buildings. La forme g\'en\'erale de l'h\'eritage est la suivante :
+\begin{lstlisting}
+class classe_derivee : acces classe_de_base
+{
+    corps de la nouvelle classe
+};
+\end{lstlisting}
+
+L'acc\`es est optionnel. Mais s'il est pr\'esent, il peut \^etre \textbf{public}, \textbf{private} ou \textbf{protected}. 
+Nous allons analyser le cas o\`u l'h\'eritage est publique. L'h\'eritage publique suppose que tous les membres
+publiques de la classe de base \textbf{Buildings} seront publiques \`a la classe d\'eriv\'ee \textbf{House} et seront visibles
+\`a toute fonction membre de \textbf{House} comme si elles ont \'et\'e d\'eclar\'ees \`a l'int\'erieur de la classe
+\textbf{House}. Cependant, les fonctions membres de la classe House n'ont pas acc\`es aux \'el\'ements
+priv\'es de la classe \textbf{Buildings}. Bien que la classe \textbf{House} h\'erite de la classe \textbf{Buildings} elle n'a acc\`es qu'aux membres publiques de 
+cette derni\`ere. L'h\'eritage ne passe pas outre le principe 
+d'encapsulation n\'ecessaire \`a la programmation orient\'ee objet (POO). \textbf{Retenez qu'une classe d\'eriv\'ee
+a l'acc\`es \`a la fois \`a ses membres et ceux de la classe \`a laquelle elle h\'erite}. Ci-dessous nous pr\'esentons un programme pour illustrer l'h\'eritage. 
+Le programme cr\'ee deux classes d\'eriv\'ees de la classe \textbf{Buildings} en utilisant l'h\'eritage public, l'une est appel\'ee \textbf{House} et l'autre \textbf{School}.
+
+\begin{lstlisting} 
+#include<iostream>
+using namespace std;
+class Buildings
+{
+    private:
+        int rooms;
+        int floors;
+        int area;
+    public:
+        void set_rooms(int num);
+        int get_rooms();
+        void set_floors(int num);
+        int get_floors();
+        void set_area(int num);
+        int get_area();
+};
+//La classe House est derivee de Buildings
+class House : public Buildings
+{
+    private:
+        int bedrooms;
+        int baths;
+    public:
+        void set_bedrooms(int num);
+        int get_bedrooms();
+        void set_baths(int num);
+        int get_baths();
+};
+//La classe School est derivee de Buildings
+class School : public Buildings
+{
+    private:
+        int classrooms;
+        int offices;
+    public:
+        void set_classrooms(int num);
+        int get_classrooms();
+        void set_offices(int num);
+        int get_offices();
+};
+void Buildings::set_rooms(int num)
+{
+    rooms = num;
+}
+void Buildings::set_floors(int num)
+{
+    floors = num;
+}
+void Buildings::set_area(int num)
+{
+    area = num;
+}
+int Buildings::get_rooms()
+{
+    return rooms;
+}
+int Buildings::get_area()
+{
+    return area;
+}
+void House::set_bedrooms(int num)
+{
+    bedrooms = num;
+}
+void House::set_baths(int num)
+{
+    baths = num;
+}
+int House::get_bedrooms()
+{
+    return bedrooms;
+}
+int House::get_baths()
+{
+    return baths;
+}
+void School::set_classrooms(int num)
+{
+    classrooms = num;
+}
+void School::set_offices(int num)
+{
+    offices = num;
+}
+int School::get_classrooms()
+{
+    return classrooms;
+}
+int School::get_offices()
+{
+    return offices;
+}
+int main()
+{
+    House h;
+    School s;
+    h.set_rooms(12);
+    h.set_floors(3);
+    h.set_area(4500);
+    h.set_bedrooms(5);
+    h.set_baths(3);
+    cout << "house has " << h.get_bedrooms();
+    cout << " bedrooms"<< endl;
+    cout << "House has " << h.get_rooms();
+    cout << " rooms"<< endl;
+    s.set_rooms(200);
+    s.set_classrooms(180);
+    s.set_offices(5);
+    s.set_area(25000);
+    cout << "school has " << s.get_classrooms();
+    cout << " classrooms\n";
+    cout << "Its area is " << s.get_area()<<endl;
+    return 0;
+}
+\end{lstlisting}
+Le r\'esultat de l'ex\'ecution de ce programme est le suivant :
+
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/classes.png}
+\end{center}
+\end{figure}
+
+\section{Introduction \`a la gestion de projets}
+Jusqu'\`a maintenant, nous avons d\'evelopp\'e nos programmes dans un fichier unique. Mais dans la plus part des cas, le d\'eveloppement d'un grand projet requiert la r\'epartition 
+du code en des fichiers s\'epar\'es. Cela permet la libert\'e de navigation en passant d'un fichier \`a l'autre et de faciliter le cycle d'\'edition des fichiers sources.
+\subsection{Types de fichier d'un projet}
+En travaillant sur un grand projet de programmation, on introduit les concepts 
+de \textbf{fichiers sources}, le \textbf{fichier d'ent\^ete} et le fichier de 
+\textbf{projet}. Les fichier sources portent l'extension .cpp tandis que les 
+fichiers d'ent\^ete portent l'extension .h. Dans notre cas, le fichier de projet 
+portera l'extension .pro. Il contient les dirrectives de la compilation et la 
+g\'en\'eration de l'ex\'ecutable. Consid\'erons l'exemple suivant. 
+Cr\'eer un fichier \textbf{entete.h} dans lequel vous saisissez les instructions
+suivantes :
+
+\begin{lstlisting}
+#ifndef ENTETE_H
+#define ENTETE_H
+void line();
+double carre(double);
+double cube(double);
+#endif
+\end{lstlisting}
+et un autre fichier entete.cpp dans lequel vous saisissez les instructions suivantes : 
+
+\begin{lstlisting}
+#include"entete.h"
+void line()
+{
+    cout << "--------------------------------------"<<endl;
+}
+double carre(double num)
+{
+    return num*num;
+}
+double cube(double num)
+{ 
+    return num*num*num;
+}
+\end{lstlisting}
+On remarque que dans le fichier d'ent\^ete on y met la d\'eclaration des 
+prototypes de toutes les fonctions. La ligne du pr\'e-processeur \#include"entete.h" 
+n'utilise pas les chevrots pour inclure le fichier entete.h. Quand le 
+pr\'e-processeur rencontre une telle ligne, il va chercher le fichier dans le 
+r\'epertoire courant ce qui fait la diff\'erence avec la directive avec les 
+chevrots, le pr\'e-processeur cherchera le fichier dans la librairie 
+standard du C++. La directive
+
+\begin{lstlisting}
+#ifndef ENTETE_H
+#define ENTETE_H
+............
+#endif
+\end{lstlisting}
+permet d'\'eviter l'inclusion multiple du code balis\'e. Une fois que le pr\'e-processeur rencontre ce bout de code, il saura que c'est un code d'ent\^ete et qui doit \^etre 
+inclus une fois pour toute. Ceci est utile si les m\^eme prototypes doivent \^etre utilis\'es dans plusieurs fichiers du projet.
+
+Vous cr\'eez un fichier main.cpp dans lequel vous inscrivez le code suivant :
+
+\begin{lstlisting}
+#include<iostream>
+#include"entete.h"
+using namespace std;
+int main(int atrgc, char argv[])
+{
+    line();
+    double number = 10;
+    cout <<number <<" au carre "<< carre(number)<<endl;
+    cout << number << " Au cube " << cube(number) << endl;
+    line();
+}
+\end{lstlisting}
+
+Dans un r\'epertoire, vous aurez les trois fichiers ci-dessous.
+
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/project.png}
+\end{center}
+\end{figure}
+
+Une bonne pratique de la programmation fait que le fichier d'ent\^ete ait le m\^eme nom que le fichier source, les deux se diff\'erentient par leurs extensions.
+
+\subsection{Compilation d'un projet}
+
+Pour pouvoir compiler un projet, il faut avoir install\'e les outils n\'ecessaires. Dans le cadre de ce cours nous utiliserons les outils \textbf{qmake} et \textbf{make}
+qui sont directement install\'es avec \textbf{qtcreator}. Si tout a \'et\'e bien install\'e, la compilation d'un projet passe par trois \'etapes simples. 
+Supposons que votre r\'epertoire de travail s'appelle TOTO. L'ex\'ecution de la comme \textit{qmake -project} g\'en\`ere un fichier de projet appel\'e \textbf{TOTO.pro}. Le
+fichier de projet contient toutes les directives n\'ecesaires \`a la compilation de votre projet. L'ex\'ecution de la commande \textit{qmake TOTO.pro} g\'en\`ere \`a son 
+tour un fichier \textbf{Makefile}. Le fichier Makefile contient toutes les directives n\'ecessaires \`a l'\'edition des liens et \`a la g\'en\'eration de votre ex\'ecutable.
+En d\'efinitif, l'ex\'ecution de la commande \textbf{make} g\'en\`ere
+le fichier ex\'ecutable appel\'e TOTO.
+L'ex\'ecution de ce programme par la commande \textit{./TOTO} donne ce qui suit :
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.3]{./Figures/res.png}
+\end{center}
+\end{figure}
+
+
+\newpage
+
+\chapter{Travaux dirig\'es}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[l]{Travaux dirig\'es} \rhead{\thepage}
+
+\section{Exerices sur les notions de variables et op\'erateurs}
+\begin{enumerate}
+\item Que vaut la valeur de i, j et k \`a la fin des instructions suivantes
+\begin{minted}{c}
+int i=0, j=0, k=0;
+j=++i;
+k=j++;
+\end{minted}
+\item Que vaut la valeur de i \`a la fin des instructions
+\begin{minted}{c}
+int i = 5;
+i *=2;
+\end{minted}
+
+\item Qu'affiche le programme suivant.
+\begin{lstlisting}
+#include<iostream>
+using namespace std;
+int main() 
+{
+    int i;
+    double x, y, z;
+    x = 1.; y = 2.; z = 3.;
+    i = x<y && y<z; 
+    cout << "i=" << i << endl;
+    i = x>y || y==z; 
+    cout << "i=" << i << endl;
+    i = !(x>y || y>z); 
+    cout << "i=" << i << endl;
+    return 0;
+}
+\end{lstlisting}
+\item Un individu peut obtenir une r\'eduction s'il remplit une des conditions suivantes :
+\begin{itemize}
+\item il a moins de 18 ans
+\item il a moins de 25 ans et fait des \'etudes
+\item il a moins de 25 ans et ses deux parents ne travaillent pas
+\end{itemize}
+
+On d\'efinit les variables de type int suivantes :
+\begin{itemize}
+\item[]$age$\ qui vaut l'\^age de l'individu
+\item[]$etu$\ qui vaut 1 s'il fait des \'etudes, 0 sinon
+\item[]$pt$\ qui vaut 1 si le p\`ere travaille, 0 sinon
+\item[]$mt$\ qui vaut 1 si la m\`ere travaille, 0 sinon
+\end{itemize}
+Ecrire une expression compos\'ee de ces quatre variables qui vaut 1 s'il a droit \`a
+la r\'eduction, 0 sinon.
+
+\item Lesquels de ces noms suivants sont des noms valables de variables
+
+
+
+\begin{minted}{c}
+my_name    89_sales    sales_89   a-salary
+\end{minted}
+
+\item Combien de variables sont d\'ecrites par les instructions suivantes
+\begin{minted}{c}
+int i, j, k;
+char c, d, e;
+float x=65.43;
+\end{minted}
+
+\item Corriger le programme suivant sans utiliser la ligne \textbf{using namespace std;}.
+
+\begin{lstlisting}
+#include<iostream>
+int main()
+{
+    const int age=35;
+    cout << age << "\n";
+    age = 52;
+    cout << age << "\n";
+    return 0;
+}
+\end{lstlisting} 
+
+\item Ecrire un programme qui d\'eclare trois variable pour stocker ton poids, ta taille ainsi que la taille de ta chaussure. D\'eclare les variables, 
+alors affecte-les des valeurs dans le corps de ton programme.
+
+\item Compl\'eter le programme de l'exercice pr\'ec\'edent en y ajoutant l'instruction \textbf{cout} pour afficher les valeur \`a l'\'ecran. Ajouter des messages appropri\'es
+pour indiquer la signification de chaque nombre affich\'e.  
+
+\item Ecrire dans un programme la formule de Planck donn\'ee par l'expression 
+math\'ematique suivante.
+\begin{equation*}
+u\left(\nu\right) = \frac{8\pi\hbar\nu^{3}}{c^{3}}\frac{1}{e^{\frac{\hbar\nu}{kT}}-1}
+\end{equation*} 
+D\'eclarer autant de variable que n\'ecessaires pour simplifier l'\'ecriture.
+($\hbar = 6.62618\times 10^{-34},\ k = 1.38066\times 10^{-23}, c = 2.99792\times 10^{8}, \nu = 1.\times 10^{15},\ t = 5.\times 10^{3}$)
+\end{enumerate}
+
+
+\section{Exercices sur les structures it\'erartives et conditionnelles}
+
+\begin{enumerate}
+\item Quels r\'esultats fournira ce programme :
+\begin{lstlisting}
+#include<iostream>
+using namespace std ;
+int main()
+{
+    int t[3] ;
+    int i, j ;
+    int * adt ;
+    for (i=0, j=0 ; i<3 ; i++) 
+        t[i] = j++ + i ;
+    for (i=0 ; i<3 ; i++)
+         cout << t[i] << " " ;
+    cout << "\n" ;
+    for (i=0 ; i<3 ; i++)
+         cout << *(t+i) << " " ;
+    cout << "\n" ; 
+    for (adt = t ; adt < t+3 ; adt++)
+        cout << *adt << " ";
+    cout << "\n" ;
+
+    for (adt = t+2 ; adt>=t ; adt--) 
+        cout << *adt << " ";
+    cout << "\n" ;
+}
+\end{lstlisting}
+\item Ecrire un programme C++ qui affiche \`a l'\'ecran le message \og La programmation en C++ est amusante!...\fg\ 5 fois.
+
+\item Ecrire un programme qui d\'etermine la n i\`eme valeur $u_n$\ (n \'etant fourni en donn\'ee) de la « suite de
+Fibonacci » d\'efinie comme suit :
+
+\begin{minted}{c}
+u_1 = 1
+u_2 = 1
+u_n = u_n-1 + u_n-2 pour n>2
+\end{minted}
+\item Calculer la somme des n premiers termes de la « s\'erie harmonique », c'est-\`a-dire la somme :
+
+1 + 1/2 + 1/3 + 1/4 + ..... + 1/n
+
+La valeur de n sera lue en donn\'ee. 
+
+
+\item Ecrire un programme qui affiche la « table de multiplication » des nombres de 1 \`a 10, sous la forme
+suivante :
+
+\begin{table}[hhhh]
+\begin{center}
+\begin{tabular}{cccccccccccc}
+& I & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\hline
+1& I& 1& 2& 3 &4& 5& 6 &7& 8& 9& 10\\
+2 &I &2& 4 &6 &8 &10 &12 &14& 16& 18 &20\\
+3 &I& 3& 6& 9& 12& 15 &18& 21& 24& 27& 30\\
+4 &I &4& 8 &12& 16 &20 &24 &28 &32 &36& 40\\
+5 & I &5 &10 &15 &20& 25& 30 &35& 40& 45& 50\\
+6 &I &6& 12& 18 &24 &30 &36 &42& 48 &54& 60\\
+7 &I& 7& 14& 21 &28& 35 &42 &49& 56& 63& 70\\
+8 &I &8 &16& 24& 32& 40& 48&56 &64& 72& 80\\
+9 &I &9 &18&27& 36 &45& 54& 63 &72& 81& 90\\
+10 & I& 10& 20& 30 &40& 50 &60& 70& 80 &90& 100\\
+\end{tabular}
+\end{center}
+\end{table}
+
+Rappelons que l'insertion dans le flot cout d'une expression de la forme setw(n) , où n est une
+expression enti\`ere, demande de r\'ealiser l'affichage suivant sur n caract\`eres au minimum. L'emploi de
+setw n\'ecessite l'inclusion du fichier iomanip .
+
+\item Ecrite un programme qui calcule la factorielle d'un nombre sans utiliser la r\'ecursivit\'e. On sait que pour tout entier naturel
+
+\begin{equation*}
+n! = n*(n-1)! = 1*2*3*4*....*n,
+\end{equation*}
+avec 1! = 1 et 0! = 1.
+Le proramme pourra demander \`a l'utilisateur d'entrer un entier naturel et calculer sa factorielle et afficher le r\'esultat. Prendre en compte le cas o\`u l'utilisateur 
+tape un entier n\'egatif.
+
+\item Calculer la fonction $sin x/x$. Il faut g\'erer un cas particulier pour $x = 0$. 
+
+\item Calculer la fonction de Heaviside d\'efinie par
+\begin{eqnarray*}
+H\left(x\right) = 0\ \mbox{pour}\ x< 0\\
+H\left(x\right) = 1\ \mbox{pour}\ x\geq 0
+\end{eqnarray*}
+
+\item On consid\`ere trois intervalles disjoints sur l'axe des r\'eels : 
+
+$\left[x_{1}^{min}, x_{1}^{max}\right],\ \left[x_{2}^{min}, x_{3}^{max}\right],\
+\left[x_{3}^{min}, x_{3}^{max}\right]$. Etant donn\'ee une variable r\'eel $x$, on veut qu'une variable enti\`ere $i$\ vaille : 
+
+\begin{itemize}
+\item[] 1 si $x$\ appartient \`a l'intervalle $\left[x_{1}^{min}, x_{1}^{max}\right]$
+\item[] 2 si $x$\ appartient \`a l'intervalle $\left[x_{2}^{min}, x_{2}^{max}\right]$
+\item[] 3 si $x$\ appartient \`a l'intervalle $\left[x_{3}^{min}, x_{3}^{max}\right]$
+\item[] 0 sinon.
+Prendre les valeurs suivantes : $x_{1}^{min} = -1,\ x_{2}^{min} = 0.5,\ x_{3}^{min} = 2.,\ x_{1}^{max} = -0.5,\ x_{2}^{max} = 0.8,\ x_{3}^{max} = 2.9,\ x = 0.7$
+\end{itemize}
+
+\item Calcul d'une int\'e'grale par la m\'ethode des rectangles.
+\begin{equation*}
+\int_{a}^{b}f\left(x\right)dx\sim h\sum_{i=1}^{n}f\left[a + \left(i-\frac{1}{2}\right)h\right]
+\end{equation*}
+o\`u $n$\ est le nombre de rectangles, $h$\ le pas d'int\'egration : $h = \left(b-a\right)/n$. Comme application, consid\'erer la fonction suivante : 
+
+\begin{equation*}
+\frac{1}{1+x^2}
+\end{equation*}
+sur l'intervalle $\left[1.,2.\right]$. Comparer le r\'esultat avec la solution analytique.
+\end{enumerate}
+
+
+\section{Exercices sur les tableaux et pointeurs}
+
+\begin{enumerate}
+\item Soient deux tableaux t1 et t2 d\'eclar\'es ainsi :
+float t1[10], t2[10] ;
+\'ecrire les instructions permettant de recopier, dans t1, tous les \'el\'ements positifs de t2, en compl\'etant
+\'eventuellement t1 par des z\'eros.
+\item Ecrire, de deux façons diff\'erentes, un programme qui lit 10 nombres entiers dans un tableau avant d'en
+rechercher le plus grand et le plus petit :
+\begin{itemize}
+\item[a.] en utilisant uniquement le \og formalisme tableau \fg ;
+\item[b.] en utilisant le \og formalisme pointeur \fg, \`a chaque fois que cela est possible.
+\end{itemize}
+\item Écrire un programme effectuant la suite d’opérations suivantes :
+\begin{itemize}
+\item Allocation dynamique de mémoire pour un tableau d’entiers d’une taille donnée par l’utilisateur;
+\item Demande des valeurs des cases du tableau à l’utilisateur;
+\item Création dynamique d’un nouveau tableau destiné à recevoir les carrés des valeurs contenues
+dans le premier, et calcul des valeurs de ce tableau;
+\item Suppression du premier tableau, affichage des valeurs du second, puis suppression du second.
+\end{itemize}
+\end{enumerate}
+\section{Exercices sur les modules et fonctions}
+
+\begin{enumerate}
+\item Quelle modification faut-il apporter au programme suivant pour qu'il devienne correct :
+\begin{lstlisting}
+#include<iostream>
+using namespace std ;
+int main()
+{ int n, p=5 ;
+    n = fct(p) ;
+    cout << "p = " << p << " n = " << n ;
+}
+int fct(int r)
+{ 
+    return 2*r ;
+}
+\end{lstlisting}
+\item Ecrire une fonction qui fournit en valeur de retour la somme des \'el\'ements d'un tableau de flottants
+transmis, ainsi que sa dimension, en argument.
+
+\item Ecrire une fonction permettant d'ajouter une valeur fournie en argument \`a une variable fournie
+\'egalement en argument. Par exemple, l'appel ( n et p \'etant entiers) :
+ajouter (2*p+1, n) ;
+ajoutera la valeur de l'expression 2*p+1 \`a la variable n .
+Ecrire un petit programme de test de la fonction.
+\item Ecrire 2 fonctions \`a un argument entier et une valeur de retour enti\`ere permettant de pr\'eciser si
+l'argument reçu est multiple de 2 (pour la premi\`ere fonction) ou multiple de 3 (pour la seconde fonction).
+Utiliser ces deux fonctions dans un petit programme qui lit un nombre entier et qui pr\'ecise s'il est pair,
+multiple de 3 et/ou multiple de 6 :
+
+
+
+
+
+\item Ecrire une fonction qui re\c{c}oit en argument deux nombres et renvoit la moyenne des deux.
+\item Ecrire une fonction qui fait un test  sur deux nombres a,b entr\'es en argument. Elle renvoit 1 si $a < b$, 0 si $ a > b$\ et 2 si $a=b$. 
+\item Ecrire une fonction qui renvoit le maximun de deux nombres re\c{c}u en argument.
+\item Ecrire une fonction qui reçoit en arguments 2 nombres flottants et un caract\`ere, et qui fournit un r\'esultat
+correspondant \`a l'une des 4 op\'erations appliqu\'ees \`a ses deux premiers arguments, en fonction de la
+valeur du dernier, \`a savoir : addition pour le caract\`ere +, soustraction pour -, multiplication pour * et
+division pour / (tout autre caract\`ere que l'un des 4 cit\'es sera interpr\'et\'e comme une addition). On ne
+tiendra pas compte des risques de division par z\'ero.
+Ecrire un petit programme ( main ) utilisant cette fonction pour effectuer les 4 op\'erations sur les 2
+nombres fournis en donn\'ee.
+\item \'ecrire :
+\begin{itemize}
+\item une fonction, nomm\'ee f1, se contentant d'afficher « bonjour » (elle ne poss\'edera aucun
+argument, ni valeur de retour) ;
+\item une fonction, nomm\'ee f2, qui affiche « bonjour » un nombre de fois \'egal \`a la valeur reçue en
+argument (int) et qui ne renvoie aucune valeur ;
+\item une fonction, nomm\'ee f3, qui fait la m\^eme chose que f2, mais qui, de plus, renvoie la valeur
+(int) 0.
+\'ecrire un petit programme appelant successivement chacune de ces 3 fonctions, apr\`es les avoir
+convenablement d\'eclar\'ees (on ne fera aucune hypoth\`ese sur les emplacements relatifs des diff\'erentes
+fonctions composant le fichier source).
+\end{itemize}
+
+\item Ecrite une fonction pour \'evaluer l'expression suivante :
+
+\begin{equation*}
+\frac{1}{1+x^2}
+\end{equation*}
+\end{enumerate}
+
+
+%\section{Exercices sur la manipulation de cha\^ienes de caract\`eres}
+
+
+%\begin{enumerate}
+%\item
+%\end{enumerate}
+
+\section{Exercices sur la POO}
+\begin{enumerate}
+\item On se propose de d\'efinir une classe nomm\'ee \textbf{Point}. Les donn\'ees membres de la classe sont \textbf{coordX, coordY} pour les coordonn\'ees X et Y respectivement. Elles
+seront de type  \textbf{double}. La classe est munie de deux constructeurs : un constructeur sans argument \textbf{Point()} qui initialisera les donn\'ees membres \`a z\'ero 
+et un constructeur \`a deux arguments \textbf{Point(double x, double y)} avec lesquels il initialisera les coordonn\'ees X et Y. Les donn\'es membres seront \`a acc\`es priv\'e
+et les constructeurs seront \`a acc\`es public. Dans la partie publique, on d\'efinira les fonctions membres suivantes : 
+\begin{itemize}
+\item void init() : une fonction qui initialisera les coordonn\'ees X et Y \`a 0 si elle est appel\'ee sur un objet de type Point,
+\item void deplace(double dx, double dy=0) : cette fonction augment les coordonn\'ees X et Y avec les valeurs pass\'ees en argument : par example son appelle sur un objet avec les 
+valeur 0.1 et 0.2 aura pour effet d'ajouter 0.1 \`a la variable coordX et 0.2 \`a la variable coordY. Son appel avec un seul argument aura pour effet de modifier la valeur de coordX
+tout en gardant inchang\'ee la valeur de coordY, c'est la r\^ole du passage en argument de valeurs par default. Le passage de valeurs par defaut permet d'appeler une fonction
+sans devoir prevoir explicitement tous les arguments. Remarquons que les valeurs par defaut sont sp\'ecifi\'ees apr\`es les arguments obligatoirs.
+\item double getX() et double getY() : les deux fonctions retournent les coordonn\'ees X et Y respetivement.
+\item void affiche() : cette fonction affiche les coordonn\'ees du point selon le format suivant : \textbf{Je suis en (coordX,coordY)}. Si les valeur de coordX et coordY sont 
+respectivement 2 et 3, l'appelle de la fonction affiche() produira le r\'esultat suivant : Je suis en (2,3).
+\end{itemize}
+Ecrire un programme de test et exp\'erimenter les cas suivants :
+\begin{enumerate}
+\item d\'eclarer un objet P avec l'instruction : Point P;
+\item appeler la fonction affiche() : P.affiche();
+\item appeler la fonction deplace() comme suit : P.deplace(0.1,0.2);
+\item appeler de nouveau la fonction affiche() : P.affiche();
+\item appeler la fonction init() : P.init() et ensuite la fonction affiche() : P.affiche();
+\item si tout va bien, d\'eclarer un pointeur P1 de type Point de cette fa\c{c}on : Point *P1 = new Point(2,3);
+\item appeler la fonction affiche() comme suit : P1->affiche(). Vous devez remarquer que l'appel des fonctions membres sur un objet d\'eclar\'e comme un pointeur est diff\'erent de 
+l'appel sur un objet simple. Un pointeur exige l'utilisation du symbole \textbf{->}.
+\item tester le programme avec l'instruction suivante : 
+\begin{lstlisting}
+cout << "(" <<P1.coordX << ","
+ << P1.coordY << ")" <<endl; //attention a la violation du
+                             //principe de l'encapsulation
+\end{lstlisting}
+que se passe-t-il ?
+\item tester le programme avec l'instruction suivante :
+\begin{lstlisting}
+cout << "(" <<P1.getX() << "," << P1.getY() << ")" <<endl;
+\end{lstlisting}
+Les fonctions getX() et getY() sont des fonctions membres de la classe Point d\'efinies dans la partie publique. Elles peuvent \^etre utilis\'ees pour acc\'eder aux donn\'ees membres
+d'une classe d\'efinies dans sa partie priv\'ee. Les donn\'ees priv\'ees sont accessibles uniquement \`a l'int\'erieur de la classe ou dans une fonction membre de la m\^eme classe.
+Elle ne sont jamais accessibles en dehors de la classe. Ceci constitut la base m\^eme de la programmation orient\'ee objet qui met en s\'ecurit\'e les attribues (donn\'ees membres) 
+des diff\'erents types d'objet. Pour avoir acc\`es aux attributs, on d\'efinie des fonctions membres dans la partie publique de la classe. Ces fonctions sont \'egalement apppel\'ees
+des accesseurs.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\section*{Impl\'ementation de la classe Point sous forme de projet}
+\subsection*{Le fichier d'ent\^ete}
+\begin{lstlisting}
+//Fichier point.h
+#ifndef POINT_H
+#define POINT_H
+#include<iostream>
+#include<cstring>
+#include<fstream>
+using namespace std;
+class Point
+{
+        public:
+                Point();//Constructeur
+                Point(double x, double y);//Constructeur
+                ~Point(); //Destructeur
+                void init();
+                void deplace(double dx, double dy=0);
+                void affiche();
+                double getX();
+                double getY(); //Accesseurs
+                void save(string str);
+                void setX(double);
+                void setY(double);
+        private:
+                double coordX;
+                double coordY;
+};
+#endif //POINT_H
+
+\end{lstlisting}
+
+Le fichier source d\'eclare quelques m\'ethodes ou fonctions membres et deux attributs ou donn\'ees membres. Il faut remarquer le point virgule \`a la fin de la d\'eclaration de la 
+classe. En plus des m\'ethodes \'evoqu\'ees dans l'\'enonc\'e du projet, la classe d\'eclare \'egalement une m\'ethode \textbf{save(string)} qui re\c{c}oit en argument une cha\^ine
+de caract\`ere. Cette fonction ouvre en \'ecriture un fichier et enregistre les coordonn\'ees X et Y pour un point donn\'e. L'argument r\'e\c{c}u est le nom du fichier 
+qui sera cr\'e\'e.
+\subsection*{Le fichier source}
+Le fichier source a pour r\^ole de \textbf{d\'efinir les diff\'erentes fonctionalit\'ees} qui seront mises en place par le nouveau type de variable d\'efinie \`a travers la classe. 
+On comprend par exemple comment un objet sera construt \`a l'aide du constructeur, la technique d'accession/modification de donn\'ees membres par les accesseurs. L'affichage des 
+donn\'ees membres ne pouvant pas se faire par la proc\'edure habituelle h\'erit\'ee des fonctionnalit\'es de flux d'entr\'ees/sorties standards, on peut alors mettre au point 
+un autre moyen de le faire.
+\begin{lstlisting}
+//Fichier point.cpp
+#include "point.h"
+Point::Point()
+{
+	coordX = 0;
+	coordY = 0;
+}
+Point::Point(double x, double y)
+{
+	coordX = x;
+	coordY = y;
+}
+Point::~Point()
+{
+
+}
+void Point::init()
+{       
+        coordX = 0;
+        coordY = 0;
+}
+void Point::deplace(double dx, double dy)
+{ 
+	coordX = coordX + dx;
+	coordY = coordY + dy;
+}
+void Point::affiche()
+{
+	cout << "Je suis en ("<<coordX<<
+	","<< coordY <<")"<< endl;
+}
+double Point::getX()
+{
+	return coordX;
+}
+double Point::getY()
+{
+	return coordY;
+}
+\end{lstlisting}
+
+\subsection*{Cas d'utilisation de la classe}
+La puissance de la programmation orient\'ee objet repose sur le fait qu'il est 
+possible de s\'eparer le d\'eclaration et la d\'efinition de la classe d'avec les 
+cas d'utilisation.
+La d\'efinition de la classe se fait dans le fichier d'ent\^ete et sa d\'efinition est r\'eserv\'ee pour le fichier source. Et g\'en\'eralemnt les cas d'utilisation sont encod\'es
+dans le programme pricipal qui contient la porte d'entr\'ee de l'application (la fonction main(). A travers cet exemple on voit combien le programme principal est tr\`es. Il ne fait
+que d\'eclarer des objets et appeler les fonctions membres. 
+Le cycle de d\'eveloppement g\'er\'e sous forme d'un projet est facile \`a suivre son \'evolution. En effet, si on d\'ecide de changer ou d'am\'eliorer les fonctionnalt\'es de la 
+classe, on aura qu'on faire les modification de le fichier d'ent\^ete et le fichier source. Le programme de cas d'utilisation peut \^etre laiss\'e comme tel. Lors de la cr\'eation
+de nouveau objet par le programmeur, on dinstingue deux niveaux :
+\begin{lstlisting}
+//Le fichier main.cpp
+int main()
+{
+	Point P;
+	P.affiche();
+	P.deplace(0.1,0.2);
+	P.affiche();
+	P.init();
+	P.affiche();
+	cout << "("<<P.getX() << "," <<
+	 P.getY() << ")"<< endl;
+	Point *P1;
+	P1 = new Point(2,8);
+	P1->affiche();//remarquez la notation ->
+	cout << "("<<P1->getX() << "," << 
+	P1->getY() << ")"<< endl;
+}
+\end{lstlisting}
+
+
+\begin{enumerate}
+\item La d\'eclaration/d\'efinition de la classe,
+\item La d\'eclaration des objets.
+\end{enumerate}
+L'appel des fonctions membres se fait sur des objets ayant \'et\'e pr\'ealablement d\'efinis.
+
+%\section*{Le diagramme UML de la classe Point}
+
+%\input{UML.tex}
+
+
+
+
+
+
+\section*{Projet de d\'eveloppement d'une application \`a interface graphique (GUI)}
+
+\begin{center}
+\textit{Nul n'est tenu \`a inventer le roue. Il faut partir de ce qui existe et avancer.}
+\end{center}
+
+Dans cette section, il ne s'agira pas de faire un expos\'e sur tous les concepts en 
+rapport avec le d\'eveloppement d'applications \`a interface graphique. Nous 
+pr\'esenterons au lecteur un cours r\'esum\'e sur diff\'erentes \'etapes utiles pour 
+ma\^itre sur pieds une application GUI. L'installation des outils pour la compilation 
+d'une telle application sera \'evoqu\'ee \`a titre informative mais les commandes 
+\`a ex\'ecuter pour installer les packages de bases sont disponibles \textbf{en lien}
+sur la plate forme du cours. 
+\begin{enumerate}
+\item Pr\'erequis : Le pr\'esent projet exige que l'environnement de d\'eveloppement int\'egr\'e \textbf{qtcreator} soit installer pour pouvoit compiler ou tester le projet.
+Apr\`es l'installation de l'outil qtcreator, nos disposons des outils \textbf{qmake}\
+et \textbf{make} pour cr\'eer le fichier de projet et l'ex\'ecutable. Les \'etapes de 
+la compilation du projet seront pr\'esent\'ees \`a la fin de son impl\'ementation. 
+\item L'application qui sera d\'evelopp\'ee dans le cadre de ce TP sera constitu\'ee de :
+\begin{itemize}
+\item Une fen\^etre principale avec les menues Fichier et Aide. Le menu Fichier 
+pourra avoir les actions Saisie, Donn\'ees et Fermer. L'action Saisie aura pour 
+r\^ole d'ouvrir une bo\^ite de dialogue pour saisir les donn\'ees dans les champs
+(champs de saisie) d\'edi\'es. L'action Donn\'ees pourra avoir pour r\^ole d'afficher 
+les donn\'ees en provenance de la base de donn\'ee. 
+A travers l'action Donn\'ees, la fen\^etre principale pourra se connecter \`a la base de donn\'ees et en extraire le contenu. L'action Fermer se chargera de fermer 
+l'application \`a la fin du travail de saisie. Le menu Aide aura une action qui ouvre sur une bo\^ite de dialogue avec quelques informations en rapport avec l'application.
+\item Une bo\^ite de dialogue pour la saisie de donn\'ees. La bo\^ite de saisie aura les \'el\'ements suivants :
+\begin{itemize}
+\item Des champs de saisie pour rentrer le nom et pr\'enom
+\item Un champ pour rentrer la matricule
+\item Un champ pour rentrer la section fr\'equent\'ee
+\item Un champ pour renter l'ecole d'origine
+\item un champ pour rentrer la note obtenue \`a l'examen d'\'etat.
+\item Un boutton poussoir pour effacer les champs  
+\item Un boutton poussoir pour enregistrer les donn\'ees 
+\item Un boutton poussoir pour fermer la bo\^ite de dialogue
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+
+Le commentaire \`a ce projet est laiss\'e comme compl\'ement de la lecture du 
+livre Qt 4 et C++ Programmation d’interfaces GUI de Jasmin Blanchette et Mark 
+Summerfield qui constitut une bonne introduction \`a la programmation d'interface graphique.
+\subsection*{Le fichier d'ent\^ete 1}
+
+
+
+
+\begin{lstlisting}
+#ifndef DIALOG_H
+#define DIALOG_H
+#include<QDialog>
+//Foreward declaration
+class QLineEdit;
+class QLabel;
+class QHBoxLayout;
+class QVBoxLayout;
+class QPushButton;
+class QSpinBox;
+class QSqlQueryModel;
+class QSettings;
+
+class Dialog:public QDialog
+{
+	Q_OBJECT
+	public:
+		Dialog(QWidget *parent=0);
+		~Dialog();
+	public slots:
+		void clear();
+	        void getText();
+	private:
+	         QLineEdit *nameLineEdit;
+		 QLineEdit *postNameLineEdit;
+		 QLineEdit *ecoleOrigineLineEdit;
+		 QLineEdit *matriculeLineEdit;
+		 QLineEdit *sectionLineEdit;
+		 //QLineEdit *noteLineEdit;
+		 QSpinBox *noteSpinBox;
+
+		 QPushButton *okPushButton;
+		 QPushButton *savePushButton;
+		 QPushButton *clearPushButton;
+
+		 QHBoxLayout *hboxLayout1;
+		 QHBoxLayout *hboxLayout2;
+		 QHBoxLayout *hboxLayout3;
+		 QHBoxLayout *hboxLayout4;
+		 QHBoxLayout *hboxLayout5;
+		 QHBoxLayout *hboxLayout6;
+		 QHBoxLayout *hboxLayout7;
+
+		 QVBoxLayout *vboxLayout;
+
+		 QLabel *nameLabel;
+		 QLabel *postNameLabel;
+		 QLabel *ecoleOrigineLabel;
+		 QLabel *matriculeLabel;
+		 QLabel *sectionLabel;
+		 QLabel * noteLabel;
+		 QSqlQueryModel *queryModel;
+		 QSettings *settings;
+};
+#endif //DIALOG_H
+\end{lstlisting}
+
+\subsection*{Le fichier source 1}
+
+\begin{lstlisting}
+#include"dialog.h"
+#include<QHBoxLayout>
+#include<QVBoxLayout>
+#include<QLineEdit>
+#include<QLabel>
+#include<QSpinBox>
+#include<QSettings>
+#include<QPushButton>
+#include<QString>
+#include<QDebug>
+#include<QSqlDatabase>
+#include<QSqlQueryModel>
+
+Dialog::Dialog(QWidget *parent)
+	:QDialog(parent)
+{
+	nameLineEdit = new QLineEdit;
+	postNameLineEdit  = new QLineEdit;
+        ecoleOrigineLineEdit  = new QLineEdit;
+        matriculeLineEdit  = new QLineEdit;
+        sectionLineEdit = new QLineEdit;
+        noteSpinBox = new QSpinBox;
+	okPushButton = new QPushButton(tr("Ok"));
+        savePushButton = new QPushButton(tr("Save"));
+        clearPushButton = new QPushButton(tr("Clear"));
+	hboxLayout1  = new QHBoxLayout;
+        hboxLayout2 = new QHBoxLayout;
+        hboxLayout3 = new QHBoxLayout;
+        hboxLayout4 = new QHBoxLayout;
+        hboxLayout5 = new QHBoxLayout;
+        hboxLayout6 = new QHBoxLayout;
+        hboxLayout7 = new QHBoxLayout;
+
+	vboxLayout = new QVBoxLayout;
+	nameLabel = new QLabel(tr("Name"));
+        postNameLabel = new QLabel(tr("Post name"));
+        ecoleOrigineLabel = new QLabel(tr("School"));
+        matriculeLabel = new QLabel(tr("Id"));
+        sectionLabel  = new QLabel(tr("Section"));
+        noteLabel  = new QLabel(tr("Marks"));
+        queryModel = new QSqlQueryModel;
+        settings = new QSettings;
+
+	hboxLayout1->addWidget(nameLabel);
+	hboxLayout1->addStretch();
+	hboxLayout1->addWidget(nameLineEdit);
+
+	hboxLayout2->addWidget(postNameLabel);
+        hboxLayout2->addStretch();
+        hboxLayout2->addWidget(postNameLineEdit);
+	hboxLayout3->addWidget(matriculeLabel);
+	hboxLayout3->addStretch();
+        hboxLayout3->addWidget(matriculeLineEdit);
+	hboxLayout4->addWidget(sectionLabel);
+        hboxLayout4->addStretch();
+        hboxLayout4->addWidget(sectionLineEdit);
+	hboxLayout5->addWidget(ecoleOrigineLabel);
+        hboxLayout5->addStretch();
+        hboxLayout5->addWidget(ecoleOrigineLineEdit);
+        hboxLayout6->addWidget(noteLabel);
+        hboxLayout6->addStretch();
+        hboxLayout6->addWidget(noteSpinBox);
+	hboxLayout7->addStretch();
+	hboxLayout7->addWidget(clearPushButton);
+	hboxLayout7->addWidget(savePushButton);
+        hboxLayout7->addWidget(okPushButton);
+
+	vboxLayout->addLayout(hboxLayout1);
+	vboxLayout->addLayout(hboxLayout2);
+	vboxLayout->addLayout(hboxLayout3);
+	vboxLayout->addLayout(hboxLayout4);
+	vboxLayout->addLayout(hboxLayout5);
+	vboxLayout->addLayout(hboxLayout6);
+	vboxLayout->addLayout(hboxLayout7);
+	setMinimumSize(600,200);
+	setLayout(vboxLayout);
+
+	connect(okPushButton,SIGNAL(clicked()),this, SLOT(close()));
+	connect(savePushButton,SIGNAL(clicked()),this,SLOT(getText()));
+	connect(clearPushButton,SIGNAL(clicked()),this,SLOT(clear()));
+}
+
+void Dialog::clear()
+{
+	nameLineEdit->setText("");
+        postNameLineEdit->setText("");
+        ecoleOrigineLineEdit->setText("");
+        matriculeLineEdit->setText("");
+        sectionLineEdit->setText("");
+        noteSpinBox->setValue(0);
+}
+Dialog::~Dialog()
+{
+}
+
+void Dialog::getText()
+{
+	QString nameStr;
+	QString postnameStr;
+	QString matriculeStr;
+	QString ecoleStr;
+	QString sectionStr;
+	int noteFlt;
+	nameStr = nameLineEdit->text();
+	postnameStr = postNameLineEdit->text();
+	matriculeStr = matriculeLineEdit->text();
+	ecoleStr = ecoleOrigineLineEdit->text();
+	sectionStr = sectionLineEdit->text();
+	noteFlt = noteSpinBox->value();
+	QString querryStr;
+	querryStr = QString("INSERT INTO identif(matricule, nom,prenom,
+	 ecole,section,note) values('%0','%1','%2','%3','%4','%5')")
+	.arg(matriculeStr).arg(nameStr).arg(postnameStr).
+	arg(ecoleStr).arg(sectionStr).arg(noteFlt);
+	qDebug() << querryStr;
+	settings = new QSettings("initfile.ini",QSettings::IniFormat);
+	QString database = settings -> value("DATABASE").toString();
+	QString user = settings -> value("USER" ).toString();
+	QString host = settings -> value ("HOST").toString();
+	QString pass = settings -> value("PASS").toString();
+	QString driver = settings -> value("DRIVER").toString();
+	QSqlDatabase db = QSqlDatabase :: addDatabase(driver);
+	db.setHostName(host);
+	db.setDatabaseName(database);
+	db.setUserName(user);
+	db.setPassword(pass);
+	bool ok = db.open();
+	if(ok)
+		qDebug() <<"Connexion avec success!...";
+	else
+		qDebug() <<"Erreur de connexion!...";
+	QString tableQuerry = QString("CREATE TABLE IF NOT EXISTS 
+	identif(matricule TEXT, nom TEXT, prenom TEXT, ecole TEXT, 
+	section TEXT, note FLOAT)");
+	qDebug() << tableQuerry;
+	queryModel -> setQuery(tableQuerry,db);
+	queryModel -> setQuery(querryStr,db);
+	clear();
+}
+\end{lstlisting}
+
+\subsection*{Le fichier d'ent\^ete 2}
+\begin{lstlisting}
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+#include<QMainWindow>
+class QMenuBar;
+class QMenu;
+class QAction;
+class QDebug;
+class QSettings;
+class Dialog;
+class MainWindow:public QMainWindow
+{
+	Q_OBJECT
+	public:
+		MainWindow(QWidget *parent=0);
+		~MainWindow();
+	public slots:
+	        void recordData();
+	private:
+               QMenuBar * menuBar ;
+	       QAction *recordAction ;
+	       QAction *exitAction ;
+	       QMenu *fileMenu ;
+	       Dialog *dlg ;	
+};
+#endif //MAINWINDOW
+\end{lstlisting}
+
+\subsection*{Le fichier source 2}
+
+
+\begin{lstlisting}
+#include"mainwindow.h"
+#include<QMenuBar>
+#include<QMenu>
+#include<QDebug>
+#include<QSettings>
+#include<QAction>
+#include"dialog.h"
+MainWindow::MainWindow(QWidget *parent)
+	:QMainWindow(parent)
+{
+	menuBar = new QMenuBar;
+	recordAction = new QAction;
+	exitAction = new QAction ;
+	fileMenu = menuBar->addMenu(tr("&Fichier"));
+	menuBar -> setNativeMenuBar(true);
+	menuBar -> showMaximized();
+	recordAction = new QAction(tr("Saisie"));
+	fileMenu -> addAction (recordAction);
+	exitAction = new QAction(tr("Quitter"));
+	fileMenu->addAction(exitAction);
+        setWindowTitle(tr("Notre premiere application"));
+	//QSettings settings("initfile.ini " , QSettings::IniFormat);
+	//QString db ;
+	//db = settings.value ("DATABASE").toString();
+	//qDebug() << db;
+	connect(exitAction , SIGNAL(triggered()) , this , 
+	SLOT(close()));
+	connect(recordAction , SIGNAL(triggered()) , this, 
+	SLOT(recordData()));
+	setAnimated(true);
+	setMinimumSize(600,400);
+	setMenuBar(menuBar);
+}
+MainWindow::~MainWindow()
+{
+
+}
+void MainWindow::recordData()
+{
+	dlg = new Dialog();
+	dlg->show();
+}
+\end{lstlisting}
+
+\section*{Et le fichier principale}
+
+\begin{lstlisting}
+#include"mainwindow.h"
+#include<QApplication>
+int main(int argc, char *argv[])
+{
+	QApplication app(argc, argv);
+	MainWindow *window = new MainWindow;	
+	window->show();
+	app.exec();
+}
+\end{lstlisting}
+\section*{R\'esultat de la copilation de l'application}
+\begin{figure}[hhhh]
+\begin{center}
+\includegraphics[scale = 0.25]{./Figures/appDialog.png}
+\end{center}
+\end{figure}
+
+
+
+
+\end{document}
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Personnage
+    {
+	    public:
+		    Personnage();
+		    void setNom(string);
+                    void setPrenom(string);
+                    void setAge(int);
+		    string getNom();
+		    string getPrenom();
+		    int getAge();
+	    private:
+		    string nom;
+		    string prenom;
+		    int age;
+    };
+    Personnage::Personnage()
+    {
+	    nom = "";
+	    prenom = "";
+	    age = 0;
+    }
+    void Personnage::setNom(string name)
+    {
+	    nom = name;
+    }
+    void Personnage::setPrenom(string postname)
+    {
+	    prenom = postname;
+    }
+    void Personnage::setAge(int Age)
+    {
+	    age = Age;
+    }
+    string Personnage::getNom()
+    {
+	    return nom;
+    }
+    string Personnage::getPrenom()
+    {
+	    return prenom;
+    }
+    int Personnage::getAge()
+    {
+	    return age;
+    }
+int main()
+{
+    double diametre, rayon;
+    const double PI = 3.14;
+    int circonferance;
+    diametre = 15;
+    rayon = diametre/2;
+    circonferance = 2*PI*rayon;
+    cout << circonferance << endl;
+    
+
+    Personnage P;
+    P.setNom("Ndenzako");
+    P.setPrenom("Eug\`ene");
+    P.setAge(25);
+    cout<<P.getNom()<<"  "<<P.getPrenom()<<"  "<<P.getAge()<<endl;
+}
+
+Classes in C++ by exampes pge 355!!!:q!!!!!
+
+Ecrire un programme en C++ qui demande \`a l'utilisateur d'entrer le rayon du cercle, calcule et affiche la circonf\'erence et la surface du cercle.

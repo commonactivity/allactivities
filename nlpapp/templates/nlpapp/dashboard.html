@@ -1,0 +1,15 @@
+{% extends 'nlpapp/base.html' %}
+{% block content %}
+<h3>Current Sessions:</h3>
+<ul>
+{% for s in sessions %}
+<li>{{ s.session_name }} | Started: {{ s.started_at }}{% if s.finished_at %} | Finished: {{ s.finished_at }}{% endif %}</li>
+{% empty %}<li>No sessions yet.</li>{% endfor %}
+</ul>
+<h2>Upload file</h2>
+<form method="post" enctype="multipart/form-data" action="{% url 'nlpapp:upload'%}">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Upload&Generate WordCloud</button>
+</form>
+{% endblock %}

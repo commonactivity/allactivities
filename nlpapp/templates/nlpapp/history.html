@@ -1,0 +1,10 @@
+{% extends 'nlpapp/base.html' %}
+{% block content %}
+<h3>WordCloud History:</h3>
+<ul>
+{% for wc in uploads %}
+<li>{{ wc.file.name }}{% if wc.wordcloud %}<br><img src="{{ wc.wordcloud.url }}" width="300">{% endif %}</li>
+{% empty %}<li>No uploads yet.</li>{% endfor %}
+</ul>
+{% endblock %}
+

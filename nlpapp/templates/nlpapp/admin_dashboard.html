@@ -1,0 +1,11 @@
+{% extends 'nlpapp/base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>
+    Total Uploads: {{total_uploads}}
+</p>
+<p>Total Wordclouds: {{total_wordclouds}}</p>
+
+<h3>Uploads per user</h3>
+<img src="data:image/png;base64,{{chart_base64}}" alt="Uploads per user char">
+{% endblock %}
