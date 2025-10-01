@@ -26,5 +26,6 @@ venv/
 __pycache__/
 *.pyc
 *.sqlite3
+*.swp
 .env
 >>>>>>> d8a1255 (Initial commit)
